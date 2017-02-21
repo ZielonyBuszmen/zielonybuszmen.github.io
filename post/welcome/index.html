@@ -7,10 +7,12 @@
 <meta name="description" content=" John Doe&#39;s Personal blog about everything">
 <meta name="generator" content="Hugo 0.18.1" />
 <meta property="og:title" content="welcome" />
-<meta property="og:description" content="Post jakiś asd asd as d asd as d as asd
-asdas das das d
-afafsasf
-# Tytuł ble!!!" />
+<meta property="og:description" content="#Post z możliwościami MD
+This text will be italic This will also be italic
+This text will be bold This will also be bold
+You can combine them
+## Przykładowy kod
+&lt;?php namespace App\Repositories\Customers; use App\Events\SessionCartChanged; use App\Models\CatalogProducts; use App\Models\CustomersCarts; use App\Models\CustomersCartsSession; use App\Repositories\Repository; use Illuminate\Container\Container as App; use Illuminate\Http\Request; class CartsRepository extends Repository { protected $model = &#39;App\Models\CustomersCarts&#39;; protected $requrest; public function __construct(App $app, Request $request) { parent::__construct($app); $this-&gt;requrest = $request; } /** Dodaje przedmiot do koszyka */ public function add($product_id) { $product = CatalogProducts::find($product_id); if ($product == null) throw new \ErrorException(&#39;Produkt o takim ID nie istenieje&#39;); $old_cart = $this-&gt;requrest-&gt;session()-&gt;has(&#39;cart&#39;) ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zielonybuszmen.github.io/post/welcome/" />
 
@@ -63,17 +65,104 @@ afafsasf
 			</p>
 		</header>
 		<div class="post__content clearfix">
-			<p>Post jakiś
- asd asd as
-  d
-  asd
-  as d
-  as
-  asd</p>
+			
 
-<p>asdas das das d</p>
+<p>#Post z możliwościami MD</p>
 
-<p>afafsasf</p>
+<p><em>This text will be italic</em>
+<em>This will also be italic</em></p>
+
+<p><strong>This text will be bold</strong>
+<strong>This will also be bold</strong></p>
+
+<p><em>You <strong>can</strong> combine them</em></p>
+
+<p>## Przykładowy kod</p>
+
+<pre><code class="language-php">&lt;?php
+namespace App\Repositories\Customers;
+
+use App\Events\SessionCartChanged;
+use App\Models\CatalogProducts;
+use App\Models\CustomersCarts;
+use App\Models\CustomersCartsSession;
+use App\Repositories\Repository;
+use Illuminate\Container\Container as App;
+use Illuminate\Http\Request;
+
+class CartsRepository extends Repository
+{
+    protected $model = 'App\Models\CustomersCarts';
+
+    protected $requrest;
+
+    public function __construct(App $app, Request $request)
+    {
+        parent::__construct($app);
+        $this-&gt;requrest = $request;
+
+    }
+
+    /** Dodaje przedmiot do koszyka */
+    public function add($product_id)
+    {
+        $product = CatalogProducts::find($product_id);
+        if ($product == null) throw new \ErrorException('Produkt o takim ID nie istenieje');
+
+        $old_cart = $this-&gt;requrest-&gt;session()-&gt;has('cart') ? $this-&gt;requrest-&gt;session()-&gt;get('cart') : null;
+        $cart = new CustomersCartsSession($old_cart);
+        $cart-&gt;add($product, $product-&gt;product_id);
+
+        $this-&gt;requrest-&gt;session()-&gt;put('cart', $cart);
+    }
+}
+</code></pre>
+
+<h3 id="inne-rzeczy">Inne rzeczy</h3>
+
+<ol>
+<li>Item 1</li>
+<li>Item 2</li>
+
+<li><p>Item 3</p>
+
+<ul>
+<li>Item 3a</li>
+
+<li><p>Item 3b</p></li>
+
+<li><p>[x] @mentions, #refs, [links](), <strong>formatting</strong>, and <del>tags</del> supported</p></li>
+
+<li><p>[x] list syntax required (any unordered or ordered list supported)</p></li>
+
+<li><p>[x] this is a complete item</p></li>
+
+<li><p>[ ] this is an incomplete item</p></li>
+</ul></li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Content from cell 1</td>
+<td>Content from cell 2</td>
+</tr>
+
+<tr>
+<td>Content in the first column</td>
+<td>Content in the second column</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="/static/img/coding.jpg" alt="Example image" /></p>
 
 <p># Tytuł ble!!!</p>
 

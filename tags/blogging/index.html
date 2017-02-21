@@ -62,10 +62,12 @@
 					</div>
 				</header>
 				<div class="loop__excerpt">
-					Post jakiś asd asd as d asd as d as asd
-asdas das das d
-afafsasf
-# Tytuł ble!!!
+					#Post z możliwościami MD
+This text will be italic This will also be italic
+This text will be bold This will also be bold
+You can combine them
+## Przykładowy kod
+&lt;?php namespace App\Repositories\Customers; use App\Events\SessionCartChanged; use App\Models\CatalogProducts; use App\Models\CustomersCarts; use App\Models\CustomersCartsSession; use App\Repositories\Repository; use Illuminate\Container\Container as App; use Illuminate\Http\Request; class CartsRepository extends Repository { protected $model = 'App\Models\CustomersCarts'; protected $requrest; public function __construct(App $app, Request $request) { parent::__construct($app); $this-&gt;requrest = $request; } /** Dodaje przedmiot do koszyka */ public function add($product_id) { $product = CatalogProducts::find($product_id); if ($product == null) throw new \ErrorException('Produkt o takim ID nie istenieje'); $old_cart = $this-&gt;requrest-&gt;session()-&gt;has('cart') ?
 				</div>
 			</div>
 		</article>
