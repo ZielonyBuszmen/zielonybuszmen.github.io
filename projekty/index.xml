@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projekties on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/projekty/index.xml</link>
+    <description>Recent content in Projekties on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <lastBuildDate>Sat, 08 Jul 2017 16:22:11 +0200</lastBuildDate>
+    <atom:link href="https://zielonybuszmen.github.io/projekty/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title> testowy projekt </title>
+      <link>https://zielonybuszmen.github.io/projekty/test/</link>
+      <pubDate>Sat, 08 Jul 2017 16:22:11 +0200</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/projekty/test/</guid>
+      <description>&lt;p&gt;asdasdasd aS asdasdasd asdasdasd datesda jakis projekt&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

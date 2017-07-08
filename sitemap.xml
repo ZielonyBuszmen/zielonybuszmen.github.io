@@ -2,8 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zielonybuszmen.github.io/post/good-to-great/</loc>
+    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/projekty/test/</loc>
+    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/post/ble/</loc>
+    <lastmod>2017-07-08T16:22:11+02:12</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zielonybuszmen.github.io/post/welcome/</loc>
     <lastmod>2017-02-21T20:15:59+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/o-mnie/</loc>
   </url>
   
   <url>
@@ -43,7 +62,13 @@
   
   <url>
     <loc>https://zielonybuszmen.github.io/post/</loc>
-    <lastmod>2017-02-21T20:15:59+01:00</lastmod>
+    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/projekty/</loc>
+    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -54,7 +79,7 @@
   
   <url>
     <loc>https://zielonybuszmen.github.io/</loc>
-    <lastmod>2017-02-21T20:15:59+01:00</lastmod>
+    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
     <priority>0</priority>
   </url>
   

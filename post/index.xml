@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on ZielonyBuszmen</title>
+    <title>Posts on Zielony Buszmen</title>
     <link>https://zielonybuszmen.github.io/post/index.xml</link>
-    <description>Recent content in Posts on ZielonyBuszmen</description>
+    <description>Recent content in Posts on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 21 Feb 2017 20:15:59 +0100</lastBuildDate>
+    <language>pl-pl</language>
+    <lastBuildDate>Sat, 08 Jul 2017 16:22:11 +0200</lastBuildDate>
     <atom:link href="https://zielonybuszmen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title> socos </title>
+      <link>https://zielonybuszmen.github.io/post/good-to-great/</link>
+      <pubDate>Sat, 08 Jul 2017 16:22:11 +0200</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/post/good-to-great/</guid>
+      <description>&lt;p&gt;Siemnakoasd&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> asfasfaf </title>
+      <link>https://zielonybuszmen.github.io/post/ble/</link>
+      <pubDate>Sat, 08 Jul 2017 16:22:11 +0212</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/post/ble/</guid>
+      <description>&lt;p&gt;fasfasfasfafaf&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>welcome</title>

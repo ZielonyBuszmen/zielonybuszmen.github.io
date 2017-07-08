@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ZielonyBuszmen</title>
+    <title>Zielony Buszmen</title>
     <link>https://zielonybuszmen.github.io/index.xml</link>
-    <description>Recent content on ZielonyBuszmen</description>
+    <description>Recent content on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 21 Feb 2017 20:15:59 +0100</lastBuildDate>
+    <language>pl-pl</language>
+    <lastBuildDate>Sat, 08 Jul 2017 16:22:11 +0200</lastBuildDate>
     <atom:link href="https://zielonybuszmen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title> socos </title>
+      <link>https://zielonybuszmen.github.io/post/good-to-great/</link>
+      <pubDate>Sat, 08 Jul 2017 16:22:11 +0200</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/post/good-to-great/</guid>
+      <description>&lt;p&gt;Siemnakoasd&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> testowy projekt </title>
+      <link>https://zielonybuszmen.github.io/projekty/test/</link>
+      <pubDate>Sat, 08 Jul 2017 16:22:11 +0200</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/projekty/test/</guid>
+      <description>&lt;p&gt;asdasdasd aS asdasdasd asdasdasd datesda jakis projekt&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> asfasfaf </title>
+      <link>https://zielonybuszmen.github.io/post/ble/</link>
+      <pubDate>Sat, 08 Jul 2017 16:22:11 +0212</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/post/ble/</guid>
+      <description>&lt;p&gt;fasfasfasfafaf&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>welcome</title>
@@ -115,6 +145,16 @@ class CartsRepository extends Repository
 &lt;p&gt;&lt;img src=&#34;https://zielonybuszmen.github.io/static/img/coding.jpg&#34; alt=&#34;Example image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;# Tytuł ble!!!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://zielonybuszmen.github.io/o-mnie/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/o-mnie/</guid>
+      <description>&lt;p&gt;O mnie, kuxwa&lt;/p&gt;
 </description>
     </item>
     
