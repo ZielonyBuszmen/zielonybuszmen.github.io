@@ -7,11 +7,6 @@
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/projekty/test/</loc>
-    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zielonybuszmen.github.io/post/ble/</loc>
     <lastmod>2017-07-08T16:22:11+02:12</lastmod>
   </url>
@@ -22,12 +17,44 @@
   </url>
   
   <url>
+    <loc>https://zielonybuszmen.github.io/post/instalacja-cake-php/</loc>
+    <lastmod>2017-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/post/adresacja-ip-cz2/</loc>
+    <lastmod>2017-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/post/adresacja-ip-cz1/</loc>
+    <lastmod>2017-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zielonybuszmen.github.io/o-mnie/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/tags/algorytmy-i-struktury-danych/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zielonybuszmen.github.io/tags/blogging/</loc>
     <lastmod>2017-02-21T20:15:59+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/tags/c/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -61,14 +88,38 @@
   </url>
   
   <url>
+    <loc>https://zielonybuszmen.github.io/categories/internet/</loc>
+    <lastmod>2017-02-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/tags/php/</loc>
+    <lastmod>2017-02-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://zielonybuszmen.github.io/post/</loc>
     <lastmod>2017-07-08T16:22:11+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/projekty/</loc>
+    <loc>https://zielonybuszmen.github.io/categories/programowanie/</loc>
+    <lastmod>2017-02-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/categories/projekty/</loc>
     <lastmod>2017-07-08T16:22:11+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zielonybuszmen.github.io/tags/sieci/</loc>
+    <lastmod>2017-02-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

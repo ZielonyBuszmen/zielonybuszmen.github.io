@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/tags/php/index.xml</link>
+    <description>Recent content in Php on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <atom:link href="https://zielonybuszmen.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Instalacja CakePHP od podszewki</title>
+      <link>https://zielonybuszmen.github.io/post/instalacja-cake-php/</link>
+      <pubDate>Tue, 21 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/post/instalacja-cake-php/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

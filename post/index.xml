@@ -138,5 +138,43 @@ class CartsRepository extends Repository
 </description>
     </item>
     
+    <item>
+      <title>Instalacja CakePHP od podszewki</title>
+      <link>https://zielonybuszmen.github.io/post/instalacja-cake-php/</link>
+      <pubDate>Tue, 21 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/post/instalacja-cake-php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
+      <link>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Adresacja IP cz. 2 – podział na podsieci</title>
+      <link>https://zielonybuszmen.github.io/post/adresacja-ip-cz2/</link>
+      <pubDate>Sat, 18 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/post/adresacja-ip-cz2/</guid>
+      <description>&lt;p&gt;Lorem ble ble ble&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Adresacja IP cz. 1 – Z czym to się je?</title>
+      <link>https://zielonybuszmen.github.io/post/adresacja-ip-cz1/</link>
+      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/post/adresacja-ip-cz1/</guid>
+      <description>&lt;p&gt;Lorem ble ble ble&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
