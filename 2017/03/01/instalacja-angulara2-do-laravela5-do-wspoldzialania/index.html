@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Instalacja Angulara2 do Laravela5 do ‚współdziałania’</title>
+  <meta property="og:title" content="Instalacja Angulara2 do Laravela5 do ‚współdziałania’" />
+  <meta name="twitter:title" content="Instalacja Angulara2 do Laravela5 do ‚współdziałania’" />
+  <meta name="description" content="Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &#8211; Angular instaluje się jako &#8222;stand-alone&#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.">
+  <meta property="og:description" content="Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &#8211; Angular instaluje się jako &#8222;stand-alone&#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.">
+  <meta name="twitter:description" content="Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &#8211; Angular instaluje się jako &#8222;stand-alone&#8221;. Jak więc go dodać do Laravela? Jest …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Zielony Buszmen" href="https://zielonybuszmen.github.io/">
+            <img class="avatar-img" src="https://zielonybuszmen.github.io/img/avatar-green.png" alt="Zielony Buszmen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Instalacja Angulara2 do Laravela5 do ‚współdziałania’</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 1 March 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &#8211; Angular instaluje się jako &#8222;stand-alone&#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.</p>
+
+<p>Na samym początku uprzedzam, że roboty jest sporo, coś zawsze może pójść nie tak, więc trzeba przygotować spory zapas czasu na poniższą <em>zabawę</em></p>
+
+<h1 id="zaczynamy">Zaczynamy</h1>
+
+<ol>
+<li><p>W głównym katalogu szukamy pliku <code>package.json</code> i podmieniamy w nim kod na poniższy: <pre class="brush: jscript; title: package.json; notranslate" title="package.json">{
+&ldquo;private&rdquo;: true,
+&ldquo;scripts&rdquo;: {
+&ldquo;prod&rdquo;: &ldquo;gulp &ndash;production&rdquo;,
+&ldquo;dev&rdquo;: &ldquo;gulp watch&rdquo;,
+&ldquo;start&rdquo;: &ldquo;tsc &amp;&amp; concurrently \&ldquo;npm run tsc:w\&rdquo; \&ldquo;npm run lite\&rdquo; &ldquo;,
+&ldquo;lite&rdquo;: &ldquo;lite-server&rdquo;,
+&ldquo;postinstall&rdquo;: &ldquo;typings install&rdquo;,
+&ldquo;tsc&rdquo;: &ldquo;tsc&rdquo;,
+&ldquo;tsc:w&rdquo;: &ldquo;tsc -w&rdquo;,
+&ldquo;typings&rdquo;: &ldquo;typings&rdquo;
+},
+&ldquo;dependencies&rdquo;: {
+&ldquo;@angular/common&rdquo;: &ldquo;2.0.0&rdquo;,
+&ldquo;@angular/compiler&rdquo;: &ldquo;2.0.0&rdquo;,
+&ldquo;@angular/core&rdquo;: &ldquo;2.0.0&rdquo;,
+&ldquo;@angular/forms&rdquo;: &ldquo;2.0.0&rdquo;,
+&ldquo;@angular/http&rdquo;: &ldquo;2.0.0&rdquo;,
+&ldquo;@angular/platform-browser&rdquo;: &ldquo;2.0.0&rdquo;,
+&ldquo;@angular/platform-browser-dynamic&rdquo;: &ldquo;2.0.0&rdquo;,
+&ldquo;@angular/router&rdquo;: &ldquo;3.0.0&rdquo;,
+&ldquo;@angular/upgrade&rdquo;: &ldquo;2.0.0&rdquo;,
+&ldquo;core-js&rdquo;: &ldquo;^2.4.1&rdquo;,
+&ldquo;reflect-metadata&rdquo;: &ldquo;^0.1.3&rdquo;,
+&ldquo;rxjs&rdquo;: &ldquo;5.0.0-beta.12&rdquo;,
+&ldquo;systemjs&rdquo;: &ldquo;0.19.27&rdquo;,
+&ldquo;zone.js&rdquo;: &ldquo;^0.6.23&rdquo;,
+&ldquo;angular2-in-memory-web-api&rdquo;: &ldquo;0.0.20&rdquo;,
+&ldquo;bootstrap&rdquo;: &ldquo;^3.3.6&rdquo;
+},
+&ldquo;devDependencies&rdquo;: {
+&ldquo;bootstrap-sass&rdquo;: &ldquo;^3.3.7&rdquo;,
+&ldquo;concurrently&rdquo;: &ldquo;^2.2.0&rdquo;,
+&ldquo;elixir-typescript&rdquo;: &ldquo;2.0.0&rdquo;,
+&ldquo;gulp&rdquo;: &ldquo;^3.9.1&rdquo;,
+&ldquo;jquery&rdquo;: &ldquo;^3.1.0&rdquo;,
+&ldquo;laravel-elixir&rdquo;: &ldquo;^6.0.0-9&rdquo;,
+&ldquo;laravel-elixir-browsersync-official&rdquo;: &ldquo;^1.0.0&rdquo;,
+&ldquo;laravel-elixir-vue&rdquo;: &ldquo;^0.1.4&rdquo;,
+&ldquo;laravel-elixir-webpack-official&rdquo;: &ldquo;^1.0.2&rdquo;,
+&ldquo;lite-server&rdquo;: &ldquo;^2.2.2&rdquo;,
+&ldquo;lodash&rdquo;: &ldquo;^4.14.0&rdquo;,
+&ldquo;typescript&rdquo;: &ldquo;^2.0.2&rdquo;,
+&ldquo;typings&rdquo;: &ldquo;^1.3.2&rdquo;,
+&ldquo;vue&rdquo;: &ldquo;^1.0.26&rdquo;,
+&ldquo;vue-resource&rdquo;: &ldquo;^0.9.3&rdquo;
+}
+}
+</pre></p>
+
+<p>Jest to plik, który &#8222;zarządza&#8221; pakietami Node.js. Dzięki niemu w łatwy sposób w dalszej części ściągniemy wszystkie wymagane biblioteki.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p></li>
+
+<li><p>W głównym katalogu tworzymy plik <code>tsconfig.json</code> <pre class="brush: jscript; title: tsconfig.json; notranslate" title="tsconfig.json">{
+&ldquo;compilerOptions&rdquo;: {
+&ldquo;target&rdquo;: &ldquo;es5&rdquo;,
+&ldquo;module&rdquo;: &ldquo;commonjs&rdquo;,
+&ldquo;moduleResolution&rdquo;: &ldquo;node&rdquo;,
+&ldquo;sourceMap&rdquo;: true,
+&ldquo;emitDecoratorMetadata&rdquo;: true,
+&ldquo;experimentalDecorators&rdquo;: true,
+&ldquo;removeComments&rdquo;: false,
+&ldquo;noImplicitAny&rdquo;: false
+}
+}
+</pre></p>
+
+<p>Plik konfiguracyjny dla skryptu kompilującego typescript do JSa</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p></li>
+
+<li><p>Tworzymy plik <code>typings.json</code> również w głównym katalogu <pre class="brush: jscript; title: typings.json; notranslate" title="typings.json">{
+&ldquo;globalDependencies&rdquo;: {
+&ldquo;core-js&rdquo;: &ldquo;registry:dt/core-js#0.0.0+20160725163759&rdquo;,
+&ldquo;jasmine&rdquo;: &ldquo;registry:dt/jasmine#2.2.0+20160621224255&rdquo;,
+&ldquo;node&rdquo;: &ldquo;registry:dt/node#6.0.0+20160909174046&rdquo;
+}
+}
+</pre></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p></li>
+
+<li><p>Uruchamiamy terminal i wpisujemy w nim komendę:
+<pre>npm install</pre></p>
+
+<p>Może to trochę potrwać, bo właśnie teraz do katalogu  _node<em>modules</em> pobierają się wszystkie paczki wymienione w pliku <em>package.json</em></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<ul>
+<li><p>Po tym przechodzimy do <code>node_modules/elixir-typescript/index.js</code> i komentujemy poniższą linijkę: <pre class="brush: jscript; first-line: 45; title: ; notranslate" title="">//.pipe($.concat(paths.output.name))
+</pre></p>
+
+<p>Jak by nie patrzeć to edytujemy plik &#8222;systemowy&#8221;, nie powinno się tak robić. Niestety, w tym wypadku musimy. Bo gdy nie zakomentujemy tej linijki, skrypt kompilujący TS do JS wrzuci wszystko do jednego pliku app.js. A nie o to nam chodzi. Chcemy przecież, by kompilator TSa skompilował każdy plik oddzielnie. Stąd też taka mała zmiana w kodzie źródłowym. </li></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<ul>
+<li><p>Przechodzimy do <code>resources/assets/typescript</code> i tworzymy w nim 3 pliki: <code>app.component.ts</code>, <code>app.module.ts</code>, <code>main.ts</code>. (Gdyby folder <em>typescript</em> nie istniał, to go oczywiście tworzymy 😉 )</p>
+
+<p>&nbsp;</p>
+
+<p>Będą to pliki naszej aplikacji Angularowej. Tutaj będziemy rozszerzać jej funkcjonalność o nowe komponenty.</p>
+
+<p>&nbsp;</p>
+<strong>app.module.ts</strong></p>
+
+<p><pre class="brush: jscript; title: resources/assets/typescript/app.module.ts; notranslate" title="resources/assets/typescript/app.module.ts">///&lt;reference path=&ldquo;../../../typings/index.d.ts&rdquo;/&gt;</p></li>
+</ul></li>
+</ul></li>
+</ol>
+
+<p>import { NgModule }      from &lsquo;@angular/core&rsquo;;
+import { BrowserModule } from &lsquo;@angular/platform-browser&rsquo;;
+import { AppComponent }   from &lsquo;./app.component&rsquo;;
+@NgModule({
+    imports:      [ BrowserModule ],
+    declarations: [ AppComponent ],
+    bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+</pre></p>
+
+<pre><code>        &amp;nbsp;
+
+        **app.component.ts**
+
+        &lt;pre class=&quot;brush: jscript; title: resources/assets/typescript/app.component.ts; notranslate&quot; title=&quot;resources/assets/typescript/app.component.ts&quot;&gt;import { Component } from '@angular/core';
+</code></pre>
+
+<p>@Component({
+    selector: &lsquo;my-app&rsquo;,
+    template: &lsquo;</p>
+
+<p>&lt;h1&gt;Moja angularowa aplikacja działa! Jak trzeba&lt;/h1&gt;</p>
+
+<p>&lsquo;
+})
+export class AppComponent { }</p>
+
+<p></pre></p>
+
+<pre><code>        &amp;nbsp;
+
+        **main.ts**
+
+        &lt;pre class=&quot;brush: jscript; title: resources/assets/typescript/main.ts; notranslate&quot; title=&quot;resources/assets/typescript/main.ts&quot;&gt;import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+</code></pre>
+
+<p>import { AppModule } from &lsquo;./app.module&rsquo;;
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);</p>
+
+<p></pre></p>
+
+<pre><code>    &amp;nbsp;
+
+    &amp;nbsp;
+
+      * Przechodzimy do głównego katalogu i do pliku `gulpfile.js` wklejamy poniższy kod &lt;pre class=&quot;brush: jscript; title: gulpfile.js; notranslate&quot; title=&quot;gulpfile.js&quot;&gt;const elixir = require('laravel-elixir');
+</code></pre>
+
+<p>require(&lsquo;laravel-elixir-vue&rsquo;);
+require(&lsquo;elixir-typescript&rsquo;);</p>
+
+<p>/*
+ |&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+ | Elixir Asset Management
+ |&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+ |
+ | Elixir provides a clean, fluent API for defining some basic Gulp tasks
+ | for your Laravel application. By default, we are compiling the Sass
+ | file for our application, as well as publishing vendor resources.
+ |
+ */</p>
+
+<p>elixir(function(mix){</p>
+
+<pre><code>/* Copy angular2 JS vendor files */
+mix
+.copy('node_modules/@angular', 'public/js/angular2_vendor/@angular')
+.copy('node_modules/anular2-in-memory-web-api', 'public/js/angular2_vendor/anular2-in-memory-web-api')
+.copy('node_modules/core-js', 'public/js/angular2_vendor/core-js')
+.copy('node_modules/reflect-metadata', 'public/js/angular2_vendor/reflect-metadata')
+.copy('node_modules/systemjs', 'public/js/angular2_vendor/systemjs')
+.copy('node_modules/rxjs', 'public/js/angular2_vendor/rxjs')
+.copy('node_modules/zone.js', 'public/js/angular2_vendor/zone.js');
+
+/* Angular2 Scripts */
+mix.typescript(
+    [
+        'app.component.ts',
+        'app.module.ts',
+        'main.ts'
+    ],
+    'public/app_angular2',
+    {
+        &quot;target&quot;: &quot;es5&quot;,
+        &quot;module&quot;: &quot;system&quot;,
+        &quot;moduleResolution&quot;: &quot;node&quot;,
+        &quot;sourceMap&quot;: true,
+        &quot;emitDecoratorMetadata&quot;: true,
+        &quot;experimentalDecorators&quot;: true,
+        &quot;removeComments&quot;: false,
+        &quot;noImplicitAny&quot;: false
+    }
+);
+</code></pre>
+
+<p>});
+</pre></p>
+
+<pre><code>        Wykorzystujemy tutaj dobrodziejstwo Laravela i jego  _Elixir Mix_. Więcej do poczytania w dokumentacji wersji 5.3: [laravel.com/docs/5.3/elixir][1]
+
+        &amp;nbsp;
+
+        &amp;nbsp;
+
+          * Tworzymy folder w `public/app_angular2` i wpisujemy komendę w _terminalu_ 
+            &lt;pre&gt;gulp&lt;/pre&gt;
+
+            &amp;nbsp;
+
+            &amp;nbsp;
+
+              * W katalogu `/public` tworzymy plik **systemjs.config.js** &lt;pre class=&quot;brush: jscript; title: ; notranslate&quot; title=&quot;&quot;&gt;/**
+</code></pre>
+
+<ul>
+<li>System configuration for Angular samples</li>
+
+<li><p>Adjust as necessary for your application needs.
+*/
+(function (global) {
+System.config({</p>
+
+<pre><code>// map tells the System loader where to look for things
+map: {
+    // our app is within the app folder
+    app: 'app_angular2',
+    // angular bundles
+    '@angular/core': 'js/angular2_vendor/@angular/core/bundles/core.umd.js',
+    '@angular/common': 'js/angular2_vendor/@angular/common/bundles/common.umd.js',
+    '@angular/compiler': 'js/angular2_vendor/@angular/compiler/bundles/compiler.umd.js',
+    '@angular/platform-browser': 'js/angular2_vendor/@angular/platform-browser/bundles/platform-browser.umd.js',
+    '@angular/platform-browser-dynamic': 'js/angular2_vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+    '@angular/http': 'js/angular2_vendor/@angular/http/bundles/http.umd.js',
+    '@angular/router': 'js/angular2_vendor/@angular/router/bundles/router.umd.js',
+    '@angular/forms': 'js/angular2_vendor/@angular/forms/bundles/forms.umd.js',
+    // other libraries
+    'rxjs':                       'js/angular2_vendor/rxjs',
+    'angular2-in-memory-web-api': 'js/angular2_vendor/angular2-in-memory-web-api',
+},
+// packages tells the System loader how to load when no filename and/or no extension
+packages: {
+    app: {
+        main: './main.js',
+        defaultExtension: 'js'
+    },
+    rxjs: {
+        defaultExtension: 'js'
+    },
+    'angular2-in-memory-web-api': {
+        main: './index.js',
+        defaultExtension: 'js'
+    }
+}
+</code></pre>
+
+<p>});
+})(this);
+</pre></p>
+
+<pre><code>            &amp;nbsp;
+
+            &amp;nbsp;
+
+              * Na koniec tworzymy widok, w którym wklejamy skrypt inicjalizujący aplikację Angulara2. Nie zapomnijmy go wywołać w kontrolerze, albo dodać do routa 🙂 &lt;pre class=&quot;brush: xml; title: ; notranslate&quot; title=&quot;&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+</code></pre>
+
+<p>&lt;html lang=&ldquo;en&rdquo;&gt;
+&lt;head&gt;
+    &lt;meta charset=&ldquo;utf-8&rdquo;&gt;
+    &lt;meta http-equiv=&ldquo;X-UA-Compatible&rdquo; content=&ldquo;IE=edge&rdquo;&gt;
+    &lt;meta name=&ldquo;viewport&rdquo; content=&ldquo;width=device-width, initial-scale=1&rdquo;&gt;</p>
+
+<pre><code>&amp;lt;title&amp;gt;Laravel 5.3 - Angular 2&amp;lt;/title&amp;gt;
+
+&amp;lt;!-- 1. Load libraries --&amp;gt;
+&amp;lt;!-- Polyfill(s) for older browsers --&amp;gt;
+{{ Html::script('core-js/client/shim.min.js') }}
+{{ Html::script('zone.js/dist/zone.js') }}
+{{ Html::script('reflect-metadata/Reflect.js') }}
+{{ Html::script('systemjs/dist/system.src.js') }}
+{{ Html::script('systemjs.config.js') }}
+</code></pre>
+
+<p>&lt;script&gt;
+    System.import(&lsquo;app_angular2&rsquo;).catch(function(err){ console.error(err); });
+&lt;/script&gt;</p>
+
+<p>&lt;/head&gt;
+&lt;!&ndash; 3. Display the application &ndash;&gt;
+&lt;body&gt;
+&lt;my-app&gt;Loading&hellip;&lt;/my-app&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></p>
+
+<pre><code>              * Vua La! Po uruchomieniu aplikacji powinniśmy zobaczyć napis **_Moja angularowa aplikacja działa! Jak trzeba&lt;/b&gt;_. Nie pozostaje nam nic innego, jak rozpoczęcie tworzenia kodu. Warto dodać, że po każdej zmianie pliku w folderze typescripts musimy wpisać komendę `gulp`, która zaktualizuje nam pliki js. Aby proces ten zautomatyzować, możemy wpisać komendę  `gulp watch`, która rozwiąże problem &lt;/ol&gt;
+</code></pre></li>
+</ul>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/" data-toggle="tooltip" data-placement="top" title="Laravel – testy jednostkowe w PHPStormie">&larr; Poprzedni post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://zielonybuszmen.github.io/2017/03/22/albert-launcher-na-ubuntu/" data-toggle="tooltip" data-placement="top" title="Albert launcher na Ubuntu">Następny post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

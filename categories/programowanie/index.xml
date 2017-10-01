@@ -8,10 +8,74 @@
     <language>pl-pl</language>
     <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
     <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
-    <lastBuildDate>Tue, 21 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 May 2017 18:55:30 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/categories/programowanie/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Komendy GITa – Branche zdalne, merge i rebase</title>
+      <link>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</link>
+      <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</guid>
+      <description>Operowanie branchami Sprawdzanie bieżącego brancha:
+git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
+git branch NAZWA [SHA-1] Przełączanie branchy
+git checkout NAZWA Stworzenie nowego brancha i przełączenie na niego
+git checkout -b NAZWA Branche zawarte w aktualnym branchu
+git branch --merged Branche rozłączne z aktualnym branchem
+git branch --no-merged Usuwanie gałęzi (tylko gdy jest zmergowana)
+git branch -d NAZWA Usuwanie gałęzi (wymuszone)
+git branch -D NAZWA Zmiana nazwy brancha</description>
+    </item>
+    
+    <item>
+      <title>Komendy GITa</title>
+      <link>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</link>
+      <pubDate>Thu, 23 Mar 2017 16:25:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</guid>
+      <description>Wersja oprogramowania
+git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l Ustalenie opcji
+git config --global user.name &#34;Imie Nazwisko&#34; git config --global user.email mail@cos.pl Globalne ustawienia gita są w pliku:
+C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
+.git\config Inicjalizacja repozytorium git init Klonowanie repo git clone adres-repo [sciezka/docelowa/opcjonalnie] Informacje o repo Uczestnicy projektu</description>
+    </item>
+    
+    <item>
+      <title>Instalacja Angulara2 do Laravela5 do ‚współdziałania’</title>
+      <link>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</link>
+      <pubDate>Wed, 01 Mar 2017 21:47:42 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</guid>
+      <description>Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &amp;#8211; Angular instaluje się jako &amp;#8222;stand-alone&amp;#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &amp;#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.</description>
+    </item>
+    
+    <item>
+      <title>Laravel – testy jednostkowe w PHPStormie</title>
+      <link>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</link>
+      <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</guid>
+      <description>Krótki wpis, szybka porada &amp;#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
+Przechodzimy do **Settings **(Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie **PHP **i wybieramy PHPUnit.
+W nowo otwartym oknie wybieramy **Use Composer autoloader **i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
+
+Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
+&amp;lt;?php class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
+    </item>
+    
+    <item>
+      <title>Instalacja CakePHP od podszewki</title>
+      <link>https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/</link>
+      <pubDate>Tue, 21 Feb 2017 17:13:57 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/</guid>
+      <description> 
+Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP installation: https://book.cakephp.org/3.0/en/installation.html composer create-project --prefer-dist cakephp/app&amp;lt;br /&amp;gt;   </description>
+    </item>
     
     <item>
       <title>Instalacja CakePHP od podszewki</title>
@@ -24,11 +88,48 @@
     
     <item>
       <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
+      <link>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</link>
+      <pubDate>Mon, 20 Feb 2017 15:00:38 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</guid>
+      <description>Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
+Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).</description>
+    </item>
+    
+    <item>
+      <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
       <link>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</link>
       <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Jekyll  – ogarnac jak to dziala i opisac</title>
+      <link>https://zielonybuszmen.github.io/p146/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/p146/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows 10 i</title>
+      <link>https://zielonybuszmen.github.io/p324/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/p324/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>koszyk w laravelu</title>
+      <link>https://zielonybuszmen.github.io/p149/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/p149/</guid>
+      <description>Koszyk na sesji i w bazie, taki jak na laravel5, opisać</description>
     </item>
     
   </channel>

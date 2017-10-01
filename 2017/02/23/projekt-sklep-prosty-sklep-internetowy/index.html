@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Projekt Sklep – prosty sklep internetowy</title>
+  <meta property="og:title" content="Projekt Sklep – prosty sklep internetowy" />
+  <meta name="twitter:title" content="Projekt Sklep – prosty sklep internetowy" />
+  <meta name="description" content="git clone https://github.com/ZielonyBuszmen/projektSklep.git  Github &#8211; github.com/ZielonyBuszmen/projektSklep Działający projekt &#8211; projektsklep.cba.pl lub projektsklep.za.pl Technologie &#8211;  PHP, MySQL, Bootstrap Data &#8211;  listopad/grudzień 2015 Zespół &#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  
+&nbsp;
+Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL.">
+  <meta property="og:description" content="git clone https://github.com/ZielonyBuszmen/projektSklep.git  Github &#8211; github.com/ZielonyBuszmen/projektSklep Działający projekt &#8211; projektsklep.cba.pl lub projektsklep.za.pl Technologie &#8211;  PHP, MySQL, Bootstrap Data &#8211;  listopad/grudzień 2015 Zespół &#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  
+&nbsp;
+Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL.">
+  <meta name="twitter:description" content="git clone https://github.com/ZielonyBuszmen/projektSklep.git  Github &#8211; github.com/ZielonyBuszmen/projektSklep Działający projekt &#8211; projektsklep.cba.pl lub projektsklep.za.pl Technologie …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2017/02/23/projekt-sklep-prosty-sklep-internetowy/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2017/02/23/projekt-sklep-prosty-sklep-internetowy/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Zielony Buszmen" href="https://zielonybuszmen.github.io/">
+            <img class="avatar-img" src="https://zielonybuszmen.github.io/img/avatar-green.png" alt="Zielony Buszmen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Projekt Sklep – prosty sklep internetowy</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 23 February 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<pre>git clone https://github.com/ZielonyBuszmen/projektSklep.git</pre>
+
+<ul>
+<li><span class="project-info link-github">Github &#8211; </span><a href="https://github.com/ZielonyBuszmen/projektSklep">github.com/ZielonyBuszmen/projektSklep</a></li>
+<li><span class="project-info">Działający projekt &#8211; </span><a href="http://projektsklep.cba.pl/">projektsklep.cba.pl</a> lub <a href="http://projektsklep.za.pl/">projektsklep.za.pl</a></li>
+<li><span class="project-info">Technologie &#8211; </span> PHP, MySQL, Bootstrap</li>
+<li><span class="project-info">Data &#8211; </span> listopad/grudzień 2015</li>
+<li><span class="project-info">Zespół &#8211; </span> niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: <strong><a href="http://bartoszgajda.com/">bartoszgajda.com</a></strong></li>
+<li><span class="project-info">Przeznaczenie projektu &#8211; </span> Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum</li>
+</ul>
+
+<p><a style="outline: 1px dashed red;" title="" href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-sklep-1.png"><img class="aligncenter wp-image-240 " title="" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-sklep-1-300x265.png" width="691" height="610" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-sklep-1-300x265.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-sklep-1-768x679.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-sklep-1-1024x905.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-sklep-1-820x725.png 820w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-sklep-1.png 1519w" sizes="(max-width: 691px) 100vw, 691px" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL. Mimo wszystko nauczył nas, jakie zalety daje kontrola wersji GIT podczas projektów grupowych, jak rozdzielać zadania, oraz jak pisać kod, który działa.</p>
+
+<h1 id="prezentacja">Prezentacja</h1>
+
+<p>Na stronie głównej wświetlają się produkty. Możemy je filtrować po cenie, zmieniać ilość wyświetlanych na stronie oraz przeglądać je ze względu na kategorie. Dodatkowo jest zaimplementowana w pełni działająca paginacja</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-2.png"><img class="aligncenter size-full wp-image-264" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-2.png" alt="" width="1197" height="826" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-2.png 1197w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-2-300x207.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-2-768x530.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-2-1024x707.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-2-820x566.png 820w" sizes="(max-width: 1197px) 100vw, 1197px" /></a></p>
+
+<p>Produkty możemy dodawać do koszyka, którego podgląd możemy zobaczyć w drop-downie na górnym pasku. Każdy produkt posiada własną stronę, a na niej opis oraz cenę.<a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-3.png"><img class="aligncenter size-full wp-image-265" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-3.png" alt="" width="1247" height="662" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-3.png 1247w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-3-300x159.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-3-768x408.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-3-1024x544.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-3-820x435.png 820w" sizes="(max-width: 1247px) 100vw, 1247px" /></a></p>
+
+<p>Tak prezentuje się widok całego koszyka. Możemy zarządzać zamieszonymi w nim produktami &#8211; zmieniać ich ilość, usuwać. Warto dodać, że do koszyka nie można dodać większej ilości danego produktu, niż jest na stanie w magazynie.</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-4.png"><img class="aligncenter size-full wp-image-266" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-4.png" alt="" width="1283" height="723" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-4.png 1283w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-4-300x169.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-4-768x433.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-4-1024x577.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-4-820x462.png 820w" sizes="(max-width: 1283px) 100vw, 1283px" /></a>Klient po zalogowaniu może złożyć zamówienie na towary, które umieścił w koszyku.</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-5.png"><img class="aligncenter size-full wp-image-267" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-5.png" alt="" width="1214" height="726" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-5.png 1214w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-5-300x179.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-5-768x459.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-5-1024x612.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-5-820x490.png 820w" sizes="(max-width: 1214px) 100vw, 1214px" /></a></p>
+
+<p>W każdej chwili klient może podejrzeć swoje zamówienia oraz sprawdzić, na jakim etapie dostarczenia się znajdują.</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-6.png"><img class="aligncenter size-full wp-image-268" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-6.png" alt="" width="1058" height="465" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-6.png 1058w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-6-300x132.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-6-768x338.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-6-1024x450.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-6-820x360.png 820w" sizes="(max-width: 1058px) 100vw, 1058px" /></a></p>
+
+<h3 id="panel-pracownika">Panel pracownika</h3>
+
+<p>W sklepie został dodatkowo zaimplementowany panel pracownika</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-8.png"><img class="aligncenter size-full wp-image-270" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-8.png" alt="" width="1266" height="710" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-8.png 1266w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-8-300x168.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-8-768x431.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-8-1024x574.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-8-820x460.png 820w" sizes="(max-width: 1266px) 100vw, 1266px" /></a></p>
+
+<p>Dany pracownik może wziąć na &#8222;swoje barki&#8221; dane zamówienie i zacząć je przetwarzać. Wówczas dostęp do danego zamówienia jest zablokowany dla innych pracowników. Można dowolnie zmieniać ilość produktów, usuwać je. Każde zamówienie da się zaakceptować albo odrzucić.<a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-12.png"><img class="aligncenter size-full wp-image-274" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-12.png" alt="" width="1248" height="892" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-12.png 1248w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-12-300x214.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-12-768x549.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-12-1024x732.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-12-820x586.png 820w" sizes="(max-width: 1248px) 100vw, 1248px" /></a></p>
+
+<p>Dostępny jest panel &#8222;Zarządzania produktami&#8221;, gdzie można dodawać nowe produkty oraz edytować  usuwać już istniejące.</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-9.png"><img class="aligncenter size-full wp-image-271" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-9.png" alt="" width="1314" height="601" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-9.png 1314w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-9-300x137.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-9-768x351.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-9-1024x468.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektSklep-9-820x375.png 820w" sizes="(max-width: 1314px) 100vw, 1314px" /></a></p>
+
+<h1 id="instalacja">Instalacja</h1>
+
+<p>Instalacja sama w sobie jest bardzo prosta. Projekt potrzebuje jedynie serwera z interpreterem PHP 5 oraz bazy danych MySQL.</p>
+
+<p>Na sam początek pobieramy projekt. Możemy to zrobić za pomocą komendy git clone, która jest umieszczona na samym początku tego wpisu, albo pobrać go z paczki ZIP: <a href="https://github.com/ZielonyBuszmen/projektSklep/archive/master.zip">https://github.com/ZielonyBuszmen/projektSklep/archive/master.zip</a></p>
+
+<p>W pliku <code>baza/polaczenie.php</code> znajdują się konfiguracja połączenia z serwerem bazy. Domyślnie jest to</p>
+
+<pre class="brush: php; title: ; notranslate" title="">$adres = '127.0.0.1';
+    $uzytkownik = 'root';
+    $haslo = '';
+    $nazwa_bazy = 'projektsklep';
+</pre>
+
+<p>W projekcie jest instalator, który sam wykryje, że nie ma zaimportowanych tabel. Wystarczy, aby powyższe dane były wpisane poprawnie, a cały proces &#8222;instalacji&#8221; będzie prowadził użytkownika &#8222;za rączkę&#8221;. Gdyby jednak tak się nie stało, to w folderze <code>baza/</code> znajduje się kilka ostatnich zrzutów bazy, które trzeba zaimportować np. poprzez phpMyAdmin.</p>
+
+<p><strong>Prawa folderów</strong></p>
+
+<p>Dla folderu <code>img/</code> oraz wszystkich jego podfolderów musimy nadać prawa zapisu (np. nigdy niezawodny chmod 777).</p>
+
+<h2 id="przykładowe-dane-logowania">Przykładowe dane logowania</h2>
+
+<p>Przykładowe dane logowania wyglądają następująco</p>
+
+<table style="height: 119px;" width="356">
+  <tr>
+    <td width="80">
+      <strong>Typ</strong>
+    </td>
+    
+    <td width="80">
+      <strong>Login</strong>
+    </td>
+    
+    <td width="80">
+      <strong>Hasło</strong>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Pracownik
+    </td>
+    
+    <td>
+      test
+    </td>
+    
+    <td>
+      test
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Klient
+    </td>
+    
+    <td>
+      test2
+    </td>
+    
+    <td>
+      test2
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2017/02/22/jpg-aq-pl-hosting-screenow-i-zdjec/" data-toggle="tooltip" data-placement="top" title="jpg.aq.pl – hosting screenów i zdjęć">&larr; Poprzedni post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://zielonybuszmen.github.io/2017/02/23/onepage-hafty/" data-toggle="tooltip" data-placement="top" title="OnePage Hafty">Następny post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

@@ -8,10 +8,20 @@
     <language>pl-pl</language>
     <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
     <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
-    <lastBuildDate>Sat, 18 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Feb 2017 15:01:40 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/tags/sieci/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Adresacja IP cz. 2 – podział na podsieci</title>
+      <link>https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/</link>
+      <pubDate>Sat, 18 Feb 2017 15:01:40 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/</guid>
+      <description>Jest to druga część poradnika. Będą opisane w niej trochę bardziej zaawansowane zagadnienia z tematów podziału sieci na podsieci. Jeśli nie widziałeś części pierwszej, odnajdziesz ją pod tym adresem: Adresacja IP cz. 1 – Z czym to się je?
+Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie musimy zasiąść i sprawdzić ile w danej sieci mieści się hostów. Nie jest to zajęcie trudne, jednakże wymaga trochę pomyślunku.</description>
+    </item>
     
     <item>
       <title>Adresacja IP cz. 2 – podział na podsieci</title>
@@ -20,6 +30,16 @@
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/post/adresacja-ip-cz2/</guid>
       <description>Lorem ble ble ble</description>
+    </item>
+    
+    <item>
+      <title>Adresacja IP cz. 1 – Z czym to się je?</title>
+      <link>https://zielonybuszmen.github.io/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/</link>
+      <pubDate>Fri, 17 Feb 2017 15:02:06 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/</guid>
+      <description>Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik składa się z dwóch części. Druga jest dostępna tutaj: Adresacja IP cz. 2 – podział na podsieci.
+ Pierwotnie poradnik został wrzucony na stronę Pcfaq.pl Z racji tego, że ma wysoką wartość edukacyjną oraz że jest on mojego autorstwa, postanowiłem go przenieść także i tutaj.</description>
     </item>
     
     <item>

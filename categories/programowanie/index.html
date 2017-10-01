@@ -175,6 +175,170 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/">
+                <h2 class="post-title">Komendy GITa – Branche zdalne, merge i rebase</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 1 May 2017
+              </p>
+              <div class="post-entry">
+                
+                  Operowanie branchami Sprawdzanie bieżącego brancha:
+git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
+git branch NAZWA [SHA-1] Przełączanie branchy
+git checkout NAZWA Stworzenie nowego brancha i przełączenie na niego
+git checkout -b NAZWA Branche zawarte w aktualnym branchu
+git branch --merged Branche rozłączne z aktualnym branchem
+git branch --no-merged Usuwanie gałęzi (tylko gdy jest zmergowana)
+git branch -d NAZWA Usuwanie gałęzi (wymuszone)
+git branch -D NAZWA Zmiana nazwy brancha
+                  <a href="https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/" class="post-read-more">[Czytaj dalej]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/git/">GIT</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/2017/03/23/komendy-gita/">
+                <h2 class="post-title">Komendy GITa</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 23 March 2017
+              </p>
+              <div class="post-entry">
+                
+                  Wersja oprogramowania
+git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l Ustalenie opcji
+git config --global user.name "Imie Nazwisko" git config --global user.email mail@cos.pl Globalne ustawienia gita są w pliku:
+C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
+.git\config Inicjalizacja repozytorium git init Klonowanie repo git clone adres-repo [sciezka/docelowa/opcjonalnie] Informacje o repo Uczestnicy projektu
+                  <a href="https://zielonybuszmen.github.io/2017/03/23/komendy-gita/" class="post-read-more">[Czytaj dalej]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/git/">GIT</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/">
+                <h2 class="post-title">Instalacja Angulara2 do Laravela5 do ‚współdziałania’</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 1 March 2017
+              </p>
+              <div class="post-entry">
+                
+                  Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &#8211; Angular instaluje się jako &#8222;stand-alone&#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.
+                  <a href="https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/" class="post-read-more">[Czytaj dalej]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/angular/">Angular</a>&nbsp;
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/laravel/">Laravel</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/">
+                <h2 class="post-title">Laravel – testy jednostkowe w PHPStormie</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 26 February 2017
+              </p>
+              <div class="post-entry">
+                
+                  Krótki wpis, szybka porada &#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
+Przechodzimy do **Settings **(Ctrl + Alt + S), klikamy Languages &amp; Frameworks, następnie **PHP **i wybieramy PHPUnit.
+W nowo otwartym oknie wybieramy **Use Composer autoloader **i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
+
+Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
+&lt;?php class ExampleTest extends TestCase { public function testTrueTest() { $this-&gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.
+                  <a href="https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/" class="post-read-more">[Czytaj dalej]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/laravel/">Laravel</a>&nbsp;
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/phpstorm/">PHPStorm</a>&nbsp;
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/testy/">Testy</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/">
+                <h2 class="post-title">Instalacja CakePHP od podszewki</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 21 February 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+
+<p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
+
+<h3 id="linki-komendy">Linki, komendy</h3>
+
+<ul>
+<li>Composer download: <a href="https://getcomposer.org/download/">https://getcomposer.org/download/</a></li>
+<li>CakePHP installation: <a href="https://book.cakephp.org/3.0/en/installation.html">https://book.cakephp.org/3.0/en/installation.html</a></li>
+<li><code>composer create-project --prefer-dist cakephp/app&lt;br /&gt;
+</code></li>
+</ul>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="https://zielonybuszmen.github.io/post/instalacja-cake-php/">
                 <h2 class="post-title">Instalacja CakePHP od podszewki</h2>
 
@@ -194,6 +358,38 @@
                 <span class="post-meta">
                   
                     #<a href="https://zielonybuszmen.github.io/tags/php/">PHP</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/">
+                <h2 class="post-title">Binarne drzewo poszukiwań – Binary Search Tree (BST)</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 20 February 2017
+              </p>
+              <div class="post-entry">
+                
+                  Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
+Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).
+                  <a href="https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/" class="post-read-more">[Czytaj dalej]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/algorytmy-i-struktury-danych/">Algorytmy i struktury danych</a>&nbsp;
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/c/">C#</a>&nbsp;
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/programowanie/">Programowanie</a>&nbsp;
                   
                 </span>
               
@@ -224,6 +420,68 @@
                     #<a href="https://zielonybuszmen.github.io/tags/c/">C#</a>&nbsp;
                   
                 </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/p146/">
+                <h2 class="post-title">Jekyll  – ogarnac jak to dziala i opisac</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 1 January 0001
+              </p>
+              <div class="post-entry">
+                
+                  <p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/p324/">
+                <h2 class="post-title">Windows 10 i</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 1 January 0001
+              </p>
+              <div class="post-entry">
+                
+                  
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/p149/">
+                <h2 class="post-title">koszyk w laravelu</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 1 January 0001
+              </p>
+              <div class="post-entry">
+                
+                  <p>Koszyk na sesji i w bazie, taki jak na laravel5, opisać</p>
+
+                
+              </div>
+
               
 
             </article>

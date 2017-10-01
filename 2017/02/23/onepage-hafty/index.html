@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>OnePage Hafty</title>
+  <meta property="og:title" content="OnePage Hafty" />
+  <meta name="twitter:title" content="OnePage Hafty" />
+  <meta name="description" content="git clone https://github.com/ZielonyBuszmen/onePage-hafty.git  Github &#8211; github.com/ZielonyBuszmen/onePage-hafty Działający projekt &#8211; hafty-kasi.cba.pl Technologie &#8211; Larevel 5.3, Bootstrap, Angular2 Data &#8211;  styczeń 2017 Przeznaczenie projektu &#8211;  Projekt na zlecenie. Na stronie znajduje się galeria zdjęć, księga gości i kilka informacji. Wszystko wykonane jako &#8222;OnePage&#8221;, bez przeładowywania witryny. Strona korzysta z ViewComposerów oraz została &#8222;zlokalizowana&#8221; w 3 językach   Kilka spraw technicznych Layout został podzielony na elementy, które dowolnie można usuwać lub zmieniać ich kolejność:">
+  <meta property="og:description" content="git clone https://github.com/ZielonyBuszmen/onePage-hafty.git  Github &#8211; github.com/ZielonyBuszmen/onePage-hafty Działający projekt &#8211; hafty-kasi.cba.pl Technologie &#8211; Larevel 5.3, Bootstrap, Angular2 Data &#8211;  styczeń 2017 Przeznaczenie projektu &#8211;  Projekt na zlecenie. Na stronie znajduje się galeria zdjęć, księga gości i kilka informacji. Wszystko wykonane jako &#8222;OnePage&#8221;, bez przeładowywania witryny. Strona korzysta z ViewComposerów oraz została &#8222;zlokalizowana&#8221; w 3 językach   Kilka spraw technicznych Layout został podzielony na elementy, które dowolnie można usuwać lub zmieniać ich kolejność:">
+  <meta name="twitter:description" content="git clone https://github.com/ZielonyBuszmen/onePage-hafty.git  Github &#8211; github.com/ZielonyBuszmen/onePage-hafty Działający projekt &#8211; hafty-kasi.cba.pl Technologie &#8211; Larevel 5.3, …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2017/02/23/onepage-hafty/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2017/02/23/onepage-hafty/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Zielony Buszmen" href="https://zielonybuszmen.github.io/">
+            <img class="avatar-img" src="https://zielonybuszmen.github.io/img/avatar-green.png" alt="Zielony Buszmen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>OnePage Hafty</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 23 February 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<pre>git clone https://github.com/ZielonyBuszmen/onePage-hafty.git</pre>
+
+<ul>
+<li><span class="project-info link-github">Github &#8211; </span><a href="https://github.com/ZielonyBuszmen/onePage-hafty">github.com/ZielonyBuszmen/onePage-hafty</a></li>
+<li><span class="project-info">Działający projekt &#8211; </span><a href="http://hafty-kasi.cba.pl/">hafty-kasi.cba.pl</a></li>
+<li><span class="project-info">Technologie &#8211; </span>Larevel 5.3, Bootstrap, Angular2</li>
+<li><span class="project-info">Data &#8211; </span> styczeń 2017</li>
+<li><span class="project-info">Przeznaczenie projektu &#8211; </span> Projekt na zlecenie. Na stronie znajduje się galeria zdjęć, księga gości i kilka informacji. Wszystko wykonane jako &#8222;OnePage&#8221;, bez przeładowywania witryny. Strona korzysta z ViewComposerów oraz została &#8222;zlokalizowana&#8221; w 3 językach</li>
+</ul>
+
+<h2 id="img-class-aligncenter-size-full-wp-image-261-title-src-http-zielonybuszmen-cba-pl-wp-content-uploads-2017-02-hafty-1-png-alt-width-1519-height-770-srcset-http-zielonybuszmen-cba-pl-wp-content-uploads-2017-02-hafty-1-png-1519w-http-zielonybuszmen-cba-pl-wp-content-uploads-2017-02-hafty-1-300x152-png-300w-http-zielonybuszmen-cba-pl-wp-content-uploads-2017-02-hafty-1-768x389-png-768w-http-zielonybuszmen-cba-pl-wp-content-uploads-2017-02-hafty-1-1024x519-png-1024w-http-zielonybuszmen-cba-pl-wp-content-uploads-2017-02-hafty-1-820x416-png-820w-sizes-max-width-1519px-100vw-1519px-3"><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/hafty-1.png"><img class="aligncenter size-full wp-image-261" title="" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/hafty-1.png" alt="" width="1519" height="770" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/hafty-1.png 1519w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/hafty-1-300x152.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/hafty-1-768x389.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/hafty-1-1024x519.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/hafty-1-820x416.png 820w" sizes="(max-width: 1519px) 100vw, 1519px" /></a></h2>
+
+<h2 id="kilka-spraw-technicznych">Kilka spraw technicznych</h2>
+
+<p>Layout został podzielony na elementy, które dowolnie można usuwać lub zmieniać ich kolejność:</p>
+
+<pre class="brush: php; title: resources/views/default.blade.php; notranslate" title="resources/views/default.blade.php">&lt;!DOCTYPE html&gt;
+&lt;html lang="pl"&gt;
+
+&lt;head&gt;
+    @include('includes.head')
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Navigation --&gt;
+    @include('includes.navigation')
+
+    &lt;!-- Header --&gt;
+    @include('includes.header')
+
+    &lt;!-- About --&gt;
+    @include('includes.about')
+
+    &lt;!-- Blueimp gallery LightBox -&gt;
+    @include('includes.gallery_blueimp')
+
+    &lt;!-- Guest Book --&gt;
+    @include('includes.guest_book')
+
+    &lt;!-- Footer --&gt;
+    @include('includes.footer')
+
+    &lt;!-- Bottom scripts --&gt;
+    @include('includes.bottom_scripts')
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>W kodzie zaimplementowałem możliwość zmiany języka serwisu. Jest to brzydki kod, bo napisany w roucie zamiast w kontrolerze (lub jakiejś innej stosownej do tego klasie).</p>
+
+<pre class="brush: php; title: routes/web.php; notranslate" title="routes/web.php">Route::get('/locale/{locale}', function ($locale, \Illuminate\Http\Request $request) {
+    App::setLocale($locale);
+    $request-&gt;session()-&gt;put('lang', $locale);
+    return redirect("/");
+})-&gt;where("locale", "(pl|en|es)");
+</pre>
+
+<h2 id="dodawanie-nowych-zdjęć">Dodawanie nowych zdjęć:</h2>
+
+<ul>
+<li>Duże zdjęcia znajdują się w <code>public/img/hafty</code>. Na podstawie tego katalogu skrypt tworzy array&#8217;a z odnośnikami do zdjęć.</li>
+<li>Miniaturki są przechowywane w folderze <code>public/img/miniaturki</code>. Miniaturka musi nazywać się tak samo jak duże zdjęcie. Powinna mieć wymiary <code>400px x 300px</code>.</li>
+<li>Ustawienia odnośnie lokalizacji folderu ze zdjęciami oraz cały skrypt który przeszukuje te foldery znajdziemy w pliku <code>app/Repositories/PhotoRepository.php</code>. Metoda <code>getAll()</code> zwraca gotowego array&#8217;a z linkami do zdjęć i miniaturek. Wynik tej funkcji jest zwracany do widoku <code>resources/views/includes/gallery_blueimp.blade.php</code>. Nie jest to robione standardowo przez kontroler lub router, tylko poprzez tzw. &#8222;ViewComposer&#8221; o nazwie <code>PhotoComposer</code> (lokalizacja <code>app/Console/Http/ViewComposers/PhotoComposer.php</code>). Te dane są zwracane do zmiennej <code>$photos</code>, którą możemy używać w widoku.</li>
+<li>Repozytorium do ViewComposera jest &#8222;wstrzykiwane&#8221; dzięki mechanizmowi Dependency Injection</li>
+</ul>
+
+<p>Sam ViewComposer prezentuje się następująco. Jak widzimy, repozytorium z fotografiami jest &#8222;wstrzykiwane&#8221; dzięki mechanizmowi Dependency Injection.</p>
+
+<pre class="brush: php; title: ; notranslate" title="">&lt;?php namespace App\Http\ViewComposers; 
+
+use App\Repositories\PhotoRepository; 
+use Illuminate\View\View; 
+
+class PhotoComposer 
+{ 
+    protected $photos; 
+    public function __construct(PhotoRepository $photos) 
+    { 
+        $this-&gt;photos = $photos;
+    }
+
+    public function compose(View $view)
+    {
+        $view-&gt;with('photos', $this-&gt;photos-&gt;getAll());
+    }
+}
+</pre>
+
+<p>ViewComposer jest wykonywany dzięki ServiceProviderowi:</p>
+
+<pre class="brush: php; highlight: [18,19,20]; title: ; notranslate" title="">&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+
+class ComposerServiceProvider extends ServiceProvider
+{
+    /**
+     * Register bindings in the container.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        // Using class based composers...
+        View::composer(
+            'includes.gallery_blueimp', 'App\Http\ViewComposers\PhotoComposer'
+        );
+
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+}</pre>
+
+<h2 id="instalacja">Instalacja</h2>
+
+<p>Standardowo -&gt; pobieramy projekt do folderu <code>htdocs</code> Xamppa, albo do <code>www</code> Wampa (lampa, trampa, itp). Następnie otwieramy terminal (konsolę) w folderze z projektem i wpisujemy <code>composer install</code>, a potem <code>npm install</code>. Tak, projekt wymaga zainstalowanego Composera oraz Node.js.</p>
+
+<p>Być może będzie wymagane odblokowanie <code>php_intl.dll</code> w pliku <code>php.ini</code> w konfiguracji naszego serwera, ale to już jest spowodowane przez wymagania samego Laravela.</p>
+
+<p>Następnie musimy przejść do pliku <code>node_modules/elixir-typescript/index.js</code> i zakomentować w nim linijkę: <code>//.pipe($.concat(paths.output.name))</code>.</p>
+
+<p>Na koniec wpisujemy komendę <code>gulp</code> by skompilować assety (pliki TypeScript) Angulara 2.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2017/02/23/projekt-sklep-prosty-sklep-internetowy/" data-toggle="tooltip" data-placement="top" title="Projekt Sklep – prosty sklep internetowy">&larr; Poprzedni post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://zielonybuszmen.github.io/2017/02/23/projekt-moodle-prosta-platforma-e-learningowa/" data-toggle="tooltip" data-placement="top" title="Projekt Moodle – platforma e-learningowa">Następny post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

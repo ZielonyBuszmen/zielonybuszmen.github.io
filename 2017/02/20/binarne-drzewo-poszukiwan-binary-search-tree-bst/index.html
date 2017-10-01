@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
+  <meta property="og:title" content="Binarne drzewo poszukiwań – Binary Search Tree (BST)" />
+  <meta name="twitter:title" content="Binarne drzewo poszukiwań – Binary Search Tree (BST)" />
+  <meta name="description" content="Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
+Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).">
+  <meta property="og:description" content="Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
+Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).">
+  <meta name="twitter:description" content="Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Zielony Buszmen" href="https://zielonybuszmen.github.io/">
+            <img class="avatar-img" src="https://zielonybuszmen.github.io/img/avatar-green.png" alt="Zielony Buszmen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Binarne drzewo poszukiwań – Binary Search Tree (BST)</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 20 February 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.</p>
+
+<p>Drzewo składa się z węzłów (<strong>nodes</strong>). Każdy z nich posiada <u>co najwyżej</u> dwóch <em>następników.</em> Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (<strong>root</strong>). Jego następniki są nazywane węzłami <em>potomnymi (dziecko, potomek) (<strong>child nodes).</strong></em></p>
+
+<p><img class="wp-image-61 aligncenter" title="" src="http://localhost/blog_wordpress/wp-content/uploads/2017/02/Clipboard01-300x213.png" alt="" width="541" height="384" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01-300x213.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01-768x546.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01-1024x728.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01-820x583.png 820w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01.png 1178w" sizes="(max-width: 541px) 100vw, 541px" /></p>
+
+<p>Istnieje jedna i podstawowa reguła drzewa binarnego – Wszystkie elementy znajdujące się w lewym poddrzewie są mniejsze od swojego ojca, natomiast elementy w prawym poddrzewie są większe od swojego ojca. Reguła to obowiązuje zawsze i wszędzie, na wszystkie poddrzewa.</p>
+
+<p>A co z elementami równymi? To już kwestia własnego ustalenia. Zazwyczaj takie elementy wrzuca się na prawo.</p>
+
+<p>Na obrazku rootem (głównym węzłem) drzewa jest liczba 8. Ma ona dwóch potomków: 3 oraz 10. Następnie 3 też ma dwóch potomków: 1 oraz 6. Można więc powiedzieć, że 3 jest ojcem dla 1 i 6. Bądź 14 jest ojcem 13; albo że 8 jest ojcem 3 i 10. Warto zauważyć, że np. taka 14 posiada tylko lewego potomka 13. Węzeł 4 nie ma potomków w ogóle.</p>
+
+<p>Na tym zakończylibyśmy tą całą otoczkę teoretyczną. Nie omówiliśmy takich rzeczy jak dodawanie węzła, przeszukiwanie drzewa, itp. To wszystko można znaleźć w tym filmiku: <a href="https://youtu.be/_V7a1Gwuj5k?t=37m46s"><strong>https://youtu.be/_V7a1Gwuj5k?t=37m46s</strong></a>  (od <strong>37:46</strong> do <strong>45:20</strong>). Gościu fajnie tłumaczy, ALE nie polecam sugerować się jego kodem. BO jego drzewo jest w C++ ORAZ po drugie i najważniejsze – stosuje <strong>tablicową implementację drzewa</strong>, która do niczego nam się nie przyda. Bo my musimy napisać drzewo „z prawdziwego zdarzenia”, a nie jakieś tablicowe śmieszki.</p>
+
+<p>Warto jeszcze nadmienić, że w tym artykule nie będzie pokazane całe drzewo ze wszystkimi jego możliwościami, itd. Po taką wiedzę zapraszam piętro niżej, do wydziału leśnego. No bo kto jak kto, ale oni o drzewach wiedzą najwięcej.</p>
+
+<p>&nbsp;</p>
+
+<h1 id="implementacja"><strong>Implementacja</strong></h1>
+
+<pre class="brush: csharp; gutter: false; title: ; notranslate" title="">public class Node
+    {
+        int number;
+        Node left;
+        Node right;
+    }
+</pre>
+
+<p>Klasa nazywa się Node, czyli węzeł. Zawiera trzy pola: <strong>number</strong>, <strong>left</strong> oraz <strong>right</strong>.</p>
+
+<ul>
+<li><code>int number;</code> &#8211; to liczba, czyli to, co dany węzeł ma przechowywać. W węzłach nie będziemy przetrzymywać wymyślnych klientów, adresów, czy innego barachła. Tylko zwykłą i najprostszą liczbę, tak jak to było wyżej na rysunku.</li>
+<li><code>Node left;</code> &#8211; **referencja (odwołanie) **do lewego dziecka.</li>
+<li><code>Node right;</code> &#8211; **referencja (odwołanie) **do prawego dziecka.</li>
+</ul>
+
+<p>Na początku może to wyglądać dziwnie – klasa Node posiada dwa pola typu Node? Tak. Tak jak już było wspomniane – drzewo to struktura hierarchiczna, więc takie coś jest na początku dziennym. I takie coś trzeba będzie wertować rekurencyjnie (niestety).</p>
+
+<p>&nbsp;</p>
+
+<p>Druga klasa, którą stworzymy zaraz pod kodem klasy węzła, będzie klasą drzewa:</p>
+
+<pre class="brush: csharp; gutter: false; title: ; notranslate" title="">public class Tree
+    {
+        Node root;
+        int counter;
+    }
+</pre>
+
+<p>Drzewo – czyli <strong>Tree</strong>. Klasa zawiera dwa pola:</p>
+
+<ul>
+<li><code>Node root;</code> &#8211; **refrencja (odwołanie) **do głównego węzła, do <em>korzenia</em> tego drzewa</li>
+<li><code>int counter;</code>funkcją będzie funkc &#8211; a tutaj taki mały licznik elementów drzewa, nie musi on tutaj być, ale dlaczego by go nie zrobić dla picu? 😉</li>
+</ul>
+
+<h1 id="teraz-zajmiemy-się-implementacją-węzła-u-node-u"><strong>Teraz zajmiemy się implementacją węzła <u>(node)</u></strong></h1>
+
+<pre class="brush: csharp; highlight: [7,8,9,10,11,12,13,14,15,16,17]; title: klasa węzła (node); notranslate" title="klasa węzła (node)">public class Node
+    {
+        int number;
+        Node left;
+        Node right;
+
+        public Node(int value)    // konstruktor
+        {
+            this.number = value;   //1
+            this.left = null;      //2
+            this.right = null;     //2
+        }
+
+        public bool IsLeaf()
+        {
+            return (this.left == null && this.right == null);
+        }
+</pre>
+
+<p>Dodaliśmy do kodu dwie funkcje. Pierwsza z nich to konstruktor, do którego przekazujemy tylko jeden parametr – wartość węzła, którą zaraz przypisujemy do pola <code>int numer (//1)</code>. W kolejnych dwóch linijkach przypisujemy odwołania do lewego i prawego dziecka tego węzła -&gt; z racji tego, że ten węzeł jest „nowo narodzony” to nie ma dzieci, po prostu przypisujemy im nulle <code>(//2).</code></p>
+
+<p>Druga funkcja <code>bool IsLeaf()</code>, sprawdza, czy węzeł jest liściem. A węzeł jest liściem, gdy nie posiada dzieci. Każdy „nowo upieczony” węzeł będzie liściem, bo nie będzie posiadał ani lewego dziecka, ani prawego. Wtedy funkcja zwraca <code>true</code>. Gdy węzeł nie jest liściem, czyli posiada jedno lub dwoje dzieci, to funkcja zwraca <code>false</code>.</p>
+
+<p>&nbsp;</p>
+
+<p>Kolejną funkcją będzie funkcja przeszukująca pod-węzły pod kątem danej wartości:</p>
+
+<pre class="brush: csharp; first-line: 18; highlight: [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50]; title: Klasa węzła (node); notranslate" title="Klasa węzła (node)">// .............  //
+
+    public Node Search(int value)  //0
+    {
+        if (this.number == value)      //1
+        {
+            return this;
+        }
+        else if (value &lt; this.number)    //2
+        {
+            if (this.left == null)  //3
+            {
+                return null;
+            }
+            else
+            {
+                return this.left.Search(value);  //4
+            }
+
+        }
+        else if (value &gt; this.number)  //5
+        {
+            if (this.right == null)   //6
+            {
+                return null;
+            }
+            else
+            {
+                return this.right.Search(value);   //7
+            }
+        }
+        return null;  //8
+    } 
+
+</pre>
+
+<p>Do funkcji <code>Node Search(int value)</code> wrzucamy wartość jaką chcemy znaleźć. Funkcja przeszukuje dany węzeł, dzieci tego węzła oraz dzieci-dzieci i dzieci-dzieci-dzieci, itd.</p>
+
+<p>Gdy znajdzie – zwraca ten węzeł. Gdy nie znajdzie – zwraca null;</p>
+
+<p>Przeanalizujmy tą funkcję. Składa się ona z trzech **ifów. **Pierwszy sprawdza, czy liczba której szukamy nie jest liczbą w obecnym węźle <strong>(//1)</strong>. Jeśli tak, to od razu zwracamy ten węzeł i kończymy funkcję.</p>
+
+<p>Drugi i trzeci wypadek jest bardziej złożony. Oba są na szczęście prawie że identyczne.</p>
+
+<p><strong>(//2)</strong> Jeśli szukana liczba jest mniejsza od tej z danego węzła, to wiadomo, że musimy szukać w lewym potomku tego węzła. Heh, ale jeśli nasz węzeł nie posiada lewego potomka to musimy zakończyć nasze poszukiwania fiaskiem <strong>(//3)</strong>. Ale gdy istnieje lewy potomek to co? <strong>(//4)</strong> To wtedy szukamy w nim tej wartości. I teraz <strong>uwaga!</strong> Tutaj mamy tą <em>zdradziecką</em> rekurencję. Przeanalizujmy dokładnie tą linijkę:</p>
+
+<pre class="brush: csharp; light: true; title: ; notranslate" title="">return this.left.Search(value); </pre>
+
+<p><code>this.left</code> to odwołanie do lewego dziecka naszego węzła. <code>this.left.Search()</code> to odwołanie się do funkcji <code>Search()</code>, czyli do tej w której obecnie jesteśmy, ale z tą różnicą, że wywołujemy ją dla lewego dziecka. Przekazujemy do niej to samo <code>value</code>, które widnieje tam wyżej <strong>(//0)</strong>. Na samym początku linijki daliśmy <code>return</code>, przez co wszystko będzie wykonywać się rekurencyjne aż do znalezienia odpowiedniego węzła i jego zwrócenia <strong>(//1)</strong>. Albo nieznalezienia i zwrócenia null <strong>(//8)</strong>.</p>
+
+<p>Analogicznie postępujemy w trzeciej części tej funkcji, gdy szukana liczba jest większa lub równa od liczby przechowywanej w naszym węźle. <strong>(//5).</strong> Najpierw sprawdzamy, czy w ogóle istnieje prawy pod-węzeł **(//6). **Jeśli istnieje <strong>(//7)</strong> to zaczynamy przeszukiwać prawy węzeł i ewentualnie jego podwęzły (tak jak to miało miejsce z lewej strony).</p>
+
+<p>Gdy żaden z tych 3 **ifów **się nie wykona, to pozostaje nam zwrócić null **(//8), **czyli informację o nieznalezieniu węzła o takiej wartości.</p>
+
+<h1 id="dodawanie-węzła-do-struktury"><strong>Dodawanie węzła do struktury</strong></h1>
+
+<pre class="brush: csharp; first-line: 51; highlight: [53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77]; title: Klasa węzła (node); notranslate" title="Klasa węzła (node)">// ..............  //
+
+    public void Add(int value)        //0
+    {
+        if (value &gt;= this.number)    //1
+        {
+            if (this.right == null) 
+            {
+                this.right = new Node(value);  //2
+            }
+            else
+            {
+                this.right.Add(value);    //3
+            }
+        }
+        else if (value &lt; this.number)    //4
+        {
+            if (this.left == null)
+            {
+                this.left = new Node(value);    //5
+            }
+            else
+            {
+                this.left.Add(value);     //6
+            }
+        }
+    }
+
+</pre>
+
+<p>Funkcja <code>Add()</code> jest bliźniaczo podobna do omówionej wcześniej funkcji <code>Search()</code>. Przekazujemy do niej wartość, którą chcemy dodać do węzła (a dokładniej – do dzieci tego węzła)**(//0). **Funkcja składa się z dwóch głównych ifów <strong>(//1),(//4)</strong>. Pierwszy z nich **(//1) **wykona się wtedy, gdy liczba którą chcemy wpisać będzie większa od tej w aktualnym węźle. Jeśli tak się stanie, to najpierw sprawdzamy, czy dany węzeł posiada prawego potomka. Jeśli nie, to sprawa jest prosta. Tworzymy tego prawego potomka i przypisujemy mu naszą wartość <strong>(//2).</strong> W przeciwnym wypadku, gdy prawy węzeł istnieje, dzieje się rekurencja **(//3), **czyli znowu wywołujemy funkcję <code>Add()</code>, tylko z tą różnicą, że nie dla naszego węzła, a dla jego prawego potomka.</p>
+
+<p>Dodawanie lewego węzła dzieje się analogicznie. W przypadku, gdy dodawana wartość jest mniejsza od tej w aktualnym węźle, to musimy wrzucić ją na lewo **(//4). **Gdy lewy pod-węzeł nie istnieje to sprawa jest prosta – tworzymy go z wartością którą chcemy dodać <strong>(//5).</strong> Gdy takowy węzeł istenieje, wywołujemy na nim funkcję <code>Add()</code> <strong>(//6)</strong>, identycznie jak wcześniej.</p>
+
+<h1 id="wyświetlanie-węzła-i-jego-dzieci-i-dzieci-jego-dzieci-itd"><strong>Wyświetlanie węzła i jego dzieci (i dzieci jego dzieci, itd.)</strong></h1>
+
+<pre class="brush: csharp; first-line: 79; highlight: [79,80,81,82,83,84,85,86,87,88,89,90]; title: Klasa węzła (node); notranslate" title="Klasa węzła (node)">public void Display()
+        {
+            if (this.left != null)   
+            {
+                this.left.Display();     //1
+            }
+            Console.Write(" " + this.number);    //2
+            if (this.right != null)
+            {
+                this.right.Display();     //3
+            }
+        }
+    }
+</pre>
+
+<p>Kolejną funkcją jest <code>Display()</code>, która będzie wyświetlała nasz węzeł, oraz wszystkie jego dzieci (i dzieci ich dzieci, itd.). Funkcja ta (jak i każda inna wcześniej przedstawiona) jest niestety rekurencyjna. Wyświetlenie węzła to po prostu wyświetlenie jego wartości, czyli zmiennej <code>number</code>. Wystarczy zwykłe <code>Console.Write()</code> ze spacją z przodu (albo z tyłu, kto jak tam woli).**(//2). **Ale wyświetlenie jednej wartości nie wystarczy – musimy przecież wyświetlić całą strukturę. Stąd też powyżej linijki **//2 **oraz poniżej tworzymy dwa warunki. Ten powyżej **(//1) **sprawdza, czy nasz węzeł posiada lewe dziecko. Jeśli tak, to wywołuje na jego rzecz tą samą funkcję <code>Display()</code>. Analogicznie dzieje się poniżej **(//3). **W przypadku gdy istnieje prawe dziecko to wywołujemy na jego rzecz funkcję <code>Display()</code>.</p>
+
+<h1 id="wreszcie-możemy-przejść-do-drzewa-tree"><strong>Wreszcie możemy przejść do drzewa (tree)</strong></h1>
+
+<pre class="brush: csharp; first-line: 93; highlight: [98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140]; title: Klasa drzewa (tree); notranslate" title="Klasa drzewa (tree)">public class Tree
+    {
+        Node root;
+        int counter;
+
+        public Tree()       //1
+        {
+            root = null;
+            counter = 0;
+        }
+    
+        public bool IsEmpty()    //2  
+        {
+            return this.root == null; 
+        }
+
+        public void Add(int value)   //3
+        {
+            if (IsEmpty())
+            {
+                this.root = new Node(value);   //4
+            }
+            else
+            {
+                this.root.Add(value);     //5
+            }
+            counter++;
+        }
+
+        public bool Search(int value)     //6
+        {
+            if (this.root.Search(value) != null) return true;    //7
+            else return false;
+        }
+
+
+        public void Display()    //8
+        {
+            if (IsEmpty() == false)   //9
+            {
+                this.root.Display();
+            }
+        }
+
+        public int Count()   //10
+        {
+            return this.counter;
+        }
+
+    }
+</pre>
+
+<p>Na początku tworzymy standardowy konstruktor. **(//1). <strong>Do głównego korzenia drzewa (</strong>root<strong>) przypisujemy null (bo nowe drzewo jest zawsze puste), i licznik (</strong>counter**) ustawiamy na ****.</p>
+
+<p>Kolejna funkcja to <code>IsEmpty()</code> **(//2). <strong>Działanie jej jest proste – zwraca true gdy drzewo (czyli korzeń) jest pusty (</strong>null**). W przeciwnym wypadku zwraca false.</p>
+
+<p>Dalej mamy funkcję <code>Add()</code>, <strong>(//3)</strong> która dodaje element do drzewa. Jest ona bardzo prosta, a to dlatego, że całe właściwe dodawanie węzła znajduje się we wcześniej omówionym kodzie – w klasie Node. Na początku sprawdzamy, czy nasze drzewo jest puste (wszystko dzięki wcześniej napisanej funkcji IsEmpty()). Jeśli tak, to nowy węzeł musimy wrzucić na miejsce roota **(//4). <strong>W przeciwnym wypadku, czyli gdy drzewo nie jest puste, nową wartość musimy upakować gdzieś w strukturze. Jednak cały kod dodawania już napisaliśmy, więc wystarczy wywołaj funkcję <code>Add()</code> z klasy <code>Node</code> dla naszego korzenia (</strong>root**) **(//5). **Na końcu zwiększamy licznik elementów w drzewie.</p>
+
+<p>Przedostatnią funkcją jest <code>Display()</code>, który wyświetla nasze całe drzewo. **(//8) **Dzieje się to tylko w przypadku, gdy nie jest ono puste **(//9). **Całe wyświetlanie polega na wywołaniu funkcji <code>Display()</code> z klasy <strong>Node</strong> dla naszego głównego węzła (<strong>root</strong>).</p>
+
+<p>Ostatnia funkcja to <code>Count()</code> **(//10), **która zwraca ilość elementów w drzewie, czyli wartość naszego licznika.</p>
+
+<h1 id="wykorzystanie-kodu-drzewa-w-main"><strong>Wykorzystanie kodu drzewa w Main()</strong></h1>
+
+<pre class="brush: csharp; first-line: 144; title: Funkcja Main(); notranslate" title="Funkcja Main()">static void Main(string[] args)
+      {
+            Tree brzoza = new Tree();  // stworzenie drzewa – brzozy 
+            brzoza.Add(7);    // bo sosna to tylko na opał się nadaje 
+            brzoza.Add(12);   // dodawanie elementów do drzewa
+            brzoza.Add(4);
+            brzoza.Add(1);
+            brzoza.Add(8);
+            brzoza.Add(12);
+            brzoza.Add(63);
+            brzoza.Add(2);
+
+            Console.WriteLine("Drzewo posiada {0} elementów", brzoza.Count());
+
+            brzoza.Display();  // wyświetlenie całego drzewa
+            Console.WriteLine();
+
+            Console.WriteLine("Czy w drzewie znajduje się liczba 4?");
+            Console.WriteLine(brzoza.Search(4));
+
+            Console.WriteLine("Czy w drzewie znajduje się liczba 23?");
+            Console.WriteLine(brzoza.Search(23));
+
+            brzoza.Add(23);
+
+            Console.WriteLine("Czy w drzewie znajduje się liczba 23?");
+            Console.WriteLine(brzoza.Search(23));
+
+            Console.ReadKey();
+      }
+</pre>
+
+<p>&nbsp;</p>
+
+<h1 id="kilka-rysunków"><strong>Kilka rysunków</strong></h1>
+
+<h2 id="diagramy-uml-klas"><strong>Diagramy UML klas:</strong></h2>
+
+<p><img class="aligncenter wp-image-86 " src="http://localhost/blog_wordpress/wp-content/uploads/2017/02/uml-dzrzewo-bst.png" width="613" height="282" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst.png 1083w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst-300x138.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst-768x353.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst-1024x471.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst-820x377.png 820w" sizes="(max-width: 613px) 100vw, 613px" /></p>
+
+<h2 id="przykładowe-drzewo"><strong>Przykładowe drzewo</strong></h2>
+
+<p><img class="wp-image-85 aligncenter" src="http://localhost/blog_wordpress/wp-content/uploads/2017/02/drzewo-bst.png" width="699" height="663" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo-bst.png 874w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo-bst-300x285.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo-bst-768x728.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo-bst-820x778.png 820w" sizes="(max-width: 699px) 100vw, 699px" /></p>
+
+<h1 id="cały-kod"><strong>Cały kod:</strong></h1>
+
+<h2 id="http-wklej-org-id-3021727"><a href="http://wklej.org/id/3021727/">http://wklej.org/id/3021727/</a></h2>
+
+<pre class="brush: csharp; collapse: true; light: false; title: ; toolbar: true; notranslate" title="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tree
+{
+    public class Node
+    {
+        int number;
+        Node left;
+        Node right;
+
+        public Node(int value)    // konstruktor
+        {
+            this.number = value;   //1
+            this.left = null;      //2
+            this.right = null;     //2
+        }
+
+        public bool IsLeaf()
+        {
+            return (this.left == null && this.right == null);
+        }
+
+        public Node Search(int value)  //0
+        {
+            if (this.number == value)      //1
+            {
+                return this;
+            }
+            else if (value &lt; this.number) //2 { if (this.left == null) //3 { return null; } else { return this.left.Search(value); //4 } } else if (value &gt; this.number)  //5
+            {
+                if (this.right == null)   //6
+                {
+                    return null;
+                }
+                else
+                {
+                    return this.right.Search(value);   //7
+                }
+            }
+            return null;  //8
+        }
+
+        public void Add(int value)        //0
+        {
+            if (value &gt;= this.number)    //1
+            {
+                if (this.right == null)
+                {
+                    this.right = new Node(value);  //2
+                }
+                else
+                {
+                    this.right.Add(value);    //3
+                }
+            }
+            else if (value &lt; this.number)    //4
+            {
+                if (this.left == null)
+                {
+                    this.left = new Node(value);    //5
+                }
+                else
+                {
+                    this.left.Add(value);     //6
+                }
+            }
+        }
+
+        public void Display()
+        {
+            if (this.left != null)
+            {
+                this.left.Display();     //1
+            }
+            Console.Write(" " + this.number);    //2
+            if (this.right != null)
+            {
+                this.right.Display();     //3
+            }
+        }
+    }
+
+
+    public class Tree
+    {
+        Node root;
+        int counter;
+
+        public Tree()       //1
+        {
+            root = null;
+            counter = 0;
+        }
+
+        public bool IsEmpty()    //2  
+        {
+            return this.root == null;
+        }
+
+        public void Add(int value)   //3
+        {
+            if (IsEmpty())
+            {
+                this.root = new Node(value);   //4
+            }
+            else
+            {
+                this.root.Add(value);     //5
+            }
+            counter++;
+        }
+
+        public bool Search(int value)     //6
+        {
+            if (this.root.Search(value) != null) return true;    //7
+            else return false;
+        }
+
+
+        public void Display()    //8
+        {
+            if (IsEmpty() == false)   //9
+            {
+                this.root.Display();
+            }
+        }
+
+        public int Count()   //10
+        {
+            return this.counter;
+        }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Tree brzoza = new Tree();  // stworzenie drzewa
+            brzoza.Add(7);    // dodawanie elementów do drzewa
+            brzoza.Add(12);
+            brzoza.Add(4);
+            brzoza.Add(1);
+            brzoza.Add(8);
+            brzoza.Add(12);
+            brzoza.Add(63);
+            brzoza.Add(2);
+
+            Console.WriteLine("Drzewo posiada {0} elementów", brzoza.Count());
+
+            brzoza.Display();  // wyświetlenie całego drzewa
+            Console.WriteLine();
+
+            Console.WriteLine("Czy w drzewie znajduje się liczba 4?");
+            Console.WriteLine(brzoza.Search(4));
+
+            Console.WriteLine("Czy w drzewie znajduje się liczba 23?");
+            Console.WriteLine(brzoza.Search(23));
+
+            brzoza.Add(23);
+
+            Console.WriteLine("Czy w drzewie znajduje się liczba 23?");
+            Console.WriteLine(brzoza.Search(23));
+
+            Console.ReadKey();
+        }
+    }
+}
+</pre>
+
+<p>&nbsp;</p>
+
+<h2 id="pobierz-drzewo-w-pdf-2"><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo.pdf">Pobierz drzewo w PDF</a></h2>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/" data-toggle="tooltip" data-placement="top" title="Adresacja IP cz. 2 – podział na podsieci">&larr; Poprzedni post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/" data-toggle="tooltip" data-placement="top" title="Instalacja CakePHP od podszewki">Następny post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

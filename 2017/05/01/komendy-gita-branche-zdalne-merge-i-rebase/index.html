@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Komendy GITa – Branche zdalne, merge i rebase</title>
+  <meta property="og:title" content="Komendy GITa – Branche zdalne, merge i rebase" />
+  <meta name="twitter:title" content="Komendy GITa – Branche zdalne, merge i rebase" />
+  <meta name="description" content="Operowanie branchami Sprawdzanie bieżącego brancha:
+git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
+git branch NAZWA [SHA-1] Przełączanie branchy
+git checkout NAZWA Stworzenie nowego brancha i przełączenie na niego
+git checkout -b NAZWA Branche zawarte w aktualnym branchu
+git branch --merged Branche rozłączne z aktualnym branchem
+git branch --no-merged Usuwanie gałęzi (tylko gdy jest zmergowana)
+git branch -d NAZWA Usuwanie gałęzi (wymuszone)
+git branch -D NAZWA Zmiana nazwy brancha">
+  <meta property="og:description" content="Operowanie branchami Sprawdzanie bieżącego brancha:
+git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
+git branch NAZWA [SHA-1] Przełączanie branchy
+git checkout NAZWA Stworzenie nowego brancha i przełączenie na niego
+git checkout -b NAZWA Branche zawarte w aktualnym branchu
+git branch --merged Branche rozłączne z aktualnym branchem
+git branch --no-merged Usuwanie gałęzi (tylko gdy jest zmergowana)
+git branch -d NAZWA Usuwanie gałęzi (wymuszone)
+git branch -D NAZWA Zmiana nazwy brancha">
+  <meta name="twitter:description" content="Operowanie branchami Sprawdzanie bieżącego brancha:
+git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
+git branch NAZWA [SHA-1] Przełączanie branchy
+git …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Zielony Buszmen" href="https://zielonybuszmen.github.io/">
+            <img class="avatar-img" src="https://zielonybuszmen.github.io/img/avatar-green.png" alt="Zielony Buszmen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Komendy GITa – Branche zdalne, merge i rebase</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 1 May 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="operowanie-branchami">Operowanie branchami</h2>
+
+<p>Sprawdzanie bieżącego brancha:</p>
+
+<pre>git branch</pre>
+
+<pre>git status-sb</pre>
+
+<p>Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)</p>
+
+<pre>git branch NAZWA [SHA-1]</pre>
+
+<p>Przełączanie branchy</p>
+
+<pre>git checkout NAZWA</pre>
+
+<p>Stworzenie nowego brancha i przełączenie na niego</p>
+
+<pre>git checkout -b NAZWA</pre>
+
+<p>Branche zawarte w aktualnym branchu</p>
+
+<pre>git branch --merged</pre>
+
+<p>Branche rozłączne z aktualnym branchem</p>
+
+<pre>git branch --no-merged</pre>
+
+<p>Usuwanie gałęzi (tylko gdy jest zmergowana)</p>
+
+<pre>git branch -d NAZWA</pre>
+
+<p>Usuwanie gałęzi (wymuszone)</p>
+
+<pre>git branch -D NAZWA</pre>
+
+<p>Zmiana nazwy brancha</p>
+
+<pre>git branch -m STARA-NAZWA NOWA-NAZWA</pre>
+
+<p>Różnice pomiędzy branchami</p>
+
+<pre>git diff --name-status</pre>
+
+<h2 id="merge">Merge</h2>
+
+<p>Łączenie gałęzi NAZWA z obecną</p>
+
+<pre>git merge NAZWA</pre>
+
+<p>Usuwanie merga</p>
+
+<pre>git reset --hard HEAD~</pre>
+
+<h2 id="rebase">Rebase</h2>
+
+<p>&#8222;Zaaplikowanie&#8221; (zastosowanie) zmian z bieżącego brancha do brancha NAZWA</p>
+
+<pre>git rebase NAZWA</pre>
+
+<p>Anulowanie rebase (gdyby po opracji był stan detached HEAD)</p>
+
+<pre>git rebase --abort</pre>
+
+<h1 id="zdalne-repozytoria">Zdalne repozytoria</h1>
+
+<p>Klonowanie repo</p>
+
+<pre>git clone URL</pre>
+
+<p>Dodanie adresu repozytorium zdalnego</p>
+
+<pre>git remote add NAZWA ADRES</pre>
+
+<p>Możemy dołączać kilka repozytoriów zdalnych do jednego lokalnego</p>
+
+<p>Listowanie adresów zdalnych</p>
+
+<pre>git remote -v</pre>
+
+<h2 id="śledzenie-branchy">Śledzenie branchy</h2>
+
+<p>Sprawdzenie śledzonego brancha dla brancha X</p>
+
+<pre>git config --get branch.X.remote
+git config --get branch.X.merge
+</pre>
+
+<p>Ustawianie śledzonego brancha</p>
+
+<pre>git branch --set-upstream branch-lokalny repo/branch-zdalny</pre>
+
+<pre>git branch --set-upstream master origin/master</pre>
+
+<h2 id="lista-branchy">Lista branchy</h2>
+
+<p>Branche lokalne</p>
+
+<pre>git branch</pre>
+
+<p>Branche zdalne</p>
+
+<pre>git branch -r</pre>
+
+<p>Wszystkie branche</p>
+
+<pre>git branch -a</pre>
+
+<h2 id="synchronizacja-gałęzi">Synchronizacja gałęzi</h2>
+
+<p>Pobranie śledzonego brancha</p>
+
+<pre>git fetch</pre>
+
+<p>Pobranie zdalnego brancha, łączenie z bieżącym branchem i przywrócenie obszaru roboczego</p>
+
+<pre>git pull</pre>
+
+<p>Przesylanie bieżącego brancha do brancha śledzonego</p>
+
+<pre>git push</pre>
+
+<p>Przesłanie z nadpisaniem całego brancha (nadpisaniem historii)</p>
+
+<pre>git push -f</pre>
+
+<p>Przełączenie na gałąź zdalną</p>
+
+<pre>git checkout NAZWA</pre>
+
+<h2 id="optymalizacja-stare-commity">Optymalizacja + stare commity</h2>
+
+<p>Usuwanie zgubionych rewizji</p>
+
+<pre>git prune</pre>
+
+<p>Optymalizacja repo</p>
+
+<pre>git gc</pre>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2017/03/23/komendy-gita/" data-toggle="tooltip" data-placement="top" title="Komendy GITa">&larr; Poprzedni post</a>
+          </li>
+        
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

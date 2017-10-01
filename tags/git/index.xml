@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/tags/git/</link>
+    <description>Recent content in Git on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
+    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
+    <lastBuildDate>Mon, 01 May 2017 18:55:30 +0000</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Komendy GITa – Branche zdalne, merge i rebase</title>
+      <link>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</link>
+      <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</guid>
+      <description>Operowanie branchami Sprawdzanie bieżącego brancha:
+git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
+git branch NAZWA [SHA-1] Przełączanie branchy
+git checkout NAZWA Stworzenie nowego brancha i przełączenie na niego
+git checkout -b NAZWA Branche zawarte w aktualnym branchu
+git branch --merged Branche rozłączne z aktualnym branchem
+git branch --no-merged Usuwanie gałęzi (tylko gdy jest zmergowana)
+git branch -d NAZWA Usuwanie gałęzi (wymuszone)
+git branch -D NAZWA Zmiana nazwy brancha</description>
+    </item>
+    
+    <item>
+      <title>Komendy GITa</title>
+      <link>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</link>
+      <pubDate>Thu, 23 Mar 2017 16:25:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</guid>
+      <description>Wersja oprogramowania
+git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l Ustalenie opcji
+git config --global user.name &#34;Imie Nazwisko&#34; git config --global user.email mail@cos.pl Globalne ustawienia gita są w pliku:
+C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
+.git\config Inicjalizacja repozytorium git init Klonowanie repo git clone adres-repo [sciezka/docelowa/opcjonalnie] Informacje o repo Uczestnicy projektu</description>
+    </item>
+    
+  </channel>
+</rss>

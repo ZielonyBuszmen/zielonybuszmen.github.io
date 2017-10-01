@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>O-mnies on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/o-mnie/</link>
+    <description>Recent content in O-mnies on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
+    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
+    <lastBuildDate>Mon, 20 Feb 2017 21:30:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/o-mnie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>O mnie</title>
+      <link>https://zielonybuszmen.github.io/o-mnie/</link>
+      <pubDate>Mon, 20 Feb 2017 21:30:27 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/o-mnie/</guid>
+      <description> Mocno programistyczny blog techniczny
+&amp;nbsp;
+Znajdziesz mnie na: GitHub{.link-github} stackoverflow{.link-stack} 4programmers.net{.link-programmers} forum.komputerświat.pl{.link-programmers} &amp;nbsp;
+Kontakt -&amp;gt; wyślij wiadomość {.code-header}  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/posts/</link>
+    <description>Recent content in Posts on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
+    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
+    <lastBuildDate>Mon, 01 May 2017 18:55:30 +0000</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Komendy GITa – Branche zdalne, merge i rebase</title>
+      <link>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</link>
+      <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</guid>
+      <description>Operowanie branchami Sprawdzanie bieżącego brancha:
+git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
+git branch NAZWA [SHA-1] Przełączanie branchy
+git checkout NAZWA Stworzenie nowego brancha i przełączenie na niego
+git checkout -b NAZWA Branche zawarte w aktualnym branchu
+git branch --merged Branche rozłączne z aktualnym branchem
+git branch --no-merged Usuwanie gałęzi (tylko gdy jest zmergowana)
+git branch -d NAZWA Usuwanie gałęzi (wymuszone)
+git branch -D NAZWA Zmiana nazwy brancha</description>
+    </item>
+    
+    <item>
+      <title>Komendy GITa</title>
+      <link>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</link>
+      <pubDate>Thu, 23 Mar 2017 16:25:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</guid>
+      <description>Wersja oprogramowania
+git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l Ustalenie opcji
+git config --global user.name &#34;Imie Nazwisko&#34; git config --global user.email mail@cos.pl Globalne ustawienia gita są w pliku:
+C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
+.git\config Inicjalizacja repozytorium git init Klonowanie repo git clone adres-repo [sciezka/docelowa/opcjonalnie] Informacje o repo Uczestnicy projektu</description>
+    </item>
+    
+    <item>
+      <title>Albert launcher na Ubuntu</title>
+      <link>https://zielonybuszmen.github.io/2017/03/22/albert-launcher-na-ubuntu/</link>
+      <pubDate>Wed, 22 Mar 2017 20:09:51 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/03/22/albert-launcher-na-ubuntu/</guid>
+      <description>Pracując na Windowsie korzystałem z małego programiku o nazwie Launchy. Było to naprawdę ogromne usprawnienie podczas korzystania z komputera. Szybkie obliczenie, wyszukanie czegoś na necie albo uruchomienie dowolnego programu bez odrywania rąk od klawiatury było bardzo wygodne. Niestety, Launchy niezbyt dobrze działa na Ubuntu 16, więc zostałem zmuszony do poszukania alternatywy. Znalazłem coś, co nazywa się Albert Launcher, i uwierzcie, jest to o wiele lepsze rozwiązanie od starego już Launchy&amp;#8217;ego.</description>
+    </item>
+    
+    <item>
+      <title>Instalacja Angulara2 do Laravela5 do ‚współdziałania’</title>
+      <link>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</link>
+      <pubDate>Wed, 01 Mar 2017 21:47:42 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</guid>
+      <description>Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &amp;#8211; Angular instaluje się jako &amp;#8222;stand-alone&amp;#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &amp;#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.</description>
+    </item>
+    
+    <item>
+      <title>Laravel – testy jednostkowe w PHPStormie</title>
+      <link>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</link>
+      <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</guid>
+      <description>Krótki wpis, szybka porada &amp;#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
+Przechodzimy do **Settings **(Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie **PHP **i wybieramy PHPUnit.
+W nowo otwartym oknie wybieramy **Use Composer autoloader **i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
+
+Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
+&amp;lt;?php class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
+    </item>
+    
+    <item>
+      <title>Projekt Moodle – platforma e-learningowa</title>
+      <link>https://zielonybuszmen.github.io/2017/02/23/projekt-moodle-prosta-platforma-e-learningowa/</link>
+      <pubDate>Thu, 23 Feb 2017 14:28:42 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/23/projekt-moodle-prosta-platforma-e-learningowa/</guid>
+      <description>git clone https://github.com/bartoszgajda55/projektMoodle.git  Github &amp;#8211; github.com/bartoszgajda55/projektMoodle Działający projekt &amp;#8211; projektmoodle.cba.pl lub projektmoodle.za.pl Technologie &amp;#8211;  PHP, MySQL, Bootstrap Data &amp;#8211;  październik/listopad 2015 Zespół &amp;#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &amp;#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  
+Od początku zadanie wydawało się całkiem złożone, bo całość miała być dosyć mocno rozbudowanym systemem e-learningowym (mówiąc &amp;#8222;dosyć mocno rozbudowanym&amp;#8221; mam na myśli &amp;#8222;mocno rozbudowanym jak na umiejętności programistyczne uczniaków technikum&amp;#8221;).</description>
+    </item>
+    
+    <item>
+      <title>OnePage Hafty</title>
+      <link>https://zielonybuszmen.github.io/2017/02/23/onepage-hafty/</link>
+      <pubDate>Thu, 23 Feb 2017 13:07:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/23/onepage-hafty/</guid>
+      <description>git clone https://github.com/ZielonyBuszmen/onePage-hafty.git  Github &amp;#8211; github.com/ZielonyBuszmen/onePage-hafty Działający projekt &amp;#8211; hafty-kasi.cba.pl Technologie &amp;#8211; Larevel 5.3, Bootstrap, Angular2 Data &amp;#8211;  styczeń 2017 Przeznaczenie projektu &amp;#8211;  Projekt na zlecenie. Na stronie znajduje się galeria zdjęć, księga gości i kilka informacji. Wszystko wykonane jako &amp;#8222;OnePage&amp;#8221;, bez przeładowywania witryny. Strona korzysta z ViewComposerów oraz została &amp;#8222;zlokalizowana&amp;#8221; w 3 językach   Kilka spraw technicznych Layout został podzielony na elementy, które dowolnie można usuwać lub zmieniać ich kolejność:</description>
+    </item>
+    
+    <item>
+      <title>Projekt Sklep – prosty sklep internetowy</title>
+      <link>https://zielonybuszmen.github.io/2017/02/23/projekt-sklep-prosty-sklep-internetowy/</link>
+      <pubDate>Thu, 23 Feb 2017 08:43:52 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/23/projekt-sklep-prosty-sklep-internetowy/</guid>
+      <description>git clone https://github.com/ZielonyBuszmen/projektSklep.git  Github &amp;#8211; github.com/ZielonyBuszmen/projektSklep Działający projekt &amp;#8211; projektsklep.cba.pl lub projektsklep.za.pl Technologie &amp;#8211;  PHP, MySQL, Bootstrap Data &amp;#8211;  listopad/grudzień 2015 Zespół &amp;#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &amp;#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  
+&amp;nbsp;
+Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL.</description>
+    </item>
+    
+    <item>
+      <title>jpg.aq.pl – hosting screenów i zdjęć</title>
+      <link>https://zielonybuszmen.github.io/2017/02/22/jpg-aq-pl-hosting-screenow-i-zdjec/</link>
+      <pubDate>Wed, 22 Feb 2017 07:25:34 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/22/jpg-aq-pl-hosting-screenow-i-zdjec/</guid>
+      <description>Działający projekt &amp;#8211; jpg.aq.pl  Technologie &amp;#8211;  PHP Data &amp;#8211;  grudzień 2012 / styczeń 2013 Przeznaczenie projektu &amp;#8211;  Kilka lat temu stare wersje IP Board (fora internetowe) nie umożliwiały łatwego wrzucania screenów i zdjęć. Zwykłe hostingi obrazków usuwały je po kilku miesiącach. Chciałem serwisu, nad którym mam pełną kontrolę i wiem, że wrzucone na niego jpegi nigdy nie zostaną usunięte. Stąd powstało jpg.aq.pl. Odniosło całkiem spory sukces, bo&amp;#8230; ktoś z tego jeszcze korzysta!</description>
+    </item>
+    
+    <item>
+      <title>Instalacja CakePHP od podszewki</title>
+      <link>https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/</link>
+      <pubDate>Tue, 21 Feb 2017 17:13:57 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/</guid>
+      <description> 
+Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP installation: https://book.cakephp.org/3.0/en/installation.html composer create-project --prefer-dist cakephp/app&amp;lt;br /&amp;gt;   </description>
+    </item>
+    
+    <item>
+      <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
+      <link>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</link>
+      <pubDate>Mon, 20 Feb 2017 15:00:38 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</guid>
+      <description>Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
+Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).</description>
+    </item>
+    
+    <item>
+      <title>Adresacja IP cz. 2 – podział na podsieci</title>
+      <link>https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/</link>
+      <pubDate>Sat, 18 Feb 2017 15:01:40 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/</guid>
+      <description>Jest to druga część poradnika. Będą opisane w niej trochę bardziej zaawansowane zagadnienia z tematów podziału sieci na podsieci. Jeśli nie widziałeś części pierwszej, odnajdziesz ją pod tym adresem: Adresacja IP cz. 1 – Z czym to się je?
+Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie musimy zasiąść i sprawdzić ile w danej sieci mieści się hostów. Nie jest to zajęcie trudne, jednakże wymaga trochę pomyślunku.</description>
+    </item>
+    
+    <item>
+      <title>Adresacja IP cz. 1 – Z czym to się je?</title>
+      <link>https://zielonybuszmen.github.io/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/</link>
+      <pubDate>Fri, 17 Feb 2017 15:02:06 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/</guid>
+      <description>Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik składa się z dwóch części. Druga jest dostępna tutaj: Adresacja IP cz. 2 – podział na podsieci.
+ Pierwotnie poradnik został wrzucony na stronę Pcfaq.pl Z racji tego, że ma wysoką wartość edukacyjną oraz że jest on mojego autorstwa, postanowiłem go przenieść także i tutaj.</description>
+    </item>
+    
+    <item>
+      <title>Jekyll  – ogarnac jak to dziala i opisac</title>
+      <link>https://zielonybuszmen.github.io/p146/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/p146/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows 10 i</title>
+      <link>https://zielonybuszmen.github.io/p324/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/p324/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>koszyk w laravelu</title>
+      <link>https://zielonybuszmen.github.io/p149/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/p149/</guid>
+      <description>Koszyk na sesji i w bazie, taki jak na laravel5, opisać</description>
+    </item>
+    
+  </channel>
+</rss>

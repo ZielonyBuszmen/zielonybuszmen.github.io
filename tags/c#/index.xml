@@ -8,10 +8,20 @@
     <language>pl-pl</language>
     <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
     <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
-    <lastBuildDate>Mon, 20 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Feb 2017 15:00:38 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
+      <link>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</link>
+      <pubDate>Mon, 20 Feb 2017 15:00:38 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</guid>
+      <description>Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
+Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).</description>
+    </item>
     
     <item>
       <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>

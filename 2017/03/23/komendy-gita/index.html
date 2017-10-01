@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Komendy GITa</title>
+  <meta property="og:title" content="Komendy GITa" />
+  <meta name="twitter:title" content="Komendy GITa" />
+  <meta name="description" content="Wersja oprogramowania
+git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l Ustalenie opcji
+git config --global user.name &#34;Imie Nazwisko&#34; git config --global user.email mail@cos.pl Globalne ustawienia gita są w pliku:
+C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
+.git\config Inicjalizacja repozytorium git init Klonowanie repo git clone adres-repo [sciezka/docelowa/opcjonalnie] Informacje o repo Uczestnicy projektu">
+  <meta property="og:description" content="Wersja oprogramowania
+git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l Ustalenie opcji
+git config --global user.name &#34;Imie Nazwisko&#34; git config --global user.email mail@cos.pl Globalne ustawienia gita są w pliku:
+C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
+.git\config Inicjalizacja repozytorium git init Klonowanie repo git clone adres-repo [sciezka/docelowa/opcjonalnie] Informacje o repo Uczestnicy projektu">
+  <meta name="twitter:description" content="Wersja oprogramowania
+git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2017/03/23/komendy-gita/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2017/03/23/komendy-gita/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Zielony Buszmen" href="https://zielonybuszmen.github.io/">
+            <img class="avatar-img" src="https://zielonybuszmen.github.io/img/avatar-green.png" alt="Zielony Buszmen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Komendy GITa</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 23 March 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Wersja oprogramowania</p>
+
+<pre>git --version</pre>
+
+<h2 id="dokumentacja-pomoc">Dokumentacja (pomoc)</h2>
+
+<pre>git add --help
+git branch -- help
+git config --help
+git init --help
+
+git help add
+git help branch
+git help config
+git help init</pre>
+
+<h2 id="konfiguracja">Konfiguracja</h2>
+
+<p>Lista wszystkich opcji konfiguracyjnych</p>
+
+<pre>git config -l</pre>
+
+<p>Ustalenie opcji</p>
+
+<pre>git config --global user.name "Imie Nazwisko"
+git config --global user.email mail@cos.pl</pre>
+
+<p>Globalne ustawienia gita są w pliku:</p>
+
+<pre>C:\Users\nazwa-usera\.gitconfig</pre>
+
+<p>Plik konfiguracyjny danego repozytorium</p>
+
+<pre>.git\config</pre>
+
+<h2 id="inicjalizacja-repozytorium">Inicjalizacja repozytorium</h2>
+
+<pre>git init</pre>
+
+<h2 id="klonowanie-repo">Klonowanie repo</h2>
+
+<pre>git clone adres-repo [sciezka/docelowa/opcjonalnie]</pre>
+
+<h2 id="informacje-o-repo">Informacje o repo</h2>
+
+<p>Uczestnicy projektu</p>
+
+<pre>git shortlog -s -n</pre>
+
+<h2 id="historia">Historia</h2>
+
+<pre>git log</pre>
+
+<pre>git log --pretty=oneline</pre>
+
+<pre>git log --oneline</pre>
+
+<p>Zminimalizowane indetyfikatory</p>
+
+<pre>git log --abbrev-commit --abbrev=4 --pretty=oneline</pre>
+
+<p>3 Ostatnie rewizje</p>
+
+<pre>git log -3</pre>
+
+<p>Historia użytkownika</p>
+
+<pre>git log --author=buszmen</pre>
+
+<p>Historia zawierająca commity z przedziału czasu</p>
+
+<pre>git log--since="2016-06-07" --until="2017-01-15"</pre>
+
+<p>Lista ostatnich 15 rewizji w skróconym formacie graficznym</p>
+
+<pre>git log --pretty=oneline --abbrev-commit --abbrev=4 -15 --graph</pre>
+
+<h2 id="przywracanie-obszaru-roboczego">Przywracanie obszaru roboczego</h2>
+
+<p>(Nie usuwa nowych plików)</p>
+
+<pre>git reset --hard
+git checkout -f</pre>
+
+<p>Powrócenie do określonego commita (późniejsze commity zostają <strong>usunięte</strong> z historii projektu!)</p>
+
+<pre>git reset --hard [SHA-1]</pre>
+
+<p>Powrocenie do określonego commita (repo znajduje się w stanie detached head)</p>
+
+<pre>git checkout -f [SHA-1]</pre>
+
+<h2 id="stan-repo">Stan repo</h2>
+
+<pre>git status
+git status -s</pre>
+
+<h2 id="tworzenie-commita">Tworzenie commita</h2>
+
+<pre>git add -A
+git commit -m "ble ble ble..."</pre>
+
+<p>Automatyczna indeksacja plików zmodyfikowanch lub usuniętych</p>
+
+<pre>git commit -a</pre>
+
+<h2 id="branche-8211-gałęzie">Branche &#8211; gałęzie</h2>
+
+<p>Sprawdzenie gałęzi</p>
+
+<pre>git branch</pre>
+
+<p>Przejście na wybranego brancha</p>
+
+<pre>git checkout [nazwa-brancha]
+git checkout develop</pre>
+
+<h2 id="stan-plików">Stan plików</h2>
+
+<p>Indeksacja pliku</p>
+
+<pre>git add [nazwa-pliku]</pre>
+
+<p>Indeksacja wszystkich plików</p>
+
+<pre>git add --all
+git add -A</pre>
+
+<p>Indeksacja plików zmodyfikowanych i usuniętych</p>
+
+<pre>git add --updated
+git add -u</pre>
+
+<p>Usunięcie pliku</p>
+
+<pre>git rm [nazwa-pliku]</pre>
+
+<p>Zmiana nazwy</p>
+
+<pre>git mv stara-nazwa nowa-nazwa</pre>
+
+<h2 id="ignorowanie-plików">Ignorowanie plików</h2>
+
+<p>Lista plików do ignorowania znajduje się w pliku <code>.gitignore</code></p>
+
+<pre>/folder
+folder
+*.exe</pre>
+
+<h2 id="znaczniki">Znaczniki</h2>
+
+<p>Znacznik opisany do ostatniego commita</p>
+
+<pre>git tag -a NAZWA -m KOMENTARZ [SHA-1, by stworzyc do danego commita]</pre>
+
+<p>Znacznik lekki do ostatniej rewizji</p>
+
+<pre>git tag NAZWA [SHA-1 opcjonaln]</pre>
+
+<p>Lista znaczników opisanych</p>
+
+<pre>git describe</pre>
+
+<p>Lista wszystkich znaczników</p>
+
+<pre>git describe --tags</pre>
+
+<h2 id="dziennik-reflog">Dziennik reflog</h2>
+
+<pre>git reflog [branch]</pre>
+
+<h2 id="modyfikacja-historii-projektu">Modyfikacja historii projektu</h2>
+
+<p>Usuwanie ostatnich commitów do X</p>
+
+<pre>git reset --hard SHA</pre>
+
+<p>Edycja ostatniego commita</p>
+
+<pre>git commit --amend -a -m "..."</pre>
+
+<p>Łączenie commitów, ale dopiero następujących po podanym</p>
+
+<pre>git rebase -i SHA</pre>
+
+<p>Stworzenie commita usuwającego zmiany z innego commita</p>
+
+<pre>git revert --no-edit SHA</pre>
+
+<p>Odzyskanie pliku z konkretnego commita</p>
+
+<pre>git checkout -f SHA nazwa-pliku</pre>
+
+<h2 id="różności">Różności</h2>
+
+<p>Tworzenie pliku</p>
+
+<pre>echo a &gt; a.txt
+echo "Bla bla bla" &gt; plik.txt</pre>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2017/03/22/albert-launcher-na-ubuntu/" data-toggle="tooltip" data-placement="top" title="Albert launcher na Ubuntu">&larr; Poprzedni post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/" data-toggle="tooltip" data-placement="top" title="Komendy GITa – Branche zdalne, merge i rebase">Następny post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

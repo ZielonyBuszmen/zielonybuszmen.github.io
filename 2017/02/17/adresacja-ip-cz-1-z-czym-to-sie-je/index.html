@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Adresacja IP cz. 1 – Z czym to się je?</title>
+  <meta property="og:title" content="Adresacja IP cz. 1 – Z czym to się je?" />
+  <meta name="twitter:title" content="Adresacja IP cz. 1 – Z czym to się je?" />
+  <meta name="description" content="Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik składa się z dwóch części. Druga jest dostępna tutaj: Adresacja IP cz. 2 – podział na podsieci.
+ Pierwotnie poradnik został wrzucony na stronę Pcfaq.pl Z racji tego, że ma wysoką wartość edukacyjną oraz że jest on mojego autorstwa, postanowiłem go przenieść także i tutaj.">
+  <meta property="og:description" content="Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik składa się z dwóch części. Druga jest dostępna tutaj: Adresacja IP cz. 2 – podział na podsieci.
+ Pierwotnie poradnik został wrzucony na stronę Pcfaq.pl Z racji tego, że ma wysoką wartość edukacyjną oraz że jest on mojego autorstwa, postanowiłem go przenieść także i tutaj.">
+  <meta name="twitter:description" content="Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Zielony Buszmen" href="https://zielonybuszmen.github.io/">
+            <img class="avatar-img" src="https://zielonybuszmen.github.io/img/avatar-green.png" alt="Zielony Buszmen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Adresacja IP cz. 1 – Z czym to się je?</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 17 February 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik składa się z dwóch części. Druga jest dostępna tutaj: <a href="http://zielonybuszmen.cba.pl/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/">Adresacja IP cz. 2 – podział na podsieci</a>.</p>
+
+<blockquote>
+<p>Pierwotnie poradnik został wrzucony na stronę Pcfaq.pl Z racji tego, że ma wysoką wartość <em>edukacyjną</em> oraz że jest on mojego autorstwa, postanowiłem go przenieść także i tutaj.</p>
+</blockquote>
+
+<h2 id="adres-ip-i-jego-maska">**Adres IP i jego maska</h2>
+
+<p>**</p>
+
+<p>A więc, aby zrozumieć zaawansowane „techniki”, musimy przypomnieć sobie podstawy. Co to jest adres IP i do czego służy nie wytłumaczę, gdyż Wiki nie kot, nie ugryzie. Na „warsztat” rzucimy sobie przykładowy adres IP:</p>
+
+<pre><strong><big><big>190.168.15.10</big></big></strong></pre>
+
+<p>Adres IP składa się z czterech oktetów bitów. W zapisie dziesiętnym są to cztery liczby oddzielone kropkami (w zapisie binarnym to cztery liczby po osiem bitów, czyli cztery oktety). Dlaczego cztery, a nie pięć? Bo łatwo skojarzyć to np. z „czteropakiem” Złocistej Ambrozji Radochy (która daje +5 do radochy, -10 do inteligencji, +50 do gadatliwości).</p>
+
+<p>Każdy adres IP ma swoją maskę. Maska ta zakrywa tylko część adresu. Maska zazwyczaj jest podawana wraz z adresem w treści zadania. Jednakże czasem musimy „domyślić” się sami, jaką maskę ubrał dany adres. Sprawa jest bardzo prosta. Można się co prawda uczyć zakresów IP na pamięć, ale jest to słabe. Drugim sposobem (o wiele łatwiejszym) jest sprawdzenie, od jakich bitów rozpoczyna się pierwszy oktet. A więc, na początek musimy zamienić tenże pierwszy oktet na postać binarną.</p>
+
+<pre><big><big><strong>190 = 10111110</strong></big></big></pre>
+
+<blockquote>
+<div class="wpz-sc-box info ">
+  Warto nadmienić, że każda z czterech części adresu IP (a także maski) składa się z ośmiu bitów. Jeśli po zamianie liczby na system binarny wychodzi nam mniej bitów niż 8, dopisujemy zera przed liczbę, czyli np. 17 = 10001. Liczba binarna ma 5 cyfr, więc z początku dopisujemy trzy zera. Końcowa liczba powinna wyglądać tak: 00010001
+</div>
+</blockquote>
+
+<p>Po zamianie pierwszego oktetu na liczbę binarną musimy sprawdzić pierwsze cyfry (te od lewej). W naszym przypadku jest to 10, więc adres należy do klasy B. Poniżej tabelka ukazująca te zasady:</p>
+
+<table style="height: 119px;" width="454">
+  <tr>
+    <td width="46">
+      <strong>Klasa</strong>
+    </td>
+    
+    <td width="197">
+      <strong>Początek pierwszego oktetu</strong>
+    </td>
+    
+    <td width="57">
+      <strong>Maska</strong>
+    </td>
+  </tr>
+  
+  <tr>
+    <td width="46">
+      A
+    </td>
+    
+    <td width="197">
+    </td>
+    
+    <td width="57">
+      /8
+    </td>
+  </tr>
+  
+  <tr>
+    <td width="46">
+      B
+    </td>
+    
+    <td width="197">
+      10
+    </td>
+    
+    <td width="57">
+      /16
+    </td>
+  </tr>
+  
+  <tr>
+    <td width="46">
+      C
+    </td>
+    
+    <td width="197">
+      110
+    </td>
+    
+    <td width="57">
+      /24
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>Gdy znamy klasę naszego adresu, pozostaje nam napisać maskę. Maski zapisuje się w dwóch formatach. Pierwszy z nich to ten, podobny do adresu ip, np. 255.255.0.0. Drugi sposób to liczba po ukośniku, np. /16.</p>
+
+<p>O co w tym chodzi? Aby to zrozumieć, musimy rozpisać cały adres maski na system binarny:</p>
+
+<pre><big><big>255.255.0.0 = 11111111.11111111.00000000.00000000</big></big></pre>
+
+<p>Jak widzimy, z lewej strony mamy same jedynki, które ciągną się długo. W połowie nastąpiło „załamanie” i zamiast jedynek dalej mamy same zera. Po prawej stronie, po zerach, nie ma już żadnej jedynki. To właśnie jest cecha maski – jak jedynki, to jedna za drugą. Gdy rozpoczną się zera, są aż do końca.</p>
+
+<p>Drugi sposób zapisania maski to liczba po ukośniku, np. /16. O co tutaj biega? Otóż to liczba jedynek w masce. Policzmy, ile jedynek jest w masce 255.255.0.0. Jest ich szesnaście. Z racji tego, że wygodniej jest zapisać mniej, wystarczy że zapiszemy samą liczbę jedynek. A więc /16.</p>
+
+<p>Po cóż więc ta maska jest? Jak to prawią mądre księgi: „Maska oddziela część adresu sieci od części hosta”. Mądre to słowa. A teraz prościej. Mamy jakiś IP i znamy jego maskę (czy to z obliczeń, czy to z treści zadania). Ten adres IP może być adresem jakiegoś konkretnego komputera. A my chcemy znać np. adres sieci tego komputera, albo chcemy wiedzieć ile komputerów jest w tej sieci. Musimy wtedy dokonać pewnego obliczenia. Adres i maska muszą rozpisane być blisko siebie, jeden nad drugim. Pamiętajmy, że najlepiej wszystko widać na adresach i maskach zapisanych w formie binarnej, więc do takiego stanu musimy doprowadzić nasze „obiekty testowe”.</p>
+
+<pre><big><big>190.168.15.10 = 11000000. 10101000.00001111.00001010
+255.255.0.0 = 11111111.11111111.00000000.00000000</big></big></pre>
+
+<p>Teraz musimy zrobić coś niebywale precyzyjnego. Chirurg na oddziale ma już lżejsze zadanie. Otóż cała sztuka polega na tym, by każda cyfra adresu IP była pod daną cyfra maski.</p>
+
+<pre><big><big><strong>10111110.10101000.</strong>00001111.00001010 – adres IP
+<strong>11111111.11111111.</strong>00000000.00000000 – oraz jego maska</big></big></pre>
+
+<p>No, udało się. Ale co dalej? Co dalej panie kierowniku? – ktoś może zapytać. Dalej to już z górki – im szybciej tym niebezpieczniej. Zobaczmy, jak odczytać adres sieci.</p>
+
+<p>Patrzymy na maskę i na adres i porównujemy po kolei oktety. Na początek pierwszy oktet:</p>
+
+<pre><big><big>10111110. - adres IP
+11111111. - maska</big></big></pre>
+
+<p>Jak widzimy, maska cały czas ma jedynki. To tak jakby jedynki przysłaniały adres sieci. Więc tam gdzie maska ma jedynki, przepisujemy adres bez żadnych zmian. A więc pierwszy oktet pozostawiamy bez szwanku.</p>
+
+<p>W drugim oktecie sytuacja wygląda identycznie. Same jedynki w masce, więc drugi oktet adresu przepisujemy bez zmian.</p>
+
+<p>W trzecim oktecie jedynki się skończyły. Są same zera</p>
+
+<pre><big><big><strong>.</strong>00001111. - adres IP
+<strong>.</strong>00000000. - maska</big></big></pre>
+
+<p><em>Tam gdzie w masce zera, adres IP sieci się kończy</em> – mówi staropolskie przysłowie, powtarzane tak często przez nasze prababcie. W czwartym oktecie też muszą być zera w masce, gdyż jak wiemy, gdy zera się zaczynają, są aż do końca maski.</p>
+
+<p>Dlatego też, tam gdzie mamy jedynki w masce, to tam znajduje się adres IP sieci. Tam gdzie mamy zera w masce, tam nie ma nic. Tamto jest nieważne. Dlatego tam gdzie są zera w masce wpisujemy także zera w adresie. Czyli poprawny adres sieci powinien wyglądać tak:</p>
+
+<pre><big><big><strong>10111110.10101000.</strong>00000000.00000000 – adres IP sieci
+<strong>11111111.11111111.</strong>00000000.00000000 – oraz jego maska</big></big></pre>
+
+<p>Teraz wystarczy każdy oktet adresu sieci zamienić na liczbę dziesiętna. Wyjdzie nam 190.168.0.0. Jest to nasz adres sieci.</p>
+
+<hr />
+
+<p>&nbsp;</p>
+
+<h2 id="maski-trochę-mniej-standardowe"><strong>Maski trochę mniej standardowe</strong></h2>
+
+<p>Maski klas adresów A, B oraz C są, co by tu dużo nie gadać, standardowe. Gdybyśmy się uparli, to nie musielibyśmy zamieniać całego adresu IP na system binarny. Wystarczyłby pierwszy oktet do określenia maski i tyle. Potem moglibyśmy działać na liczbach dziesiętnych. Powyższe zadanie moglibyśmy rozwiązać tak:</p>
+
+<pre><big><big><strong>190.168.</strong>15.10
+<strong>255.255</strong>.0 .0</big></big></pre>
+
+<p>Jak widzimy, nawet na liczbach dziesiętnych widać, gdzie następuje te „przełamanie” maski, i dzięki temu wiemy, gdzie oddzielić adres IP sieci.</p>
+
+<p>Jest to proste, aż za proste. Dlatego też, by uczynić sieci trudniejszymi, mamy do dyspozycji maski trochę mniej standardowe, niż te z klas A, B oraz C.</p>
+
+<pre><big><big>Mamy taki adres IP: 10.20.30.40.
+Maska tego adresu to: /20</big></big></pre>
+
+<p>Na pierwszy rzut oka nie wyczuwamy tutaj żadnego niebezpieczeństwa. Jednakże rozpiszmy maskę na bity:</p>
+
+<pre><big><big><strong>11111111.11111111.1111</strong>0000.00000000</big></big></pre>
+
+<p>Jak widać, „przełamanie” występuje w połowie trzeciego oktetu. Aby obliczyć adres sieci, następna czynność jaką musimy wykonać to zamiana adresu IP na postać binarną. Jednakże nie musimy zamieniać całego adresu. Jak już zauważyliśmy, „przełamanie” maski następuje w trzecim oktecie (.<strong>1111</strong>0000.). Wystarczy więc zamienić tylko 3-ci oktet adresu IP na system binarny. Pierwsze dwa oktety przepisujemy bez zmian, bo maska tam ma jedynki. Trzeci oktet zamieniamy na system binarny:</p>
+
+<pre><big><big>30 – 00011110</big></big></pre>
+
+<p>Następnie podstawiamy 3-ci oktet maski pod 3-ci oktet IP:</p>
+
+<pre><big><big>.00011110. – adres IP
+<strong>.1111</strong>0000. – maska</big></big></pre>
+
+<p>Tak jak pamiętamy, tam gdzie maska ma zera, to i w adresie IP sieci też są zera. Tam gdzie jedynki w masce, adres IP pozostawiamy bez zmian. A więc trzeci oktet powinien wyglądać tak:</p>
+
+<pre><big><big>.00010000.</big></big></pre>
+
+<p>Daje nam to liczbę 16, więc cały adres sieci wygląda tak: 10.20.16.0</p>
+
+<hr />
+
+<p>&nbsp;</p>
+
+<p>Jako drugi przykład weźmy adres IP 192.168.75.220 wraz z maską /29.</p>
+
+<p>Na początek zamieniamy maskę na system binarny:</p>
+
+<pre><big><big><strong>11111111.11111111.11111111.11111</strong>000</big></big></pre>
+
+<p>Jak widać, „przełamanie” występuje w ostatnim, czwartym oktecie (.<strong>11111</strong>000). Wystarczy więc zamienić ostatni oktet adresu IP na postać binarną:</p>
+
+<pre><big><big>220 – 11011100</big></big></pre>
+
+<p>Teraz musimy podstawić 4 oktet adresu IP pod czwarty oktet maski:</p>
+
+<pre><big><big>.11011100 – adres IP
+<strong>.11111</strong>000 – maska</big></big></pre>
+
+<p>Tam gdzie zera w masce, tam i zera w adresie. A więc ostatni oktet powinien wyglądać tak: .11011000, co daje nam liczbę 216. Pozostałe 3 oktety przepisujemy bez zmian, a więc adres sieci wygląda tak:</p>
+
+<pre><big><big>192.168.75.216
+
+</big></big></pre>
+
+<hr />
+
+<h1 id="część-druga-1"><a href="http://zielonybuszmen.cba.pl/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/">Część druga:</a></h1>
+
+<p>W drugiej części poradnika pokażę, jak podzielić sieć na podsieci oraz pod-podsieci ze względu na ilość sieci lub ilość hostów. Zobaczymy również, jak obliczyć ilość hostów w danej podsieci i adres broadcast.</p>
+
+<h2 style="text-align: center;">
+  <a href="http://zielonybuszmen.cba.pl/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/">>> Przejdź do drugiej części <<</a>
+</h2>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/p146/" data-toggle="tooltip" data-placement="top" title="Jekyll  – ogarnac jak to dziala i opisac">&larr; Poprzedni post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/" data-toggle="tooltip" data-placement="top" title="Adresacja IP cz. 2 – podział na podsieci">Następny post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Projekt Moodle – platforma e-learningowa</title>
+  <meta property="og:title" content="Projekt Moodle – platforma e-learningowa" />
+  <meta name="twitter:title" content="Projekt Moodle – platforma e-learningowa" />
+  <meta name="description" content="git clone https://github.com/bartoszgajda55/projektMoodle.git  Github &#8211; github.com/bartoszgajda55/projektMoodle Działający projekt &#8211; projektmoodle.cba.pl lub projektmoodle.za.pl Technologie &#8211;  PHP, MySQL, Bootstrap Data &#8211;  październik/listopad 2015 Zespół &#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  
+Od początku zadanie wydawało się całkiem złożone, bo całość miała być dosyć mocno rozbudowanym systemem e-learningowym (mówiąc &#8222;dosyć mocno rozbudowanym&#8221; mam na myśli &#8222;mocno rozbudowanym jak na umiejętności programistyczne uczniaków technikum&#8221;).">
+  <meta property="og:description" content="git clone https://github.com/bartoszgajda55/projektMoodle.git  Github &#8211; github.com/bartoszgajda55/projektMoodle Działający projekt &#8211; projektmoodle.cba.pl lub projektmoodle.za.pl Technologie &#8211;  PHP, MySQL, Bootstrap Data &#8211;  październik/listopad 2015 Zespół &#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  
+Od początku zadanie wydawało się całkiem złożone, bo całość miała być dosyć mocno rozbudowanym systemem e-learningowym (mówiąc &#8222;dosyć mocno rozbudowanym&#8221; mam na myśli &#8222;mocno rozbudowanym jak na umiejętności programistyczne uczniaków technikum&#8221;).">
+  <meta name="twitter:description" content="git clone https://github.com/bartoszgajda55/projektMoodle.git  Github &#8211; github.com/bartoszgajda55/projektMoodle Działający projekt &#8211; projektmoodle.cba.pl lub projektmoodle.za.pl …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2017/02/23/projekt-moodle-prosta-platforma-e-learningowa/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2017/02/23/projekt-moodle-prosta-platforma-e-learningowa/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Zielony Buszmen" href="https://zielonybuszmen.github.io/">
+            <img class="avatar-img" src="https://zielonybuszmen.github.io/img/avatar-green.png" alt="Zielony Buszmen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Projekt Moodle – platforma e-learningowa</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 23 February 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<pre>git clone https://github.com/bartoszgajda55/projektMoodle.git</pre>
+
+<ul>
+<li><span class="project-info link-github">Github &#8211; </span><a href="https://github.com/bartoszgajda55/projektMoodle">github.com/bartoszgajda55/projektMoodle</a></li>
+<li><span class="project-info">Działający projekt &#8211; </span><a href="http://projektmoodle.cba.pl/">projektmoodle.cba.pl</a> lub <a href="http://projektmoodle.za.pl/">projektmoodle.za.pl</a></li>
+<li><span class="project-info">Technologie &#8211; </span> PHP, MySQL, Bootstrap</li>
+<li><span class="project-info">Data &#8211; </span> październik/listopad 2015</li>
+<li><span class="project-info">Zespół &#8211; </span> niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: <strong><a href="http://bartoszgajda.com/">bartoszgajda.com</a></strong></li>
+<li><span class="project-info">Przeznaczenie projektu &#8211; </span> Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum</li>
+</ul>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-1.png"><img class="aligncenter wp-image-214 size-full" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-1.png" width="1246" height="803" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-1.png 1246w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-1-300x193.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-1-768x495.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-1-1024x660.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-1-820x528.png 820w" sizes="(max-width: 1246px) 100vw, 1246px" /></a></p>
+
+<p>Od początku zadanie wydawało się całkiem złożone, bo całość miała być dosyć mocno rozbudowanym systemem e-learningowym (mówiąc &#8222;dosyć mocno rozbudowanym&#8221; mam na myśli &#8222;mocno rozbudowanym jak na umiejętności programistyczne uczniaków technikum&#8221;). Projekt miał być podobno do platform takich jak Moodle. Zadanie od pana Grzesia prezentowało się następująco:</p>
+
+<blockquote>
+<p>Celem projektu jest stworzenie niezbyt prostego systemu e-lerningowego. Projekt powinien umożliwiać rejestrowanie trzech typów użytkowników:</p>
+
+<ul>
+<li>administrator</li>
+<li>nauczyciel</li>
+<li>student</li>
+</ul>
+
+<p>Administrator powinien mieć możliwość zarządzania wszystkimi, kursami i użytkownikami aplikacji.</p>
+
+<p>Każdy użytkownik, który rejestruje się do aplikacji powinien zostać zarejestrowany jako student. Administrator może zmienić konto studenta na konto nauczyciela.</p>
+
+<p>Nauczyciel ma możliwość tworzenia kursów. W obrębie własnego kursu nauczyciel ma możliwość zapisywania użytkowników, dodawania plików do lekcji, tworzenia zadań, umożliwiających pobranie pliku od użytkownika lub bezpośredniej treści wpisanej na stronie zadania (podobnie jak w moodle).</p>
+
+<p>Student powinien mieć możliwość wejścia tylko do kursów, na które jest zapisany. Studenta może zapisać tylko administrator lub student może dokonać tego samodzielnie na podstawie kodu, który otrzyma od nauczyciela.</p>
+</blockquote>
+
+<p>Pozwoliłem sobie je tutaj &#8222;przekleić&#8221;, bo wyraża ono więcej niż tysiąc słów 😉</p>
+
+<h1 id="prezentacja">Prezentacja</h1>
+
+<p>Po wejściu do serwisu użytkownik jest raczony pięknym ekranem logowanie i nie mniej brzydszym zdjęciem w tle. W systemie istnieją trzy typy użytkowników: administrator, nauczyciel i biedny uczniak. Dane do logowania są zamieszczone poniżej, w sekcji Instalacja.</p>
+
+<p>Po zalogowaniu na ucznia na monitorze ukazują się takie tabelki:</p>
+
+<p>[<img class="alignnone wp-image-210 size-full" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-9.png" width="1246" height="890" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-9.png 1246w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-9-300x214.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-9-768x549.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-9-1024x731.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-9-820x586.png 820w" sizes="(max-width: 1246px) 100vw, 1246px" />][6]</p>
+
+<p>Jest to panel użytkownika, gdzie może on przejść do swoich kursów. Warto zauważyć jedną, nader ciekawą rzecz: w systemie jest zawarty kurs &#8222;Programowanie Extremalne&#8221; a także został wyjaśniony odwieczny spór pomiędzy biologami a informatykami pt: &#8222;Co to jest potok i strumień&#8221;! Zachęcam do przejrzenia tychże kursów.</p>
+
+<p>Każdy kurs składa się z wielu lekcji. Przykładowa lekcja z kursu prezentuje się następująco</p>
+
+<p><img class="aligncenter wp-image-211 size-large" title="" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-10-1024x818.png" width="1024" height="818" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-10-1024x818.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-10-300x240.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-10-768x614.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-10-820x655.png 820w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-10.png 1229w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+
+<p>Jest temat i treść od nauczyciela prowadzącego dany kurs. Dodatkowo do każdej lekcji nauczyciel może dodać pliki (dodatkowe materiały) do pobrania przez ucznia. Lekcja może wymagać odpowiedzi zwrotnej od ucznia, takiej jak odesłanie pliku tworzonego na zajęciach albo napisanie odpowiedzi tekstowej.</p>
+
+<p>Do kursu uczeń może dołączyć na dwa sposoby. Pierwszy z nich to dodanie go przez prowadzącego, a drugi to wpisanie odpowiedniego kodu kursu:</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-12.png"><img class="aligncenter wp-image-213 size-full" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-12.png" width="1246" height="401" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-12.png 1246w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-12-300x97.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-12-768x247.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-12-1024x330.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-12-820x264.png 820w" sizes="(max-width: 1246px) 100vw, 1246px" /></a></p>
+
+<p>Oprócz uczniów, w aplikacji są jeszcze administratorzy i nauczyciele. Administrator ma największe prawa, może zarządzać wszystkim i wszystkimi. Zobaczmy, jak serwis wygląda od strony władczej.</p>
+
+<p>Nauczyciel i Administrator mają dostęp do panelu zarządzania kursami, który prezentuje się następująco</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-6.png"><img class="aligncenter size-full wp-image-219" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-6.png" alt="" width="1229" height="895" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-6.png 1229w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-6-300x218.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-6-768x559.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-6-1024x746.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-6-820x597.png 820w" sizes="(max-width: 1229px) 100vw, 1229px" /></a>Dzięki wygodnemu panelowi nauczyciel może przeglądać, edytować i usuwać swoje kursy. Ma też możliwość zarządzania lekcjami w danym kursie, poprzez ich edycję, usuwanie bądź przenoszenie:</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-5.png"><img class="aligncenter size-full wp-image-218" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-5.png" alt="" width="1229" height="1332" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-5.png 1229w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-5-277x300.png 277w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-5-768x832.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-5-945x1024.png 945w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-5-820x889.png 820w" sizes="(max-width: 1229px) 100vw, 1229px" /></a>Tak jak już było wspomniane, nauczyciel może do lekcji dodawać własne pliki, a także wymagać odpowiedzi przez ucznia (tekstowej albo w formie przesłania pliku). Następnie odpowiedzi można przeglądać w wygodnej formie:</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektMoodle-15.jpg"><img class="aligncenter wp-image-228" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektMoodle-15.jpg" width="870" height="151" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektMoodle-15.jpg 1083w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektMoodle-15-300x52.jpg 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektMoodle-15-768x133.jpg 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektMoodle-15-1024x178.jpg 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projektMoodle-15-820x142.jpg 820w" sizes="(max-width: 870px) 100vw, 870px" /></a> <a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-7.png"><img class="aligncenter size-full wp-image-220" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-7.png" alt="" width="876" height="176" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-7.png 876w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-7-300x60.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-7-768x154.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-7-820x165.png 820w" sizes="(max-width: 876px) 100vw, 876px" /></a>Nauczyciel ma możliwość dodawania i usuwania użytkowników z kursu:</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-8.png"><img class="aligncenter size-full wp-image-209" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-8.png" alt="" width="876" height="533" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-8.png 876w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-8-300x183.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-8-768x467.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-8-820x499.png 820w" sizes="(max-width: 876px) 100vw, 876px" /></a>Natomiast administrator może zarządzać wszystkimi użytkownikami: zmieniać ich rangi (z ucznia na nauczyciela), blokować, usuwać konta. Administrator zarządza też wszystkimi kursami. Może zablokować kurs, który porusza nazbyt dwuznaczne tematy</p>
+
+<p><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-3.png"><img class="aligncenter size-full wp-image-216" src="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-3.png" alt="" width="883" height="536" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-3.png 883w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-3-300x182.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-3-768x466.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-3-820x498.png 820w" sizes="(max-width: 883px) 100vw, 883px" /></a>Z grubsza to by było na tyle, jeśli chodzi o opis. Zachęcam do samodzielnego przetestowania całej &#8222;aplikacji&#8221;. Opis jak to zrobić znajduje się poniżej.</p>
+
+<h1 id="instalacja">Instalacja</h1>
+
+<p>Instalacja sama w sobie jest bardzo prosta i szybka. Projekt potrzebuje jedynie serwera z interpreterem PHP oraz bazy danych MySQL.</p>
+
+<p>Na sam początek pobieramy projekt. Możemy to zrobić za pomocą komendy git clone, która jest umieszczona na samym początku tego wpisu, albo pobrać go z paczki ZIP: <a href="https://github.com/bartoszgajda55/projektMoodle/archive/master.zip">github.com/bartoszgajda55/projektMoodle/archive/master.zip</a></p>
+
+<p>W pliku <code>baza/polaczenie.php</code> znajdują się konfiguracja połączenia z serwerem bazy. Domyślnie jest to</p>
+
+<pre class="brush: php; title: ; notranslate" title="">$adres = '127.0.0.1';
+    $uzytkownik = 'root';
+    $haslo = '';
+    $nazwa_bazy = 'projektMoodle';
+</pre>
+
+<p>W projekcie jest instalator, który sam wykryje, że nie ma zaimportowanych tabel. Wystarczy, aby powyższe dane były wpisane poprawnie, a cały proces &#8222;instalacji&#8221; będzie prowadził użytkownika &#8222;za rączkę&#8221;. Gdyby jednak tak się nie stało, to w folderze <code>baza/</code> znajdują się kilka ostatnich zrzutów bazy, które trzeba zaimportować np. poprzez phpMyAdmin.</p>
+
+<p><strong>Prawa folderów</strong></p>
+
+<p>Dla folderu <code>upload/</code> oraz wszystkich jego podfolderów musimy nadać prawa zapisu (np. nigdy niezawodny chmod 777).</p>
+
+<h2 id="przykładowe-dane-logowania">Przykładowe dane logowania</h2>
+
+<p>Przykładowe dane logowania wyglądają następująco</p>
+
+<table style="height: 119px;" width="356">
+  <tr>
+    <td width="80">
+      <strong>Typ</strong>
+    </td>
+    
+    <td width="80">
+      <strong>Login</strong>
+    </td>
+    
+    <td width="80">
+      <strong>Hasło</strong>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Admin
+    </td>
+    
+    <td>
+      test
+    </td>
+    
+    <td>
+      test
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Nauczyciel
+    </td>
+    
+    <td>
+      test2
+    </td>
+    
+    <td>
+      test2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Uczeń
+    </td>
+    
+    <td>
+      test3
+    </td>
+    
+    <td>
+      test3
+    </td>
+  </tr>
+</table>
+
+<p>To by było na tyle 😀</p>
+
+<p>[6]: <a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-9.png">http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/projekt-moodle-9.png</a> &ldquo;&rdquo;</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2017/02/23/onepage-hafty/" data-toggle="tooltip" data-placement="top" title="OnePage Hafty">&larr; Poprzedni post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/" data-toggle="tooltip" data-placement="top" title="Laravel – testy jednostkowe w PHPStormie">Następny post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+
