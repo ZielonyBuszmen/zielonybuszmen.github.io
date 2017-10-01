@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/categories/</link>
+    <description>Recent content in Categories on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
+    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
+    
+	<atom:link href="https://zielonybuszmen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Development</title>
+      <link>https://zielonybuszmen.github.io/categories/development/</link>
+      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internet</title>
+      <link>https://zielonybuszmen.github.io/categories/internet/</link>
+      <pubDate>Sat, 18 Feb 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/categories/internet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programowanie</title>
+      <link>https://zielonybuszmen.github.io/categories/programowanie/</link>
+      <pubDate>Tue, 21 Feb 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/categories/programowanie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projekty</title>
+      <link>https://zielonybuszmen.github.io/categories/projekty/</link>
+      <pubDate>Sat, 08 Jul 2017 16:22:11 +0200</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/categories/projekty/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

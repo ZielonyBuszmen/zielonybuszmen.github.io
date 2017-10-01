@@ -2,20 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projekty on Zielony Buszmen</title>
-    <link>https://zielonybuszmen.github.io/categories/projekty/index.xml</link>
+    <link>https://zielonybuszmen.github.io/categories/projekty/</link>
     <description>Recent content in Projekty on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <atom:link href="https://zielonybuszmen.github.io/categories/projekty/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
+    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
+    <lastBuildDate>Sat, 08 Jul 2017 16:22:11 +0200</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/categories/projekty/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title> socos </title>
       <link>https://zielonybuszmen.github.io/post/good-to-great/</link>
       <pubDate>Sat, 08 Jul 2017 16:22:11 +0200</pubDate>
-      
+      <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/post/good-to-great/</guid>
-      <description>&lt;p&gt;Siemnakoasd&lt;/p&gt;
-</description>
+      <description>Siemnakoasd</description>
     </item>
     
   </channel>

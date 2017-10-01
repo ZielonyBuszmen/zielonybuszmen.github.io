@@ -2,17 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C# on Zielony Buszmen</title>
-    <link>https://zielonybuszmen.github.io/tags/c</link>
+    <link>https://zielonybuszmen.github.io/tags/c#/</link>
     <description>Recent content in C# on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <atom:link href="https://zielonybuszmen.github.io/tags/c" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
+    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
+    <lastBuildDate>Mon, 20 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
       <link>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</link>
       <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
-      
+      <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</guid>
       <description></description>
     </item>

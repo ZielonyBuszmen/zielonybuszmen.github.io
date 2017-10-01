@@ -1,247 +1,461 @@
 <!DOCTYPE html>
-<html lang="pl-pl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Posts</title>
-<meta name="description" content=" John Doe&#39;s Personal blog about everything">
-<meta name="generator" content="Hugo 0.18.1" />
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content=" John Doe&#39;s Personal blog about everything" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://zielonybuszmen.github.io/post/" />
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Posts</title>
+  <meta property="og:title" content="Posts" />
+  <meta name="twitter:title" content="Posts" />
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:image" content="https://zielonybuszmen.github.io/img/avatar-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/post/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/post/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/highlight.min.css" />
 
 
-<meta property="og:updated_time" content="2017-07-08T16:22:11&#43;02:00"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
 
 
 
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
+<div class="pswp__bg"></div>
 
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
 
-
-
-
-<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-<link rel="alternate" type="application/rss+xml" title="Zielony Buszmen Feed" href="https://zielonybuszmen.github.io/post/index.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
-<link rel="stylesheet" href="https://zielonybuszmen.github.io/css/style.css" type="text/css" media="all" />
-<script type="text/javascript" src="https://zielonybuszmen.github.io/js/scripts.js"></script>
 </head>
-<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
-	<div class="container container-outer">
-		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-			<div class="container container-inner clearfix">
-				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
-					<a class="logo__link" href="https://zielonybuszmen.github.io/" title="Zielony Buszmen" rel="home">
-						<h1 class="logo__title">Zielony Buszmen</h1>
-						<h2 class="logo__tagline">Mocno techniczny blog programistyczny</h2>
-					</a>
-				</div>
-			</div>
-			<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-	<ul class="menu__list">
-		<li class="menu__item "><a class="menu__link" href="/">MAIN()</a></li>
-		<li class="menu__item "><a class="menu__link" href="/categories/projekty/">ZREALIZOWANE PROJEKTY</a></li>
-		<li class="menu__item "><a class="menu__link" href="/o-mnie/">O MNIE</a></li>
-		<li class="menu__item "><a class="menu__link" href="https://github.com/ZielonyBuszmen">GITHUB</a></li>
-	</ul>
-</nav>
-		</header>
-		<div class="wrapper clearfix">
 
-	<div class="main-content loop content" role="main">
-		<header class="page-header">
-			<h1 class="page-header__title">Posts</h1>
-		</header>
-		<article class="loop__item post clearfix">
-			<div class="loop__content clearfix">
-				<header class="loop__header">
-					<h3 class="loop__title post__title ">
-						<a href="https://zielonybuszmen.github.io/post/good-to-great/" rel="bookmark"> socos </a>
-					</h3>
-					<div class="loop__meta meta">
-						<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-						<time class="loop__meta-date" datetime="2017-07-08 16:22:11 &#43;0200 CEST">July 08, 2017</time>
-					</div>
-				</header>
-				<div class="loop__excerpt">
-					Siemnakoasd
-				</div>
-			</div>
-		</article>
-		<article class="loop__item post clearfix">
-			<div class="loop__content clearfix">
-				<header class="loop__header">
-					<h3 class="loop__title post__title ">
-						<a href="https://zielonybuszmen.github.io/post/ble/" rel="bookmark"> asfasfaf </a>
-					</h3>
-					<div class="loop__meta meta">
-						<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-						<time class="loop__meta-date" datetime="2017-07-08 16:22:11 &#43;0212 &#43;0212">July 08, 2017</time>
-					</div>
-				</header>
-				<div class="loop__excerpt">
-					fasfasfasfafaf
-				</div>
-			</div>
-		</article>
-		<article class="loop__item post clearfix">
-			<div class="loop__content clearfix">
-				<header class="loop__header">
-					<h3 class="loop__title post__title ">
-						<a href="https://zielonybuszmen.github.io/post/welcome/" rel="bookmark">welcome</a>
-					</h3>
-					<div class="loop__meta meta">
-						<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-						<time class="loop__meta-date" datetime="2017-02-21 20:15:59 &#43;0100 CET">February 21, 2017</time>
-					</div>
-				</header>
-				<div class="loop__excerpt">
-					#Post z możliwościami MD
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Zielony Buszmen" href="https://zielonybuszmen.github.io/">
+            <img class="avatar-img" src="https://zielonybuszmen.github.io/img/avatar-green.png" alt="Zielony Buszmen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  <header class="header-section ">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Posts</h1>
+              <hr class="small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/post/good-to-great/">
+                <h2 class="post-title"> socos </h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 8 July 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>Siemnakoasd</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/post/ble/">
+                <h2 class="post-title"> Ble </h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 8 July 2017
+              </p>
+              <div class="post-entry">
+                
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis.
+                  <a href="https://zielonybuszmen.github.io/post/ble/" class="post-read-more">[Czytaj dalej]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/post/welcome/">
+                <h2 class="post-title">welcome</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 21 February 2017
+              </p>
+              <div class="post-entry">
+                
+                  #Post z możliwościami MD
 This text will be italic This will also be italic
 This text will be bold This will also be bold
 You can combine them
 ## Przykładowy kod
 &lt;?php namespace App\Repositories\Customers; use App\Events\SessionCartChanged; use App\Models\CatalogProducts; use App\Models\CustomersCarts; use App\Models\CustomersCartsSession; use App\Repositories\Repository; use Illuminate\Container\Container as App; use Illuminate\Http\Request; class CartsRepository extends Repository { protected $model = 'App\Models\CustomersCarts'; protected $requrest; public function __construct(App $app, Request $request) { parent::__construct($app); $this-&gt;requrest = $request; } /** Dodaje przedmiot do koszyka */ public function add($product_id) { $product = CatalogProducts::find($product_id); if ($product == null) throw new \ErrorException('Produkt o takim ID nie istenieje'); $old_cart = $this-&gt;requrest-&gt;session()-&gt;has('cart') ?
-				</div>
-			</div>
-		</article>
-		<article class="loop__item post clearfix">
-			<div class="loop__content clearfix">
-				<header class="loop__header">
-					<h3 class="loop__title post__title ">
-						<a href="https://zielonybuszmen.github.io/post/instalacja-cake-php/" rel="bookmark">Instalacja CakePHP od podszewki</a>
-					</h3>
-					<div class="loop__meta meta">
-						<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-						<time class="loop__meta-date" datetime="2017-02-21 00:00:00 &#43;0000 UTC">February 21, 2017</time>
-					</div>
-				</header>
-				<div class="loop__excerpt">
-					
-				</div>
-			</div>
-		</article>
-		<article class="loop__item post clearfix">
-			<div class="loop__content clearfix">
-				<header class="loop__header">
-					<h3 class="loop__title post__title ">
-						<a href="https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/" rel="bookmark">Binarne drzewo poszukiwań – Binary Search Tree (BST)</a>
-					</h3>
-					<div class="loop__meta meta">
-						<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-						<time class="loop__meta-date" datetime="2017-02-20 00:00:00 &#43;0000 UTC">February 20, 2017</time>
-					</div>
-				</header>
-				<div class="loop__excerpt">
-					
-				</div>
-			</div>
-		</article>
-		<article class="loop__item post clearfix">
-			<div class="loop__content clearfix">
-				<header class="loop__header">
-					<h3 class="loop__title post__title ">
-						<a href="https://zielonybuszmen.github.io/post/adresacja-ip-cz2/" rel="bookmark">Adresacja IP cz. 2 – podział na podsieci</a>
-					</h3>
-					<div class="loop__meta meta">
-						<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-						<time class="loop__meta-date" datetime="2017-02-18 00:00:00 &#43;0000 UTC">February 18, 2017</time>
-					</div>
-				</header>
-				<div class="loop__excerpt">
-					Lorem ble ble ble
-				</div>
-			</div>
-		</article>
-		<article class="loop__item post clearfix">
-			<div class="loop__content clearfix">
-				<header class="loop__header">
-					<h3 class="loop__title post__title ">
-						<a href="https://zielonybuszmen.github.io/post/adresacja-ip-cz1/" rel="bookmark">Adresacja IP cz. 1 – Z czym to się je?</a>
-					</h3>
-					<div class="loop__meta meta">
-						<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-						<time class="loop__meta-date" datetime="2017-02-17 00:00:00 &#43;0000 UTC">February 17, 2017</time>
-					</div>
-				</header>
-				<div class="loop__excerpt">
-					Lorem ble ble ble
-				</div>
-			</div>
-		</article>
+                  <a href="https://zielonybuszmen.github.io/post/welcome/" class="post-read-more">[Czytaj dalej]</a>
+                
+              </div>
 
-		
-	</div>
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/development/">Development</a>&nbsp;
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/go/">Go</a>&nbsp;
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/fast/">fast</a>&nbsp;
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/blogging/">Blogging</a>&nbsp;
+                  
+                </span>
+              
 
-<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
-	
-<div class="widget-search widget">
-	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
-		<label>
-			<span class="screen-reader-text">Wyszukaj:</span>
-			<input class="widget-search__field" type="search" placeholder="Szukaj..." value="" name="q">
-		</label>
-		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://zielonybuszmen.github.io/" />
-	</form>
-</div>
-	
-<div class="widget-categories widget">
-	<h4 class="widget__title">Kategorie</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="https://zielonybuszmen.github.io/categories/development">Development</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://zielonybuszmen.github.io/categories/internet">Internet</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://zielonybuszmen.github.io/categories/programowanie">Programowanie</a></li>
-			<li class="widget__item"><a class="widget__link" href="https://zielonybuszmen.github.io/categories/projekty">Projekty</a></li>
-		</ul>
-	</div>
-</div>
-	
-<div class="widget-taglist widget">
-	<h4 class="widget__title">Tagi</h4>
-	<div class="widget__content">
-		<a class="widget__link widget__link--taglist" href="https://zielonybuszmen.github.io/tags/algorytmy-i-struktury-danych" title="algorytmy-i-struktury-danych">algorytmy-i-struktury-danych</a>
-		<a class="widget__link widget__link--taglist" href="https://zielonybuszmen.github.io/tags/blogging" title="blogging">blogging</a>
-		<a class="widget__link widget__link--taglist" href="https://zielonybuszmen.github.io/tags/c" title="c#">c#</a>
-		<a class="widget__link widget__link--taglist" href="https://zielonybuszmen.github.io/tags/development" title="development">development</a>
-		<a class="widget__link widget__link--taglist" href="https://zielonybuszmen.github.io/tags/fast" title="fast">fast</a>
-		<a class="widget__link widget__link--taglist" href="https://zielonybuszmen.github.io/tags/go" title="go">go</a>
-		<a class="widget__link widget__link--taglist" href="https://zielonybuszmen.github.io/tags/php" title="php">php</a>
-		<a class="widget__link widget__link--taglist" href="https://zielonybuszmen.github.io/tags/sieci" title="sieci">sieci</a>
-	</div>
-</div>
-	
-<div class="widget-recent widget">
-	<h4 class="widget__title">Najnowsze wpisy</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/good-to-great/"> socos </a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/ble/"> asfasfaf </a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/welcome/">welcome</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/instalacja-cake-php/">Instalacja CakePHP od podszewki</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/binarne-drzewo-poszukiwan-bst/">Binarne drzewo poszukiwań – Binary Search Tree (BST)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/adresacja-ip-cz2/">Adresacja IP cz. 2 – podział na podsieci</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/adresacja-ip-cz1/">Adresacja IP cz. 1 – Z czym to się je?</a></li>
-		</ul>
-	</div>
-</div>
-</aside>
-	</div>
-		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
-			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2017 Zielony Buszmen - Strona oparta o GitHub Pages</p>
-			</div>
-		</footer>
-	</div>
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/post/instalacja-cake-php/">
+                <h2 class="post-title">Instalacja CakePHP od podszewki</h2>
 
-<script>
-	var navigation = responsiveNav(".menu", {
-		navClass: "menu--collapse",
-	});
-</script>
+                
+              </a>
 
-</body>
+              <p class="post-meta">
+                Napisano dnia 21 February 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/php/">PHP</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/">
+                <h2 class="post-title">Binarne drzewo poszukiwań – Binary Search Tree (BST)</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 20 February 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/algorytmy-i-struktury-danych/">Algorytmy i struktury danych</a>&nbsp;
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/c/">C#</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/post/adresacja-ip-cz2/">
+                <h2 class="post-title">Adresacja IP cz. 2 – podział na podsieci</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 18 February 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>Lorem ble ble ble</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/sieci/">Sieci</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://zielonybuszmen.github.io/post/adresacja-ip-cz1/">
+                <h2 class="post-title">Adresacja IP cz. 1 – Z czym to się je?</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Napisano dnia 17 February 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>Lorem ble ble ble</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="https://zielonybuszmen.github.io/tags/sieci/">Sieci</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+
+  </body>
 </html>
+

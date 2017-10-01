@@ -2,119 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on Zielony Buszmen</title>
-    <link>https://zielonybuszmen.github.io/categories/development/index.xml</link>
+    <link>https://zielonybuszmen.github.io/categories/development/</link>
     <description>Recent content in Development on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <atom:link href="https://zielonybuszmen.github.io/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
+    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
+    <lastBuildDate>Tue, 21 Feb 2017 20:15:59 +0100</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>welcome</title>
       <link>https://zielonybuszmen.github.io/post/welcome/</link>
       <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
-      
+      <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/post/welcome/</guid>
-      <description>
-
-&lt;p&gt;#Post z możliwościami MD&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This text will be italic&lt;/em&gt;
-&lt;em&gt;This will also be italic&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;This text will be bold&lt;/strong&gt;
-&lt;strong&gt;This will also be bold&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;You &lt;strong&gt;can&lt;/strong&gt; combine them&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;## Przykładowy kod&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-namespace App\Repositories\Customers;
-
-use App\Events\SessionCartChanged;
-use App\Models\CatalogProducts;
-use App\Models\CustomersCarts;
-use App\Models\CustomersCartsSession;
-use App\Repositories\Repository;
-use Illuminate\Container\Container as App;
-use Illuminate\Http\Request;
-
-class CartsRepository extends Repository
-{
-    protected $model = &#39;App\Models\CustomersCarts&#39;;
-
-    protected $requrest;
-
-    public function __construct(App $app, Request $request)
-    {
-        parent::__construct($app);
-        $this-&amp;gt;requrest = $request;
-
-    }
-
-    /** Dodaje przedmiot do koszyka */
-    public function add($product_id)
-    {
-        $product = CatalogProducts::find($product_id);
-        if ($product == null) throw new \ErrorException(&#39;Produkt o takim ID nie istenieje&#39;);
-
-        $old_cart = $this-&amp;gt;requrest-&amp;gt;session()-&amp;gt;has(&#39;cart&#39;) ? $this-&amp;gt;requrest-&amp;gt;session()-&amp;gt;get(&#39;cart&#39;) : null;
-        $cart = new CustomersCartsSession($old_cart);
-        $cart-&amp;gt;add($product, $product-&amp;gt;product_id);
-
-        $this-&amp;gt;requrest-&amp;gt;session()-&amp;gt;put(&#39;cart&#39;, $cart);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;inne-rzeczy&#34;&gt;Inne rzeczy&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Item 1&lt;/li&gt;
-&lt;li&gt;Item 2&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Item 3&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Item 3a&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Item 3b&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;[x] @mentions, #refs, [links](), &lt;strong&gt;formatting&lt;/strong&gt;, and &lt;del&gt;tags&lt;/del&gt; supported&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;[x] list syntax required (any unordered or ordered list supported)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;[x] this is a complete item&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;[ ] this is an incomplete item&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;First Header&lt;/th&gt;
-&lt;th&gt;Second Header&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Content from cell 1&lt;/td&gt;
-&lt;td&gt;Content from cell 2&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Content in the first column&lt;/td&gt;
-&lt;td&gt;Content in the second column&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://zielonybuszmen.github.io/static/img/coding.jpg&#34; alt=&#34;Example image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;# Tytuł ble!!!&lt;/p&gt;
-</description>
+      <description>#Post z możliwościami MD
+This text will be italic This will also be italic
+This text will be bold This will also be bold
+You can combine them
+## Przykładowy kod
+&amp;lt;?php namespace App\Repositories\Customers; use App\Events\SessionCartChanged; use App\Models\CatalogProducts; use App\Models\CustomersCarts; use App\Models\CustomersCartsSession; use App\Repositories\Repository; use Illuminate\Container\Container as App; use Illuminate\Http\Request; class CartsRepository extends Repository { protected $model = &#39;App\Models\CustomersCarts&#39;; protected $requrest; public function __construct(App $app, Request $request) { parent::__construct($app); $this-&amp;gt;requrest = $request; } /** Dodaje przedmiot do koszyka */ public function add($product_id) { $product = CatalogProducts::find($product_id); if ($product == null) throw new \ErrorException(&#39;Produkt o takim ID nie istenieje&#39;); $old_cart = $this-&amp;gt;requrest-&amp;gt;session()-&amp;gt;has(&#39;cart&#39;) ?</description>
     </item>
     
   </channel>

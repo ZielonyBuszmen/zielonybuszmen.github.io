@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/tags/</link>
+    <description>Recent content in Tags on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
+    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
+    <lastBuildDate>Mon, 20 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorytmy I Struktury Danych</title>
+      <link>https://zielonybuszmen.github.io/tags/algorytmy-i-struktury-danych/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/tags/algorytmy-i-struktury-danych/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://zielonybuszmen.github.io/tags/blogging/</link>
+      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://zielonybuszmen.github.io/tags/c#/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://zielonybuszmen.github.io/tags/development/</link>
+      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fast</title>
+      <link>https://zielonybuszmen.github.io/tags/fast/</link>
+      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/tags/fast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://zielonybuszmen.github.io/tags/go/</link>
+      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>https://zielonybuszmen.github.io/tags/php/</link>
+      <pubDate>Tue, 21 Feb 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sieci</title>
+      <link>https://zielonybuszmen.github.io/tags/sieci/</link>
+      <pubDate>Sat, 18 Feb 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/tags/sieci/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
