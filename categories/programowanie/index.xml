@@ -78,15 +78,6 @@ Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP ins
     </item>
     
     <item>
-      <title>Instalacja CakePHP od podszewki</title>
-      <link>https://zielonybuszmen.github.io/post/instalacja-cake-php/</link>
-      <pubDate>Tue, 21 Feb 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/post/instalacja-cake-php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
       <link>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</link>
       <pubDate>Mon, 20 Feb 2017 15:00:38 +0000</pubDate>
@@ -94,42 +85,6 @@ Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP ins
       <guid>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</guid>
       <description>Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
 Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).</description>
-    </item>
-    
-    <item>
-      <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
-      <link>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</link>
-      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jekyll  – ogarnac jak to dziala i opisac</title>
-      <link>https://zielonybuszmen.github.io/p146/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/p146/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows 10 i</title>
-      <link>https://zielonybuszmen.github.io/p324/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/p324/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>koszyk w laravelu</title>
-      <link>https://zielonybuszmen.github.io/p149/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/p149/</guid>
-      <description>Koszyk na sesji i w bazie, taki jak na laravel5, opisać</description>
     </item>
     
   </channel>

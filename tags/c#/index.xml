@@ -23,14 +23,5 @@
 Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).</description>
     </item>
     
-    <item>
-      <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
-      <link>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</link>
-      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

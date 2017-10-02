@@ -3,16 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zielonybuszmen.github.io/post/good-to-great/</loc>
-    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zielonybuszmen.github.io/post/ble/</loc>
-    <lastmod>2017-07-08T16:22:11+02:12</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</loc>
     <lastmod>2017-05-01T18:55:30+00:00</lastmod>
   </url>
@@ -68,11 +58,6 @@
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/post/instalacja-cake-php/</loc>
-    <lastmod>2017-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zielonybuszmen.github.io/o-mnie/</loc>
     <lastmod>2017-02-20T21:30:27+00:00</lastmod>
   </url>
@@ -83,28 +68,13 @@
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</loc>
-    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/</loc>
     <lastmod>2017-02-18T15:01:40+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/post/adresacja-ip-cz2/</loc>
-    <lastmod>2017-02-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zielonybuszmen.github.io/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/</loc>
     <lastmod>2017-02-17T15:02:06+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zielonybuszmen.github.io/post/adresacja-ip-cz1/</loc>
-    <lastmod>2017-02-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -177,10 +147,6 @@
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/p146/</loc>
-  </url>
-  
-  <url>
     <loc>https://zielonybuszmen.github.io/tags/laravel/</loc>
     <lastmod>2017-03-01T21:47:42+00:00</lastmod>
     <priority>0</priority>
@@ -199,26 +165,20 @@
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/tags/php/</loc>
-    <lastmod>2017-02-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://zielonybuszmen.github.io/tags/phpstorm/</loc>
     <lastmod>2017-02-26T17:06:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/post/</loc>
-    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
+    <loc>https://zielonybuszmen.github.io/posts/</loc>
+    <lastmod>2017-05-01T18:55:30+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/posts/</loc>
-    <lastmod>2017-05-01T18:55:30+00:00</lastmod>
+    <loc>https://zielonybuszmen.github.io/post/</loc>
+    <lastmod>2017-02-21T20:15:59+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -237,12 +197,6 @@
   <url>
     <loc>https://zielonybuszmen.github.io/tags/projekty/</loc>
     <lastmod>2017-02-23T14:28:42+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://zielonybuszmen.github.io/categories/projekty/</loc>
-    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -271,12 +225,8 @@
   </url>
   
   <url>
-    <loc>https://zielonybuszmen.github.io/p324/</loc>
-  </url>
-  
-  <url>
     <loc>https://zielonybuszmen.github.io/</loc>
-    <lastmod>2017-07-08T16:22:11+02:00</lastmod>
+    <lastmod>2017-05-01T18:55:30+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -284,10 +234,6 @@
     <loc>https://zielonybuszmen.github.io/categories/zrealizowane-projekty/</loc>
     <lastmod>2017-02-23T14:28:42+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://zielonybuszmen.github.io/p149/</loc>
   </url>
   
 </urlset>

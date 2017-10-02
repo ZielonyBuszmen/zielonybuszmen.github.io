@@ -155,32 +155,5 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
  Pierwotnie poradnik został wrzucony na stronę Pcfaq.pl Z racji tego, że ma wysoką wartość edukacyjną oraz że jest on mojego autorstwa, postanowiłem go przenieść także i tutaj.</description>
     </item>
     
-    <item>
-      <title>Jekyll  – ogarnac jak to dziala i opisac</title>
-      <link>https://zielonybuszmen.github.io/p146/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/p146/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows 10 i</title>
-      <link>https://zielonybuszmen.github.io/p324/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/p324/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>koszyk w laravelu</title>
-      <link>https://zielonybuszmen.github.io/p149/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/p149/</guid>
-      <description>Koszyk na sesji i w bazie, taki jak na laravel5, opisać</description>
-    </item>
-    
   </channel>
 </rss>

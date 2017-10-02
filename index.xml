@@ -8,28 +8,10 @@
     <language>pl-pl</language>
     <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
     <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
-    <lastBuildDate>Sat, 08 Jul 2017 16:22:11 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 01 May 2017 18:55:30 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title> socos </title>
-      <link>https://zielonybuszmen.github.io/post/good-to-great/</link>
-      <pubDate>Sat, 08 Jul 2017 16:22:11 +0200</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/post/good-to-great/</guid>
-      <description>Siemnakoasd</description>
-    </item>
-    
-    <item>
-      <title> Ble </title>
-      <link>https://zielonybuszmen.github.io/post/ble/</link>
-      <pubDate>Sat, 08 Jul 2017 16:22:11 +0212</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/post/ble/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis.</description>
-    </item>
     
     <item>
       <title>Komendy GITa – Branche zdalne, merge i rebase</title>
@@ -158,15 +140,6 @@ Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP ins
     </item>
     
     <item>
-      <title>Instalacja CakePHP od podszewki</title>
-      <link>https://zielonybuszmen.github.io/post/instalacja-cake-php/</link>
-      <pubDate>Tue, 21 Feb 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/post/instalacja-cake-php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>O mnie</title>
       <link>https://zielonybuszmen.github.io/o-mnie/</link>
       <pubDate>Mon, 20 Feb 2017 21:30:27 +0000</pubDate>
@@ -189,15 +162,6 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
     </item>
     
     <item>
-      <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
-      <link>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</link>
-      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/post/binarne-drzewo-poszukiwan-bst/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Adresacja IP cz. 2 – podział na podsieci</title>
       <link>https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/</link>
       <pubDate>Sat, 18 Feb 2017 15:01:40 +0000</pubDate>
@@ -205,15 +169,6 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
       <guid>https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/</guid>
       <description>Jest to druga część poradnika. Będą opisane w niej trochę bardziej zaawansowane zagadnienia z tematów podziału sieci na podsieci. Jeśli nie widziałeś części pierwszej, odnajdziesz ją pod tym adresem: Adresacja IP cz. 1 – Z czym to się je?
 Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie musimy zasiąść i sprawdzić ile w danej sieci mieści się hostów. Nie jest to zajęcie trudne, jednakże wymaga trochę pomyślunku.</description>
-    </item>
-    
-    <item>
-      <title>Adresacja IP cz. 2 – podział na podsieci</title>
-      <link>https://zielonybuszmen.github.io/post/adresacja-ip-cz2/</link>
-      <pubDate>Sat, 18 Feb 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/post/adresacja-ip-cz2/</guid>
-      <description>Lorem ble ble ble</description>
     </item>
     
     <item>
@@ -227,48 +182,12 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
     </item>
     
     <item>
-      <title>Adresacja IP cz. 1 – Z czym to się je?</title>
-      <link>https://zielonybuszmen.github.io/post/adresacja-ip-cz1/</link>
-      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/post/adresacja-ip-cz1/</guid>
-      <description>Lorem ble ble ble</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>https://zielonybuszmen.github.io/o-mnie/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/o-mnie/</guid>
-      <description>O mnie, kuxwa</description>
-    </item>
-    
-    <item>
-      <title>Jekyll  – ogarnac jak to dziala i opisac</title>
-      <link>https://zielonybuszmen.github.io/p146/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/p146/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows 10 i</title>
-      <link>https://zielonybuszmen.github.io/p324/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/p324/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>koszyk w laravelu</title>
-      <link>https://zielonybuszmen.github.io/p149/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/p149/</guid>
-      <description>Koszyk na sesji i w bazie, taki jak na laravel5, opisać</description>
+      <description>O mnie, ble ble ble, z wordpressa przepisać</description>
     </item>
     
   </channel>
