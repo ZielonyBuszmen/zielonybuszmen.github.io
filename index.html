@@ -429,9 +429,7 @@ Od początku zadanie wydawało się całkiem złożone, bo całość miała być
 
               <div class="post-entry">
                 
-                  git clone https://github.com/ZielonyBuszmen/projektSklep.git  Github &#8211; github.com/ZielonyBuszmen/projektSklep Działający projekt &#8211; projektsklep.cba.pl lub projektsklep.za.pl Technologie &#8211;  PHP, MySQL, Bootstrap Data &#8211;  listopad/grudzień 2015 Zespół &#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  
-&nbsp;
-Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL.
+                  git clone https://github.com/ZielonyBuszmen/projektSklep.git  Github &#8211; github.com/ZielonyBuszmen/projektSklep Działający projekt &#8211; projektsklep.cba.pl lub projektsklep.za.pl Technologie &#8211;  PHP, MySQL, Bootstrap Data &#8211;  listopad/grudzień 2015 Zespół &#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL.
                   <a href="https://zielonybuszmen.github.io/2017/02/23/projekt-sklep-prosty-sklep-internetowy/" class="post-read-more">[Czytaj dalej]</a>
                 
               </div>
@@ -468,45 +466,6 @@ Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to
                 <span class="post-meta">
                 
                   #<a href="https://zielonybuszmen.github.io/tags/projekty/">Projekty</a>&nbsp;
-                
-                </span>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://zielonybuszmen.github.io/post/welcome/">
-                <h2 class="post-title">welcome</h2>
-                
-              </a>
-
-              <span class="post-meta">
-  Napisano dnia 21 February 2017
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  #Post z możliwościami MD
-This text will be italic This will also be italic
-This text will be bold This will also be bold
-You can combine them
-## Przykładowy kod
-&lt;?php namespace App\Repositories\Customers; use App\Events\SessionCartChanged; use App\Models\CatalogProducts; use App\Models\CustomersCarts; use App\Models\CustomersCartsSession; use App\Repositories\Repository; use Illuminate\Container\Container as App; use Illuminate\Http\Request; class CartsRepository extends Repository { protected $model = 'App\Models\CustomersCarts'; protected $requrest; public function __construct(App $app, Request $request) { parent::__construct($app); $this-&gt;requrest = $request; } /** Dodaje przedmiot do koszyka */ public function add($product_id) { $product = CatalogProducts::find($product_id); if ($product == null) throw new \ErrorException('Produkt o takim ID nie istenieje'); $old_cart = $this-&gt;requrest-&gt;session()-&gt;has('cart') ?
-                  <a href="https://zielonybuszmen.github.io/post/welcome/" class="post-read-more">[Czytaj dalej]</a>
-                
-              </div>
-
-              
-                <span class="post-meta">
-                
-                  #<a href="https://zielonybuszmen.github.io/tags/development/">Development</a>&nbsp;
-                
-                  #<a href="https://zielonybuszmen.github.io/tags/go/">Go</a>&nbsp;
-                
-                  #<a href="https://zielonybuszmen.github.io/tags/fast/">fast</a>&nbsp;
-                
-                  #<a href="https://zielonybuszmen.github.io/tags/blogging/">Blogging</a>&nbsp;
                 
                 </span>
               

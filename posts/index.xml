@@ -101,9 +101,7 @@ Od początku zadanie wydawało się całkiem złożone, bo całość miała być
       <pubDate>Thu, 23 Feb 2017 08:43:52 +0000</pubDate>
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/2017/02/23/projekt-sklep-prosty-sklep-internetowy/</guid>
-      <description>git clone https://github.com/ZielonyBuszmen/projektSklep.git  Github &amp;#8211; github.com/ZielonyBuszmen/projektSklep Działający projekt &amp;#8211; projektsklep.cba.pl lub projektsklep.za.pl Technologie &amp;#8211;  PHP, MySQL, Bootstrap Data &amp;#8211;  listopad/grudzień 2015 Zespół &amp;#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &amp;#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  
-&amp;nbsp;
-Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL.</description>
+      <description>git clone https://github.com/ZielonyBuszmen/projektSklep.git  Github &amp;#8211; github.com/ZielonyBuszmen/projektSklep Działający projekt &amp;#8211; projektsklep.cba.pl lub projektsklep.za.pl Technologie &amp;#8211;  PHP, MySQL, Bootstrap Data &amp;#8211;  listopad/grudzień 2015 Zespół &amp;#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &amp;#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL.</description>
     </item>
     
     <item>
@@ -113,6 +111,20 @@ Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/2017/02/22/jpg-aq-pl-hosting-screenow-i-zdjec/</guid>
       <description>Działający projekt &amp;#8211; jpg.aq.pl  Technologie &amp;#8211;  PHP Data &amp;#8211;  grudzień 2012 / styczeń 2013 Przeznaczenie projektu &amp;#8211;  Kilka lat temu stare wersje IP Board (fora internetowe) nie umożliwiały łatwego wrzucania screenów i zdjęć. Zwykłe hostingi obrazków usuwały je po kilku miesiącach. Chciałem serwisu, nad którym mam pełną kontrolę i wiem, że wrzucone na niego jpegi nigdy nie zostaną usunięte. Stąd powstało jpg.aq.pl. Odniosło całkiem spory sukces, bo&amp;#8230; ktoś z tego jeszcze korzysta!</description>
+    </item>
+    
+    <item>
+      <title>welcome</title>
+      <link>https://zielonybuszmen.github.io/posts/welcome/</link>
+      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
+      <author>youremail@domain.com (Zielony Buszmen)</author>
+      <guid>https://zielonybuszmen.github.io/posts/welcome/</guid>
+      <description>#Post z możliwościami MD
+This text will be italic This will also be italic
+This text will be bold This will also be bold
+You can combine them
+## Przykładowy kod
+&amp;lt;?php namespace App\Repositories\Customers; use App\Events\SessionCartChanged; use App\Models\CatalogProducts; use App\Models\CustomersCarts; use App\Models\CustomersCartsSession; use App\Repositories\Repository; use Illuminate\Container\Container as App; use Illuminate\Http\Request; class CartsRepository extends Repository { protected $model = &#39;App\Models\CustomersCarts&#39;; protected $requrest; public function __construct(App $app, Request $request) { parent::__construct($app); $this-&amp;gt;requrest = $request; } /** Dodaje przedmiot do koszyka */ public function add($product_id) { $product = CatalogProducts::find($product_id); if ($product == null) throw new \ErrorException(&#39;Produkt o takim ID nie istenieje&#39;); $old_cart = $this-&amp;gt;requrest-&amp;gt;session()-&amp;gt;has(&#39;cart&#39;) ?</description>
     </item>
     
     <item>

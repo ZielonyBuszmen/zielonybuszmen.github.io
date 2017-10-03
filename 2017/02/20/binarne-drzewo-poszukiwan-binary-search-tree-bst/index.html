@@ -203,7 +203,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p>Drzewo składa się z węzłów (<strong>nodes</strong>). Każdy z nich posiada <u>co najwyżej</u> dwóch <em>następników.</em> Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (<strong>root</strong>). Jego następniki są nazywane węzłami <em>potomnymi (dziecko, potomek) (<strong>child nodes).</strong></em></p>
 
-<p><img class="wp-image-61 aligncenter" title="" src="http://localhost/blog_wordpress/wp-content/uploads/2017/02/Clipboard01-300x213.png" alt="" width="541" height="384" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01-300x213.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01-768x546.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01-1024x728.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01-820x583.png 820w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/Clipboard01.png 1178w" sizes="(max-width: 541px) 100vw, 541px" /></p>
+<p><img src="/img/posts/bst/Clipboard01.png" alt="foto" /></p>
 
 <p>Istnieje jedna i podstawowa reguła drzewa binarnego – Wszystkie elementy znajdujące się w lewym poddrzewie są mniejsze od swojego ojca, natomiast elementy w prawym poddrzewie są większe od swojego ojca. Reguła to obowiązuje zawsze i wszędzie, na wszystkie poddrzewa.</p>
 
@@ -219,13 +219,13 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <h1 id="implementacja"><strong>Implementacja</strong></h1>
 
-<pre class="brush: csharp; gutter: false; title: ; notranslate" title="">public class Node
-    {
-        int number;
-        Node left;
-        Node right;
-    }
-</pre>
+<pre><code class="language-csharp">public class Node
+{
+    int number;
+    Node left;
+    Node right;
+}
+</code></pre>
 
 <p>Klasa nazywa się Node, czyli węzeł. Zawiera trzy pola: <strong>number</strong>, <strong>left</strong> oraz <strong>right</strong>.</p>
 
@@ -241,12 +241,12 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p>Druga klasa, którą stworzymy zaraz pod kodem klasy węzła, będzie klasą drzewa:</p>
 
-<pre class="brush: csharp; gutter: false; title: ; notranslate" title="">public class Tree
-    {
-        Node root;
-        int counter;
-    }
-</pre>
+<pre><code class="language-csharp">public class Tree
+{
+    Node root;
+    int counter;
+}
+</code></pre>
 
 <p>Drzewo – czyli <strong>Tree</strong>. Klasa zawiera dwa pola:</p>
 
@@ -257,24 +257,24 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <h1 id="teraz-zajmiemy-się-implementacją-węzła-u-node-u"><strong>Teraz zajmiemy się implementacją węzła <u>(node)</u></strong></h1>
 
-<pre class="brush: csharp; highlight: [7,8,9,10,11,12,13,14,15,16,17]; title: klasa węzła (node); notranslate" title="klasa węzła (node)">public class Node
+<pre><code class="language-csharp">public class Node
+{
+    int number;
+    Node left;
+    Node right;
+
+    public Node(int value)    // konstruktor
     {
-        int number;
-        Node left;
-        Node right;
+        this.number = value;   //1
+        this.left = null;      //2
+        this.right = null;     //2
+    }
 
-        public Node(int value)    // konstruktor
-        {
-            this.number = value;   //1
-            this.left = null;      //2
-            this.right = null;     //2
-        }
-
-        public bool IsLeaf()
-        {
-            return (this.left == null && this.right == null);
-        }
-</pre>
+    public bool IsLeaf()
+    {
+        return (this.left == null &amp;&amp; this.right == null);
+    }
+</code></pre>
 
 <p>Dodaliśmy do kodu dwie funkcje. Pierwsza z nich to konstruktor, do którego przekazujemy tylko jeden parametr – wartość węzła, którą zaraz przypisujemy do pola <code>int numer (//1)</code>. W kolejnych dwóch linijkach przypisujemy odwołania do lewego i prawego dziecka tego węzła -&gt; z racji tego, że ten węzeł jest „nowo narodzony” to nie ma dzieci, po prostu przypisujemy im nulle <code>(//2).</code></p>
 
@@ -284,7 +284,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p>Kolejną funkcją będzie funkcja przeszukująca pod-węzły pod kątem danej wartości:</p>
 
-<pre class="brush: csharp; first-line: 18; highlight: [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50]; title: Klasa węzła (node); notranslate" title="Klasa węzła (node)">// .............  //
+<pre><code class="language-csharp">// .............  //
 
     public Node Search(int value)  //0
     {
@@ -292,7 +292,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
         {
             return this;
         }
-        else if (value &lt; this.number)    //2
+        else if (value &amp;lt; this.number)    //2
         {
             if (this.left == null)  //3
             {
@@ -304,7 +304,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
             }
 
         }
-        else if (value &gt; this.number)  //5
+        else if (value &amp;gt; this.number)  //5
         {
             if (this.right == null)   //6
             {
@@ -318,7 +318,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
         return null;  //8
     } 
 
-</pre>
+</code></pre>
 
 <p>Do funkcji <code>Node Search(int value)</code> wrzucamy wartość jaką chcemy znaleźć. Funkcja przeszukuje dany węzeł, dzieci tego węzła oraz dzieci-dzieci i dzieci-dzieci-dzieci, itd.</p>
 
@@ -330,7 +330,8 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p><strong>(//2)</strong> Jeśli szukana liczba jest mniejsza od tej z danego węzła, to wiadomo, że musimy szukać w lewym potomku tego węzła. Heh, ale jeśli nasz węzeł nie posiada lewego potomka to musimy zakończyć nasze poszukiwania fiaskiem <strong>(//3)</strong>. Ale gdy istnieje lewy potomek to co? <strong>(//4)</strong> To wtedy szukamy w nim tej wartości. I teraz <strong>uwaga!</strong> Tutaj mamy tą <em>zdradziecką</em> rekurencję. Przeanalizujmy dokładnie tą linijkę:</p>
 
-<pre class="brush: csharp; light: true; title: ; notranslate" title="">return this.left.Search(value); </pre>
+<pre><code class="language-csharp">    return this.left.Search(value)
+</code></pre>
 
 <p><code>this.left</code> to odwołanie do lewego dziecka naszego węzła. <code>this.left.Search()</code> to odwołanie się do funkcji <code>Search()</code>, czyli do tej w której obecnie jesteśmy, ale z tą różnicą, że wywołujemy ją dla lewego dziecka. Przekazujemy do niej to samo <code>value</code>, które widnieje tam wyżej <strong>(//0)</strong>. Na samym początku linijki daliśmy <code>return</code>, przez co wszystko będzie wykonywać się rekurencyjne aż do znalezienia odpowiedniego węzła i jego zwrócenia <strong>(//1)</strong>. Albo nieznalezienia i zwrócenia null <strong>(//8)</strong>.</p>
 
@@ -340,11 +341,11 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <h1 id="dodawanie-węzła-do-struktury"><strong>Dodawanie węzła do struktury</strong></h1>
 
-<pre class="brush: csharp; first-line: 51; highlight: [53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77]; title: Klasa węzła (node); notranslate" title="Klasa węzła (node)">// ..............  //
+<pre><code class="language-csharp">// ..............  //
 
     public void Add(int value)        //0
     {
-        if (value &gt;= this.number)    //1
+        if (value &amp;gt;= this.number)    //1
         {
             if (this.right == null) 
             {
@@ -355,7 +356,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
                 this.right.Add(value);    //3
             }
         }
-        else if (value &lt; this.number)    //4
+        else if (value &amp;lt; this.number)    //4
         {
             if (this.left == null)
             {
@@ -367,8 +368,9 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
             }
         }
     }
+</code></pre>
 
-</pre>
+<p></pre></p>
 
 <p>Funkcja <code>Add()</code> jest bliźniaczo podobna do omówionej wcześniej funkcji <code>Search()</code>. Przekazujemy do niej wartość, którą chcemy dodać do węzła (a dokładniej – do dzieci tego węzła)**(//0). **Funkcja składa się z dwóch głównych ifów <strong>(//1),(//4)</strong>. Pierwszy z nich **(//1) **wykona się wtedy, gdy liczba którą chcemy wpisać będzie większa od tej w aktualnym węźle. Jeśli tak się stanie, to najpierw sprawdzamy, czy dany węzeł posiada prawego potomka. Jeśli nie, to sprawa jest prosta. Tworzymy tego prawego potomka i przypisujemy mu naszą wartość <strong>(//2).</strong> W przeciwnym wypadku, gdy prawy węzeł istnieje, dzieje się rekurencja **(//3), **czyli znowu wywołujemy funkcję <code>Add()</code>, tylko z tą różnicą, że nie dla naszego węzła, a dla jego prawego potomka.</p>
 
@@ -376,76 +378,76 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <h1 id="wyświetlanie-węzła-i-jego-dzieci-i-dzieci-jego-dzieci-itd"><strong>Wyświetlanie węzła i jego dzieci (i dzieci jego dzieci, itd.)</strong></h1>
 
-<pre class="brush: csharp; first-line: 79; highlight: [79,80,81,82,83,84,85,86,87,88,89,90]; title: Klasa węzła (node); notranslate" title="Klasa węzła (node)">public void Display()
+<pre><code class="language-csharp">    public void Display()
         {
             if (this.left != null)   
             {
                 this.left.Display();     //1
             }
-            Console.Write(" " + this.number);    //2
+            Console.Write(&quot; &quot; + this.number);    //2
             if (this.right != null)
             {
                 this.right.Display();     //3
             }
         }
     }
-</pre>
+</code></pre>
 
 <p>Kolejną funkcją jest <code>Display()</code>, która będzie wyświetlała nasz węzeł, oraz wszystkie jego dzieci (i dzieci ich dzieci, itd.). Funkcja ta (jak i każda inna wcześniej przedstawiona) jest niestety rekurencyjna. Wyświetlenie węzła to po prostu wyświetlenie jego wartości, czyli zmiennej <code>number</code>. Wystarczy zwykłe <code>Console.Write()</code> ze spacją z przodu (albo z tyłu, kto jak tam woli).**(//2). **Ale wyświetlenie jednej wartości nie wystarczy – musimy przecież wyświetlić całą strukturę. Stąd też powyżej linijki **//2 **oraz poniżej tworzymy dwa warunki. Ten powyżej **(//1) **sprawdza, czy nasz węzeł posiada lewe dziecko. Jeśli tak, to wywołuje na jego rzecz tą samą funkcję <code>Display()</code>. Analogicznie dzieje się poniżej **(//3). **W przypadku gdy istnieje prawe dziecko to wywołujemy na jego rzecz funkcję <code>Display()</code>.</p>
 
 <h1 id="wreszcie-możemy-przejść-do-drzewa-tree"><strong>Wreszcie możemy przejść do drzewa (tree)</strong></h1>
 
-<pre class="brush: csharp; first-line: 93; highlight: [98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140]; title: Klasa drzewa (tree); notranslate" title="Klasa drzewa (tree)">public class Tree
+<pre><code class="language-csharp">public class Tree
+{
+    Node root;
+    int counter;
+
+    public Tree()       //1
     {
-        Node root;
-        int counter;
-
-        public Tree()       //1
-        {
-            root = null;
-            counter = 0;
-        }
-    
-        public bool IsEmpty()    //2  
-        {
-            return this.root == null; 
-        }
-
-        public void Add(int value)   //3
-        {
-            if (IsEmpty())
-            {
-                this.root = new Node(value);   //4
-            }
-            else
-            {
-                this.root.Add(value);     //5
-            }
-            counter++;
-        }
-
-        public bool Search(int value)     //6
-        {
-            if (this.root.Search(value) != null) return true;    //7
-            else return false;
-        }
-
-
-        public void Display()    //8
-        {
-            if (IsEmpty() == false)   //9
-            {
-                this.root.Display();
-            }
-        }
-
-        public int Count()   //10
-        {
-            return this.counter;
-        }
-
+        root = null;
+        counter = 0;
     }
-</pre>
+
+    public bool IsEmpty()    //2  
+    {
+        return this.root == null; 
+    }
+
+    public void Add(int value)   //3
+    {
+        if (IsEmpty())
+        {
+            this.root = new Node(value);   //4
+        }
+        else
+        {
+            this.root.Add(value);     //5
+        }
+        counter++;
+    }
+
+    public bool Search(int value)     //6
+    {
+        if (this.root.Search(value) != null) return true;    //7
+        else return false;
+    }
+
+
+    public void Display()    //8
+    {
+        if (IsEmpty() == false)   //9
+        {
+            this.root.Display();
+        }
+    }
+
+    public int Count()   //10
+    {
+        return this.counter;
+    }
+
+}
+</code></pre>
 
 <p>Na początku tworzymy standardowy konstruktor. **(//1). <strong>Do głównego korzenia drzewa (</strong>root<strong>) przypisujemy null (bo nowe drzewo jest zawsze puste), i licznik (</strong>counter**) ustawiamy na ****.</p>
 
@@ -459,37 +461,37 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <h1 id="wykorzystanie-kodu-drzewa-w-main"><strong>Wykorzystanie kodu drzewa w Main()</strong></h1>
 
-<pre class="brush: csharp; first-line: 144; title: Funkcja Main(); notranslate" title="Funkcja Main()">static void Main(string[] args)
-      {
-            Tree brzoza = new Tree();  // stworzenie drzewa – brzozy 
-            brzoza.Add(7);    // bo sosna to tylko na opał się nadaje 
-            brzoza.Add(12);   // dodawanie elementów do drzewa
-            brzoza.Add(4);
-            brzoza.Add(1);
-            brzoza.Add(8);
-            brzoza.Add(12);
-            brzoza.Add(63);
-            brzoza.Add(2);
+<pre><code class="language-csharp">    static void Main(string[] args)
+    {
+        Tree brzoza = new Tree();  // stworzenie drzewa – brzozy 
+        brzoza.Add(7);    // bo sosna to tylko na opał się nadaje 
+        brzoza.Add(12);   // dodawanie elementów do drzewa
+        brzoza.Add(4);
+        brzoza.Add(1);
+        brzoza.Add(8);
+        brzoza.Add(12);
+        brzoza.Add(63);
+        brzoza.Add(2);
 
-            Console.WriteLine("Drzewo posiada {0} elementów", brzoza.Count());
+        Console.WriteLine(&quot;Drzewo posiada {0} elementów&quot;, brzoza.Count());
 
-            brzoza.Display();  // wyświetlenie całego drzewa
-            Console.WriteLine();
+        brzoza.Display();  // wyświetlenie całego drzewa
+        Console.WriteLine();
 
-            Console.WriteLine("Czy w drzewie znajduje się liczba 4?");
-            Console.WriteLine(brzoza.Search(4));
+        Console.WriteLine(&quot;Czy w drzewie znajduje się liczba 4?&quot;);
+        Console.WriteLine(brzoza.Search(4));
 
-            Console.WriteLine("Czy w drzewie znajduje się liczba 23?");
-            Console.WriteLine(brzoza.Search(23));
+        Console.WriteLine(&quot;Czy w drzewie znajduje się liczba 23?&quot;);
+        Console.WriteLine(brzoza.Search(23));
 
-            brzoza.Add(23);
+        brzoza.Add(23);
 
-            Console.WriteLine("Czy w drzewie znajduje się liczba 23?");
-            Console.WriteLine(brzoza.Search(23));
+        Console.WriteLine(&quot;Czy w drzewie znajduje się liczba 23?&quot;);
+        Console.WriteLine(brzoza.Search(23));
 
-            Console.ReadKey();
-      }
-</pre>
+        Console.ReadKey();
+    }
+</code></pre>
 
 <p>&nbsp;</p>
 
@@ -497,17 +499,17 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <h2 id="diagramy-uml-klas"><strong>Diagramy UML klas:</strong></h2>
 
-<p><img class="aligncenter wp-image-86 " src="http://localhost/blog_wordpress/wp-content/uploads/2017/02/uml-dzrzewo-bst.png" width="613" height="282" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst.png 1083w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst-300x138.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst-768x353.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst-1024x471.png 1024w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/uml-dzrzewo-bst-820x377.png 820w" sizes="(max-width: 613px) 100vw, 613px" /></p>
+<p><img src="/img/posts/bst/uml-drzewo-bst.png" alt="foto" /></p>
 
 <h2 id="przykładowe-drzewo"><strong>Przykładowe drzewo</strong></h2>
 
-<p><img class="wp-image-85 aligncenter" src="http://localhost/blog_wordpress/wp-content/uploads/2017/02/drzewo-bst.png" width="699" height="663" srcset="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo-bst.png 874w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo-bst-300x285.png 300w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo-bst-768x728.png 768w, http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo-bst-820x778.png 820w" sizes="(max-width: 699px) 100vw, 699px" /></p>
+<p><img src="/img/posts/bst/drzewo-bst.png" alt="foto" /></p>
 
 <h1 id="cały-kod"><strong>Cały kod:</strong></h1>
 
 <h2 id="http-wklej-org-id-3021727"><a href="http://wklej.org/id/3021727/">http://wklej.org/id/3021727/</a></h2>
 
-<pre class="brush: csharp; collapse: true; light: false; title: ; toolbar: true; notranslate" title="">using System;
+<pre><code class="language-csharp">using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -530,7 +532,7 @@ namespace tree
 
         public bool IsLeaf()
         {
-            return (this.left == null && this.right == null);
+            return (this.left == null &amp;&amp; this.right == null);
         }
 
         public Node Search(int value)  //0
@@ -539,7 +541,19 @@ namespace tree
             {
                 return this;
             }
-            else if (value &lt; this.number) //2 { if (this.left == null) //3 { return null; } else { return this.left.Search(value); //4 } } else if (value &gt; this.number)  //5
+            else if (value &lt; this.number)    //2
+            {
+                if (this.left == null)  //3
+                {
+                    return null;
+                }
+                else
+                {
+                    return this.left.Search(value);  //4
+                }
+
+            }
+            else if (value &gt; this.number)  //5
             {
                 if (this.right == null)   //6
                 {
@@ -585,7 +599,7 @@ namespace tree
             {
                 this.left.Display();     //1
             }
-            Console.Write(" " + this.number);    //2
+            Console.Write(&quot; &quot; + this.number);    //2
             if (this.right != null)
             {
                 this.right.Display();     //3
@@ -659,31 +673,32 @@ namespace tree
             brzoza.Add(63);
             brzoza.Add(2);
 
-            Console.WriteLine("Drzewo posiada {0} elementów", brzoza.Count());
+            Console.WriteLine(&quot;Drzewo posiada {0} elementów&quot;, brzoza.Count());
 
             brzoza.Display();  // wyświetlenie całego drzewa
             Console.WriteLine();
 
-            Console.WriteLine("Czy w drzewie znajduje się liczba 4?");
+            Console.WriteLine(&quot;Czy w drzewie znajduje się liczba 4?&quot;);
             Console.WriteLine(brzoza.Search(4));
 
-            Console.WriteLine("Czy w drzewie znajduje się liczba 23?");
+            Console.WriteLine(&quot;Czy w drzewie znajduje się liczba 23?&quot;);
             Console.WriteLine(brzoza.Search(23));
 
             brzoza.Add(23);
 
-            Console.WriteLine("Czy w drzewie znajduje się liczba 23?");
+            Console.WriteLine(&quot;Czy w drzewie znajduje się liczba 23?&quot;);
             Console.WriteLine(brzoza.Search(23));
 
             Console.ReadKey();
         }
     }
 }
-</pre>
+
+</code></pre>
 
 <p>&nbsp;</p>
 
-<h2 id="pobierz-drzewo-w-pdf-2"><a href="http://zielonybuszmen.cba.pl/wp-content/uploads/2017/02/drzewo.pdf">Pobierz drzewo w PDF</a></h2>
+<h2 id="pobierz-drzewo-w-pdf-files-drzewo-pdf"><a href="/files/drzewo.pdf">Pobierz drzewo w PDF</a></h2>
 
       </article>
 
