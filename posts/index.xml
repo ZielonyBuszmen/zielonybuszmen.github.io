@@ -69,11 +69,10 @@ C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</guid>
       <description>Krótki wpis, szybka porada &amp;#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
-Przechodzimy do **Settings **(Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie **PHP **i wybieramy PHPUnit.
-W nowo otwartym oknie wybieramy **Use Composer autoloader **i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
-
+Przechodzimy do Settings (Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie PHP i wybieramy PHPUnit.
+W nowo otwartym oknie wybieramy Use Composer autoloader i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
 Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
-&amp;lt;?php class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
+class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
     </item>
     
     <item>
@@ -82,8 +81,7 @@ Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
       <pubDate>Thu, 23 Feb 2017 14:28:42 +0000</pubDate>
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/2017/02/23/projekt-moodle-prosta-platforma-e-learningowa/</guid>
-      <description>git clone https://github.com/bartoszgajda55/projektMoodle.git  Github &amp;#8211; github.com/bartoszgajda55/projektMoodle Działający projekt &amp;#8211; projektmoodle.cba.pl lub projektmoodle.za.pl Technologie &amp;#8211;  PHP, MySQL, Bootstrap Data &amp;#8211;  październik/listopad 2015 Zespół &amp;#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &amp;#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  
-Od początku zadanie wydawało się całkiem złożone, bo całość miała być dosyć mocno rozbudowanym systemem e-learningowym (mówiąc &amp;#8222;dosyć mocno rozbudowanym&amp;#8221; mam na myśli &amp;#8222;mocno rozbudowanym jak na umiejętności programistyczne uczniaków technikum&amp;#8221;).</description>
+      <description>git clone https://github.com/bartoszgajda55/projektMoodle.git  Github &amp;#8211; github.com/bartoszgajda55/projektMoodle Działający projekt &amp;#8211; projektmoodle.cba.pl lub projektmoodle.za.pl Technologie &amp;#8211;  PHP, MySQL, Bootstrap Data &amp;#8211;  październik/listopad 2015 Zespół &amp;#8211;  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu &amp;#8211;  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  Od początku zadanie wydawało się całkiem złożone, bo całość miała być dosyć mocno rozbudowanym systemem e-learningowym (mówiąc &amp;#8222;dosyć mocno rozbudowanym&amp;#8221; mam na myśli &amp;#8222;mocno rozbudowanym jak na umiejętności programistyczne uczniaków technikum&amp;#8221;).</description>
     </item>
     
     <item>
@@ -92,7 +90,7 @@ Od początku zadanie wydawało się całkiem złożone, bo całość miała być
       <pubDate>Thu, 23 Feb 2017 13:07:00 +0000</pubDate>
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/2017/02/23/onepage-hafty/</guid>
-      <description>git clone https://github.com/ZielonyBuszmen/onePage-hafty.git  Github &amp;#8211; github.com/ZielonyBuszmen/onePage-hafty Działający projekt &amp;#8211; hafty-kasi.cba.pl Technologie &amp;#8211; Larevel 5.3, Bootstrap, Angular2 Data &amp;#8211;  styczeń 2017 Przeznaczenie projektu &amp;#8211;  Projekt na zlecenie. Na stronie znajduje się galeria zdjęć, księga gości i kilka informacji. Wszystko wykonane jako &amp;#8222;OnePage&amp;#8221;, bez przeładowywania witryny. Strona korzysta z ViewComposerów oraz została &amp;#8222;zlokalizowana&amp;#8221; w 3 językach   Kilka spraw technicznych Layout został podzielony na elementy, które dowolnie można usuwać lub zmieniać ich kolejność:</description>
+      <description>git clone https://github.com/ZielonyBuszmen/onePage-hafty.git  Github &amp;#8211; github.com/ZielonyBuszmen/onePage-hafty Działający projekt &amp;#8211; hafty-kasi.cba.pl Technologie &amp;#8211; Larevel 5.3, Bootstrap, Angular2 Data &amp;#8211;  styczeń 2017 Przeznaczenie projektu &amp;#8211;  Projekt na zlecenie. Na stronie znajduje się galeria zdjęć, księga gości i kilka informacji. Wszystko wykonane jako &amp;#8222;OnePage&amp;#8221;, bez przeładowywania witryny. Strona korzysta z ViewComposerów oraz została &amp;#8222;zlokalizowana&amp;#8221; w 3 językach  Kilka spraw technicznych Layout został podzielony na elementy, które dowolnie można usuwać lub zmieniać ich kolejność:</description>
     </item>
     
     <item>
@@ -133,7 +131,7 @@ You can combine them
       <pubDate>Tue, 21 Feb 2017 17:13:57 +0000</pubDate>
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/</guid>
-      <description> 
+      <description>  
 Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP installation: https://book.cakephp.org/3.0/en/installation.html composer create-project --prefer-dist cakephp/app&amp;lt;br /&amp;gt;   </description>
     </item>
     

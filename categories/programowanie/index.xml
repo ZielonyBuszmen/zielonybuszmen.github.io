@@ -60,11 +60,10 @@ C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</guid>
       <description>Krótki wpis, szybka porada &amp;#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
-Przechodzimy do **Settings **(Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie **PHP **i wybieramy PHPUnit.
-W nowo otwartym oknie wybieramy **Use Composer autoloader **i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
-
+Przechodzimy do Settings (Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie PHP i wybieramy PHPUnit.
+W nowo otwartym oknie wybieramy Use Composer autoloader i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
 Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
-&amp;lt;?php class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
+class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
     </item>
     
     <item>
@@ -73,7 +72,7 @@ Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
       <pubDate>Tue, 21 Feb 2017 17:13:57 +0000</pubDate>
       <author>youremail@domain.com (Zielony Buszmen)</author>
       <guid>https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/</guid>
-      <description> 
+      <description>  
 Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP installation: https://book.cakephp.org/3.0/en/installation.html composer create-project --prefer-dist cakephp/app&amp;lt;br /&amp;gt;   </description>
     </item>
     
