@@ -6,8 +6,6 @@
     <description>Recent content in Laravel on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
-    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
     <lastBuildDate>Wed, 01 Mar 2017 21:47:42 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +15,7 @@
       <title>Instalacja Angulara2 do Laravela5 do ‚współdziałania’</title>
       <link>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</link>
       <pubDate>Wed, 01 Mar 2017 21:47:42 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</guid>
       <description>Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &amp;#8211; Angular instaluje się jako &amp;#8222;stand-alone&amp;#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &amp;#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.</description>
     </item>
@@ -26,7 +24,7 @@
       <title>Laravel – testy jednostkowe w PHPStormie</title>
       <link>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</link>
       <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</guid>
       <description>Krótki wpis, szybka porada &amp;#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
 Przechodzimy do Settings (Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie PHP i wybieramy PHPUnit.

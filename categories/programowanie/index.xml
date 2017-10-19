@@ -6,8 +6,6 @@
     <description>Recent content in Programowanie on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
-    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
     <lastBuildDate>Mon, 01 May 2017 18:55:30 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/categories/programowanie/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +15,7 @@
       <title>Komendy GITa – Branche zdalne, merge i rebase</title>
       <link>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</link>
       <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</guid>
       <description>Operowanie branchami Sprawdzanie bieżącego brancha:
 git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
@@ -34,7 +32,7 @@ git branch -D NAZWA Zmiana nazwy brancha</description>
       <title>Komendy GITa</title>
       <link>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</link>
       <pubDate>Thu, 23 Mar 2017 16:25:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</guid>
       <description>Wersja oprogramowania
 git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
@@ -48,7 +46,7 @@ C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
       <title>Instalacja Angulara2 do Laravela5 do ‚współdziałania’</title>
       <link>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</link>
       <pubDate>Wed, 01 Mar 2017 21:47:42 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</guid>
       <description>Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &amp;#8211; Angular instaluje się jako &amp;#8222;stand-alone&amp;#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &amp;#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.</description>
     </item>
@@ -57,7 +55,7 @@ C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
       <title>Laravel – testy jednostkowe w PHPStormie</title>
       <link>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</link>
       <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</guid>
       <description>Krótki wpis, szybka porada &amp;#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
 Przechodzimy do Settings (Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie PHP i wybieramy PHPUnit.
@@ -70,9 +68,9 @@ class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp
       <title>Instalacja CakePHP od podszewki</title>
       <link>https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/</link>
       <pubDate>Tue, 21 Feb 2017 17:13:57 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/</guid>
-      <description>  
+      <description> https://www.youtube.com/embed/L6rNjcW_-1s
 Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP installation: https://book.cakephp.org/3.0/en/installation.html composer create-project --prefer-dist cakephp/app&amp;lt;br /&amp;gt;   </description>
     </item>
     
@@ -80,7 +78,7 @@ Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP ins
       <title>Binarne drzewo poszukiwań – Binary Search Tree (BST)</title>
       <link>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</link>
       <pubDate>Mon, 20 Feb 2017 15:00:38 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/</guid>
       <description>Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
 Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).</description>

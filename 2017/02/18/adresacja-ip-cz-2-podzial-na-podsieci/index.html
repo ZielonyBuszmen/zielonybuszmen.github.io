@@ -193,13 +193,13 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
       <article role="main" class="blog-post">
         
 
-<p>Jest to druga część poradnika. Będą opisane w niej trochę bardziej zaawansowane zagadnienia z tematów podziału sieci na podsieci. Jeśli nie widziałeś części pierwszej, odnajdziesz ją pod tym adresem: <a href="http://zielonybuszmen.cba.pl/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/">Adresacja IP cz. 1 – Z czym to się je?</a></p>
+<p>Jest to druga część poradnika. Będą opisane w niej trochę bardziej zaawansowane zagadnienia z tematów podziału sieci na podsieci. Jeśli nie widziałeś części pierwszej, odnajdziesz ją pod tym adresem: <a href="/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/">Adresacja IP cz. 1 – Z czym to się je?</a></p>
 
 <h2 id="ilość-hostów-w-sieci-oraz-adres-broadcast">Ilość hostów w sieci oraz adres broadcast</h2>
 
 <p>Czasem nastaje taki dzień, gdzie musimy zasiąść i sprawdzić ile w danej sieci mieści się hostów. Nie jest to zajęcie trudne, jednakże wymaga trochę pomyślunku. A więc aby wyznaczyć liczbę hostów, jaka może mieścić się w danej podsieci, musimy znać adres tejże sieci oraz jego maskę. Jako pierwszy przykład weźmy adres 192.168.54.11 z maską /24. Maska po zamianie wygląda tak:</p>
 
-<pre><big><big> 11111111.11111111.11111111.00000000</big></big></pre>
+<pre><big><big>11111111.11111111.11111111.00000000</big></big></pre>
 
 <p>Widzimy, że przełamanie występuje pomiędzy trzecim a czwartym oktetem, więc adres sieci to 192.168.54.0.</p>
 
@@ -230,13 +230,13 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 <p>Zamieńmy ostatni oktet na postać binarną:</p>
 
 <pre><big><big>.00 000000 - adres sieci
- .11 000000 - aders nowej maski
+.11 000000 - aders nowej maski
 </big></big></pre>
 
 <p>Dodana maska składa się z dwóch bitów, dlatego też na tych dwóch bitach operujemy. Pierwsza sieć będzie miała bity 00, druga 01 natomiast trzecia 10. Gdybyśmy chciali dać czwartą, miała by ona postać 11. Skąd te liczby? Wystarczy zamienić 0, 1, 2 oraz 3 na system binarny. Pierwsza sieć to sieć 0, druga sieć to sieć 1, trzecia sieć to sieć 2. Takie rozbieżności występują, gdyż „zliczamy” numer sieci od zera, a nie od jedynki. Podstawmy po kolei bity do adresu podsieci:</p>
 
-<pre><big><big> .00 000000 - adres podsieci 1. Daje to nam 192.168.25.0
- .11 000000 - aders nowej maski</big></big></pre>
+<pre><big><big>.00 000000 - adres podsieci 1. Daje to nam 192.168.25.0
+.11 000000 - aders nowej maski</big></big></pre>
 
 <p>Pierwsza podsieć ma w bitach 00, więc nic się nie zmienia.</p>
 
@@ -249,29 +249,27 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 <p>Trzecia podsieć ma w bitach 10, więc liczba 10000000 daje nam 128.</p>
 
 <blockquote>
-<div class="wpz-sc-box info ">
-  Jak teraz obliczyć pierwszy adres hosta? Wystarczy do adresu sieci dodać 1, czyli .0 +1 = 1. Pierwszym hostem podsieci 00 jest 192.168.25.1. Tak samo robimy z drugą podsiecią, co daje nam 192.168.25.65. Pierwszym adresem trzeciej podsieci jest 192.168.25.129.
-</div>
+<p>Jak teraz obliczyć pierwszy adres hosta? Wystarczy do adresu sieci dodać 1, czyli .0 +1 = 1. Pierwszym hostem podsieci 00 jest 192.168.25.1. Tak samo robimy z drugą podsiecią, co daje nam 192.168.25.65. Pierwszym adresem trzeciej podsieci jest 192.168.25.129.</p>
 </blockquote>
 
 <p>Aby obliczyć adres broadcast, musimy w części adresu hosta podstawić jedynki. Czyli:</p>
 
-<pre><big><big> .00 111111 - adres podsieci 1.
- .11 000000 - maska</big></big></pre>
+<pre><big><big>.00 111111 - adres podsieci 1.
+.11 000000 - maska</big></big></pre>
 
 <p>00111111 daje nam to 63, czyli adres broadcast pierwszej podsieci to 192.168.25.63.</p>
 
 <p>Z drugą podsiecią postępujemy identycznie</p>
 
-<pre><big><big> .01 111111 - adres podsieci 2.
- .11 000000 - maska</big></big></pre>
+<pre><big><big>.01 111111 - adres podsieci 2.
+.11 000000 - maska</big></big></pre>
 
 <p>Liczba 01111111 daje nam 127, czyli adres broadcast pierwszej podsieci to 192.168.25.127.</p>
 
 <p>W trzeciej podsieci jest identycznie:</p>
 
 <pre><big><big>.10 111111 - adres podsieci 3.
- .11 000000 - maska</big></big></pre>
+.11 000000 - maska</big></big></pre>
 
 <p>10111111 daje nam liczbę 191, czyli adres broadcast pierwszej podsieci to 192.168.25.191.</p>
 
@@ -287,31 +285,31 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 
 <p>A więc zamieńmy dwa ostatnie oktety adresu na postać binarną:</p>
 
-<pre><big><big> .144.0 - 10010000.00000000</big></big></pre>
+<pre><big><big>.144.0 - 10010000.00000000</big></big></pre>
 
 <p>Podstawmy pod adres pod maskę:</p>
 
-<pre><big><big> 1111111 <strong>1.1</strong>0000000 - maska
- 1001000 0.00000000 - adres</big></big></pre>
+<pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
+1001000 0.00000000 - adres</big></big></pre>
 
 <p>A więc pierwsza podsieć ma bity <strong>00</strong>:</p>
 
-<pre><big><big> 1111111 <strong>1.1</strong>0000000 - maska
- 1001000 <strong>0.0</strong>0000000 - adres pierwszej podsieci</big></big></pre>
+<pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
+1001000 <strong>0.0</strong>0000000 - adres pierwszej podsieci</big></big></pre>
 
 <p>Po zamianie obu oktetów na liczby dziesiętne mamy 144.0, więc adres pierwszej podsieci to 120.130.144.0</p>
 
 <p>Druga podsieć ma bity <strong>01</strong>. Podstawiamy to:</p>
 
 <pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
- 1001000 <strong>0.1</strong>0000000 - adres drugiej podsieci</big></big></pre>
+1001000 <strong>0.1</strong>0000000 - adres drugiej podsieci</big></big></pre>
 
 <p>Po zamianie wychodzi nam 144.128, co daje nam adres 120.130.144.128</p>
 
 <p>Trzecia podsieć ma bity <strong>10:</strong></p>
 
 <pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
- 1001000 <strong>1.0</strong>0000000 - adres trzeciej podsieci</big></big></pre>
+1001000 <strong>1.0</strong>0000000 - adres trzeciej podsieci</big></big></pre>
 
 <p>Daje nam to po zamianie 145.0, więc adres trzeciej podsieci to 120.130.145.0</p>
 
@@ -320,7 +318,7 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 <p>Ostatnia, czwarta podsieć ma bity <strong>11</strong>:</p>
 
 <pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
- 1001000 <strong>1.1</strong>0000000 - adres czwartej podsieci</big></big></pre>
+1001000 <strong>1.1</strong>0000000 - adres czwartej podsieci</big></big></pre>
 
 <p>Daje nam to 145.128, więc adresem czwartej podsieci jest 120.130.145.128</p>
 
@@ -345,9 +343,7 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 <p>4) 1001000 1.11<strong>1111111</strong> – daje nam to liczbę 145.255, więc adres broadcast  to 120.130.145.<strong>255</strong></p>
 
 <blockquote>
-<div class="wpz-sc-box info ">
-  Aby obliczyć adres ostatniego hosta wystarczy że od adresu broadcast odejmiemy jedynkę. A więc dla przykładu ostatnim adresem w pierwszej podsieci będzie 120.130.144.126, gdyż adres broadcast to 120.130.144.127.
-</div>
+<p>Aby obliczyć adres ostatniego hosta wystarczy że od adresu broadcast odejmiemy jedynkę. A więc dla przykładu ostatnim adresem w pierwszej podsieci będzie 120.130.144.126, gdyż adres broadcast to 120.130.144.127.</p>
 </blockquote>
 
 <h2 id="informacje-na-koniec-wpz-sc-box-info">Informacje na koniec {.wpz-sc-box.info}</h2>
@@ -355,8 +351,8 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 <p>Pierwotnie oba artykuły zostały umieszczone na stronie pcfaq.pl. Z racji tego że są całkiem niezłe i w dodatku mogę poszczyć się, że jestem ich autorem, umieściłem je tutaj. 😉 Linki do pierwotnych artykułów:</p>
 
 <ul>
-<li><a href="http://pcfaq.pl/internet/adresacja-ip-z-czym-to-sie-je-cz-1/" rel="bookmark">Adresacja IP cz. 1 – Z czym to się je?</a></li>
-<li><a href="http://pcfaq.pl/internet/adresacja-ip-cz-2-podzial-na-podsieci/" rel="bookmark">Adresacja IP cz. 2 – podział na podsieci.</a></li>
+<li><a href="http://pcfaq.pl/internet/adresacja-ip-z-czym-to-sie-je-cz-1/">Adresacja IP cz. 1 – Z czym to się je?</a></li>
+<li><a href="http://pcfaq.pl/internet/adresacja-ip-cz-2-podzial-na-podsieci/">Adresacja IP cz. 2 – podział na podsieci</a></li>
 </ul>
 
 <p>&nbsp;</p>
@@ -391,31 +387,7 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
         <ul class="list-inline text-center footer-links">
           
               <li>
-                <a href="mailto:youremail@domain.com" title="Email me">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/username" title="Facebook">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/username" title="GitHub">
+                <a href="https://github.com/ZielonyBuszmen" title="GitHub">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -436,7 +408,7 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
         <p class="credits copyright text-muted">
           
             
-              <a href="yourwebsite.com">Zielony Buszmen</a>
+              <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
                       
           
           

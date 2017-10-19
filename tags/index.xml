@@ -6,8 +6,6 @@
     <description>Recent content in Tags on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
-    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
     <lastBuildDate>Mon, 20 Feb 2017 15:00:38 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +15,7 @@
       <title>Algorytmy I Struktury Danych</title>
       <link>https://zielonybuszmen.github.io/tags/algorytmy-i-struktury-danych/</link>
       <pubDate>Mon, 20 Feb 2017 15:00:38 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/algorytmy-i-struktury-danych/</guid>
       <description></description>
     </item>
@@ -26,17 +24,8 @@
       <title>Angular</title>
       <link>https://zielonybuszmen.github.io/tags/angular/</link>
       <pubDate>Wed, 01 Mar 2017 21:47:42 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/angular/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blogging</title>
-      <link>https://zielonybuszmen.github.io/tags/blogging/</link>
-      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/tags/blogging/</guid>
       <description></description>
     </item>
     
@@ -44,26 +33,8 @@
       <title>C#</title>
       <link>https://zielonybuszmen.github.io/tags/c#/</link>
       <pubDate>Mon, 20 Feb 2017 15:00:38 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/c#/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://zielonybuszmen.github.io/tags/development/</link>
-      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fast</title>
-      <link>https://zielonybuszmen.github.io/tags/fast/</link>
-      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/tags/fast/</guid>
       <description></description>
     </item>
     
@@ -71,17 +42,8 @@
       <title>Git</title>
       <link>https://zielonybuszmen.github.io/tags/git/</link>
       <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://zielonybuszmen.github.io/tags/go/</link>
-      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/tags/go/</guid>
       <description></description>
     </item>
     
@@ -89,7 +51,7 @@
       <title>Laravel</title>
       <link>https://zielonybuszmen.github.io/tags/laravel/</link>
       <pubDate>Wed, 01 Mar 2017 21:47:42 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/laravel/</guid>
       <description></description>
     </item>
@@ -98,7 +60,7 @@
       <title>Linux</title>
       <link>https://zielonybuszmen.github.io/tags/linux/</link>
       <pubDate>Wed, 22 Mar 2017 20:09:51 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/linux/</guid>
       <description></description>
     </item>
@@ -107,7 +69,7 @@
       <title>Phpstorm</title>
       <link>https://zielonybuszmen.github.io/tags/phpstorm/</link>
       <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/phpstorm/</guid>
       <description></description>
     </item>
@@ -116,7 +78,7 @@
       <title>Programowanie</title>
       <link>https://zielonybuszmen.github.io/tags/programowanie/</link>
       <pubDate>Mon, 20 Feb 2017 15:00:38 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/programowanie/</guid>
       <description></description>
     </item>
@@ -125,7 +87,7 @@
       <title>Projekty</title>
       <link>https://zielonybuszmen.github.io/tags/projekty/</link>
       <pubDate>Thu, 23 Feb 2017 14:28:42 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/projekty/</guid>
       <description></description>
     </item>
@@ -134,7 +96,7 @@
       <title>Sieci</title>
       <link>https://zielonybuszmen.github.io/tags/sieci/</link>
       <pubDate>Sat, 18 Feb 2017 15:01:40 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/sieci/</guid>
       <description></description>
     </item>
@@ -143,7 +105,7 @@
       <title>Testy</title>
       <link>https://zielonybuszmen.github.io/tags/testy/</link>
       <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/tags/testy/</guid>
       <description></description>
     </item>

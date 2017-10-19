@@ -6,26 +6,15 @@
     <description>Recent content in Categories on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
-    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
     
 	<atom:link href="https://zielonybuszmen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Development</title>
-      <link>https://zielonybuszmen.github.io/categories/development/</link>
-      <pubDate>Tue, 21 Feb 2017 20:15:59 +0100</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Internet</title>
       <link>https://zielonybuszmen.github.io/categories/internet/</link>
       <pubDate>Sat, 18 Feb 2017 15:01:40 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/categories/internet/</guid>
       <description></description>
     </item>
@@ -34,8 +23,17 @@
       <title>Programowanie</title>
       <link>https://zielonybuszmen.github.io/categories/programowanie/</link>
       <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/categories/programowanie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projekty</title>
+      <link>https://zielonybuszmen.github.io/categories/projekty/</link>
+      <pubDate>Thu, 23 Feb 2017 14:28:42 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/categories/projekty/</guid>
       <description></description>
     </item>
     
@@ -43,17 +41,8 @@
       <title>Usprawnienia</title>
       <link>https://zielonybuszmen.github.io/categories/usprawnienia/</link>
       <pubDate>Wed, 22 Mar 2017 20:09:51 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/categories/usprawnienia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Zrealizowane Projekty</title>
-      <link>https://zielonybuszmen.github.io/categories/zrealizowane-projekty/</link>
-      <pubDate>Thu, 23 Feb 2017 14:28:42 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
-      <guid>https://zielonybuszmen.github.io/categories/zrealizowane-projekty/</guid>
       <description></description>
     </item>
     

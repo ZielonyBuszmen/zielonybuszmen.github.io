@@ -6,8 +6,6 @@
     <description>Recent content in Testy on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
-    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
     <lastBuildDate>Sun, 26 Feb 2017 17:06:36 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/tags/testy/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +15,7 @@
       <title>Laravel – testy jednostkowe w PHPStormie</title>
       <link>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</link>
       <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</guid>
       <description>Krótki wpis, szybka porada &amp;#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
 Przechodzimy do Settings (Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie PHP i wybieramy PHPUnit.

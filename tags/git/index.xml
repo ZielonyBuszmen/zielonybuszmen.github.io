@@ -6,8 +6,6 @@
     <description>Recent content in Git on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <managingEditor>youremail@domain.com (Zielony Buszmen)</managingEditor>
-    <webMaster>youremail@domain.com (Zielony Buszmen)</webMaster>
     <lastBuildDate>Mon, 01 May 2017 18:55:30 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +15,7 @@
       <title>Komendy GITa – Branche zdalne, merge i rebase</title>
       <link>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</link>
       <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</guid>
       <description>Operowanie branchami Sprawdzanie bieżącego brancha:
 git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
@@ -34,7 +32,7 @@ git branch -D NAZWA Zmiana nazwy brancha</description>
       <title>Komendy GITa</title>
       <link>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</link>
       <pubDate>Thu, 23 Mar 2017 16:25:00 +0000</pubDate>
-      <author>youremail@domain.com (Zielony Buszmen)</author>
+      
       <guid>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</guid>
       <description>Wersja oprogramowania
 git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
