@@ -17,15 +17,11 @@
       <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
       
       <guid>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</guid>
-      <description>Operowanie branchami Sprawdzanie bieżącego brancha:
-git branch git status-sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
+      <description>Operowanie branchami /* http://prismjs.com/download.html?themes=prism&amp;languages=markup+css+clike+javascript+c+cpp+csharp+git+java+php+python+sql */ /** * prism.js default theme for JavaScript, CSS and HTML * Based on dabblet (http://dabblet.com) * @author Lea Verou */ code[class*=&#34;language-&#34;], pre[class*=&#34;language-&#34;] { Sprawdzanie bieżącego brancha:
+git branch git status -sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
 git branch NAZWA [SHA-1] Przełączanie branchy
 git checkout NAZWA Stworzenie nowego brancha i przełączenie na niego
-git checkout -b NAZWA Branche zawarte w aktualnym branchu
-git branch --merged Branche rozłączne z aktualnym branchem
-git branch --no-merged Usuwanie gałęzi (tylko gdy jest zmergowana)
-git branch -d NAZWA Usuwanie gałęzi (wymuszone)
-git branch -D NAZWA Zmiana nazwy brancha</description>
+git checkout -b NAZWA Branche zawarte w aktualnym branchu</description>
     </item>
     
     <item>
