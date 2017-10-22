@@ -6,36 +6,23 @@
     <description>Recent content in Git on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <lastBuildDate>Mon, 01 May 2017 18:55:30 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Komendy GITa – Branche zdalne, merge i rebase</title>
-      <link>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</link>
-      <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
+      <title>Komendy GITa (cheat-sheet)</title>
+      <link>https://zielonybuszmen.github.io/2017/10/22/git/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</guid>
-      <description>Operowanie branchami /* http://prismjs.com/download.html?themes=prism&amp;languages=markup+css+clike+javascript+c+cpp+csharp+git+java+php+python+sql */ /** * prism.js default theme for JavaScript, CSS and HTML * Based on dabblet (http://dabblet.com) * @author Lea Verou */ code[class*=&#34;language-&#34;], pre[class*=&#34;language-&#34;] { Sprawdzanie bieżącego brancha:
-git branch git status -sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
-git branch NAZWA [SHA-1] Przełączanie branchy
-git checkout NAZWA Stworzenie nowego brancha i przełączenie na niego
-git checkout -b NAZWA Branche zawarte w aktualnym branchu</description>
-    </item>
-    
-    <item>
-      <title>Komendy GITa</title>
-      <link>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</link>
-      <pubDate>Thu, 23 Mar 2017 16:25:00 +0000</pubDate>
-      
-      <guid>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</guid>
-      <description>Wersja oprogramowania
-git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
-git config -l Ustalenie opcji
-git config --global user.name &#34;Imie Nazwisko&#34; git config --global user.email mail@cos.pl Globalne ustawienia gita są w pliku:
-C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
-.git\config Inicjalizacja repozytorium git init Klonowanie repo git clone adres-repo [sciezka/docelowa/opcjonalnie] Informacje o repo Uczestnicy projektu</description>
+      <guid>https://zielonybuszmen.github.io/2017/10/22/git/</guid>
+      <description>Mały cheat sheet z komendami GITa. Trochę tego się nazbierało, dlatego najlepszym wyjściem będzie Ctrl + F. Wszystkie komendy gita są szczegółowo opisane na stronie dokumentacji git-scm.com/docs.
+Natomiast samego GITa można pobrać stąd: git-scm.com/downloads
+Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l  Ustalenie opcji
+git config --global user.name &amp;quot;Imie Nazwisko&amp;quot; git config --global user.email mail@cos.pl  Ustalenie opcji dla projektu
+git config user.name &amp;quot;Imie Nazwisko&amp;quot; git config user.email mail@cos.</description>
     </item>
     
   </channel>

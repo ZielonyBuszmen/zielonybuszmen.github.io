@@ -5,21 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Laravel – testy jednostkowe w PHPStormie</title>
-  <meta property="og:title" content="Laravel – testy jednostkowe w PHPStormie" />
-  <meta name="twitter:title" content="Laravel – testy jednostkowe w PHPStormie" />
-  <meta name="description" content="Krótki wpis, szybka porada &#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
-Przechodzimy do Settings (Ctrl &#43; Alt &#43; S), klikamy Languages &amp; Frameworks, następnie PHP i wybieramy PHPUnit.
-W nowo otwartym oknie wybieramy Use Composer autoloader i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
-Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
-class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl &#43; Shift &#43; F10.">
-  <meta property="og:description" content="Krótki wpis, szybka porada &#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
-Przechodzimy do Settings (Ctrl &#43; Alt &#43; S), klikamy Languages &amp; Frameworks, następnie PHP i wybieramy PHPUnit.
-W nowo otwartym oknie wybieramy Use Composer autoloader i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
-Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
-class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl &#43; Shift &#43; F10.">
-  <meta name="twitter:description" content="Krótki wpis, szybka porada &#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
-Przechodzimy do Settings (Ctrl &#43; Alt &#43; S), klikamy Languages &amp; Frameworks, następnie PHP i wybieramy …">
+  <title>Laravel 5 a testy w PHPStorm</title>
+  <meta property="og:title" content="Laravel 5 a testy w PHPStorm" />
+  <meta name="twitter:title" content="Laravel 5 a testy w PHPStorm" />
+  <meta name="description" content="Konfiguracja PHPStorma do testów jednostkowych w Laravelu 5">
+  <meta property="og:description" content="Konfiguracja PHPStorma do testów jednostkowych w Laravelu 5">
+  <meta name="twitter:description" content="Konfiguracja PHPStorma do testów jednostkowych w Laravelu 5">
   <meta name="author" content="Zielony Buszmen"/>
   <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
   <meta name="twitter:card" content="summary" />
@@ -178,7 +169,11 @@ Przechodzimy do Settings (Ctrl &#43; Alt &#43; S), klikamy Languages &amp; Frame
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Laravel – testy jednostkowe w PHPStormie</h1>
+              <h1>Laravel 5 a testy w PHPStorm</h1>
+                
+                  
+                    <h2 class="post-subheading">Konfiguracja PHPStorma do testów jednostkowych w Laravelu 5</h2>
+                  
                 
                 
                   <span class="post-meta">
@@ -215,18 +210,16 @@ Przechodzimy do Settings (Ctrl &#43; Alt &#43; S), klikamy Languages &amp; Frame
 
 <p>Przechodzimy do <code>/tests/ExampleTest.php</code> i piszemy przykładowy test:</p>
 
-<pre><code class="language-php">
-class ExampleTest extends TestCase
+<pre><code class="language-php">class ExampleTest extends TestCase
 {
-    public function testTrueTest()
+    public function testTrue()
     {
-        $this-&amp;gt;assertTrue(true);
+        $this-&gt;assertTrue(true);
     }
 }
-
 </code></pre>
 
-<p>Aby uruchomić test, ustawiamy kursor w funkcji <code>testTrueTest</code> oraz wciskamy kombinacje klawiszy <strong>Ctrl + Shift + F10</strong>. Gotowe! 🙂 Test powinien się uruchomić i &#8222;się zaliczyć&#8221;.</p>
+<p>Aby uruchomić test, ustawiamy kursor w funkcji <code>testTrue</code> oraz wciskamy kombinacje klawiszy <strong>Ctrl + Shift + F10</strong>. Gotowe! 🙂 Test powinien się uruchomić i &ldquo;się zaliczyć&rdquo; ;)</p>
 
 <p><img src="/img/posts/laravel-phpStorm-testy-tdd-2.png" alt="foto" /></p>
 
@@ -240,7 +233,7 @@ class ExampleTest extends TestCase
         
         
           <li class="next">
-            <a href="https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/" data-toggle="tooltip" data-placement="top" title="Instalacja Angulara2 do Laravela5 do ‚współdziałania’">Następny post &rarr;</a>
+            <a href="https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/" data-toggle="tooltip" data-placement="top" title="Laravel i Angular w jednym stali domku">Następny post &rarr;</a>
           </li>
         
       </ul>

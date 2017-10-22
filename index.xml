@@ -6,36 +6,23 @@
     <description>Recent content on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <lastBuildDate>Mon, 01 May 2017 18:55:30 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Komendy GITa – Branche zdalne, merge i rebase</title>
-      <link>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</link>
-      <pubDate>Mon, 01 May 2017 18:55:30 +0000</pubDate>
+      <title>Komendy GITa (cheat-sheet)</title>
+      <link>https://zielonybuszmen.github.io/2017/10/22/git/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zielonybuszmen.github.io/2017/05/01/komendy-gita-branche-zdalne-merge-i-rebase/</guid>
-      <description>Operowanie branchami /* http://prismjs.com/download.html?themes=prism&amp;languages=markup+css+clike+javascript+c+cpp+csharp+git+java+php+python+sql */ /** * prism.js default theme for JavaScript, CSS and HTML * Based on dabblet (http://dabblet.com) * @author Lea Verou */ code[class*=&#34;language-&#34;], pre[class*=&#34;language-&#34;] { Sprawdzanie bieżącego brancha:
-git branch git status -sb Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1)
-git branch NAZWA [SHA-1] Przełączanie branchy
-git checkout NAZWA Stworzenie nowego brancha i przełączenie na niego
-git checkout -b NAZWA Branche zawarte w aktualnym branchu</description>
-    </item>
-    
-    <item>
-      <title>Komendy GITa</title>
-      <link>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</link>
-      <pubDate>Thu, 23 Mar 2017 16:25:00 +0000</pubDate>
-      
-      <guid>https://zielonybuszmen.github.io/2017/03/23/komendy-gita/</guid>
-      <description>Wersja oprogramowania
-git --version Dokumentacja (pomoc) git add --help git branch -- help git config --help git init --help git help add git help branch git help config git help init Konfiguracja Lista wszystkich opcji konfiguracyjnych
-git config -l Ustalenie opcji
-git config --global user.name &#34;Imie Nazwisko&#34; git config --global user.email mail@cos.pl Globalne ustawienia gita są w pliku:
-C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
-.git\config Inicjalizacja repozytorium git init Klonowanie repo git clone adres-repo [sciezka/docelowa/opcjonalnie] Informacje o repo Uczestnicy projektu</description>
+      <guid>https://zielonybuszmen.github.io/2017/10/22/git/</guid>
+      <description>Mały cheat sheet z komendami GITa. Trochę tego się nazbierało, dlatego najlepszym wyjściem będzie Ctrl + F. Wszystkie komendy gita są szczegółowo opisane na stronie dokumentacji git-scm.com/docs.
+Natomiast samego GITa można pobrać stąd: git-scm.com/downloads
+Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l  Ustalenie opcji
+git config --global user.name &amp;quot;Imie Nazwisko&amp;quot; git config --global user.email mail@cos.pl  Ustalenie opcji dla projektu
+git config user.name &amp;quot;Imie Nazwisko&amp;quot; git config user.email mail@cos.</description>
     </item>
     
     <item>
@@ -44,20 +31,20 @@ C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
       <pubDate>Wed, 22 Mar 2017 20:09:51 +0000</pubDate>
       
       <guid>https://zielonybuszmen.github.io/2017/03/22/albert-launcher-na-ubuntu/</guid>
-      <description>Pracując na Windowsie korzystałem z małego programiku o nazwie Launchy. Było to naprawdę ogromne usprawnienie podczas korzystania z komputera. Szybkie obliczenie, wyszukanie czegoś na necie albo uruchomienie dowolnego programu bez odrywania rąk od klawiatury było bardzo wygodne. Niestety, Launchy niezbyt dobrze działa na Ubuntu 16, więc zostałem zmuszony do poszukania alternatywy. Znalazłem coś, co nazywa się Albert Launcher, i uwierzcie, jest to o wiele lepsze rozwiązanie od starego już Launchy&amp;#8217;ego.</description>
+      <description>Pracując na Windowsie korzystałem z małego programiku o nazwie Launchy. Było to naprawdę ogromne usprawnienie podczas korzystania z komputera. Szybkie obliczenie, wyszukanie czegoś na necie albo uruchomienie dowolnego programu bez odrywania rąk od klawiatury było bardzo wygodne. Niestety, Launchy niezbyt dobrze działa na Ubuntu 16, więc zostałem zmuszony do poszukania alternatywy. Znalazłem coś, co nazywa się Albert Launcher, i uwierzcie, jest to o wiele lepsze rozwiązanie od starego już Launchy&amp;rsquo;ego.</description>
     </item>
     
     <item>
-      <title>Instalacja Angulara2 do Laravela5 do ‚współdziałania’</title>
+      <title>Laravel i Angular w jednym stali domku</title>
       <link>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</link>
       <pubDate>Wed, 01 Mar 2017 21:47:42 +0000</pubDate>
       
       <guid>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</guid>
-      <description>Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &amp;#8211; Angular instaluje się jako &amp;#8222;stand-alone&amp;#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &amp;#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.</description>
+      <description>Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem - Angular instaluje się jako &amp;#8222;stand-alone&amp;#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &amp;#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.</description>
     </item>
     
     <item>
-      <title>Laravel – testy jednostkowe w PHPStormie</title>
+      <title>Laravel 5 a testy w PHPStorm</title>
       <link>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</link>
       <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
       
@@ -66,7 +53,7 @@ C:\Users\nazwa-usera\.gitconfig Plik konfiguracyjny danego repozytorium
 Przechodzimy do Settings (Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie PHP i wybieramy PHPUnit.
 W nowo otwartym oknie wybieramy Use Composer autoloader i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
 Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
-class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
+class ExampleTest extends TestCase { public function testTrue() { $this-&amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrue oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
     </item>
     
     <item>

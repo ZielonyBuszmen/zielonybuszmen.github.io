@@ -12,16 +12,16 @@
     
     
     <item>
-      <title>Instalacja Angulara2 do Laravela5 do ‚współdziałania’</title>
+      <title>Laravel i Angular w jednym stali domku</title>
       <link>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</link>
       <pubDate>Wed, 01 Mar 2017 21:47:42 +0000</pubDate>
       
       <guid>https://zielonybuszmen.github.io/2017/03/01/instalacja-angulara2-do-laravela5-do-wspoldzialania/</guid>
-      <description>Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem &amp;#8211; Angular instaluje się jako &amp;#8222;stand-alone&amp;#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &amp;#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.</description>
+      <description>Na necie jest cała masa poradników, jak zainstalować Angulara2. Tylko wszystkie mają pewien problem - Angular instaluje się jako &amp;#8222;stand-alone&amp;#8221;. Jak więc go dodać do Laravela? Jest jeden prosty sposób &amp;#8211; korzystać z Laravela jako API, a cała aplikacja (front) powinna być zrobiona w Angularze2. Takie rozwiązanie mnie nie satysfakcjonowało, więc spróbowałem **zainstalować Angulara razem z Laravelem **, tak aby korzystać z odpowiedniej struktury katalogów oraz nie zaburzyć porządku w aplikacji Laravela.</description>
     </item>
     
     <item>
-      <title>Laravel – testy jednostkowe w PHPStormie</title>
+      <title>Laravel 5 a testy w PHPStorm</title>
       <link>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</link>
       <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
       
@@ -30,7 +30,7 @@
 Przechodzimy do Settings (Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie PHP i wybieramy PHPUnit.
 W nowo otwartym oknie wybieramy Use Composer autoloader i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
 Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
-class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
+class ExampleTest extends TestCase { public function testTrue() { $this-&amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrue oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
     </item>
     
   </channel>

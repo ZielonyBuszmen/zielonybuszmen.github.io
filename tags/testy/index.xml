@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Laravel – testy jednostkowe w PHPStormie</title>
+      <title>Laravel 5 a testy w PHPStorm</title>
       <link>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</link>
       <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
       
@@ -21,7 +21,7 @@
 Przechodzimy do Settings (Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie PHP i wybieramy PHPUnit.
 W nowo otwartym oknie wybieramy Use Composer autoloader i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
 Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
-class ExampleTest extends TestCase { public function testTrueTest() { $this-&amp;amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrueTest oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
+class ExampleTest extends TestCase { public function testTrue() { $this-&amp;gt;assertTrue(true); } }  Aby uruchomić test, ustawiamy kursor w funkcji testTrue oraz wciskamy kombinacje klawiszy Ctrl + Shift + F10.</description>
     </item>
     
   </channel>

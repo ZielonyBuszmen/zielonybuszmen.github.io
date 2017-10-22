@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Komendy GITa (cheat-sheet)</title>
+  <meta property="og:title" content="Komendy GITa (cheat-sheet)" />
+  <meta name="twitter:title" content="Komendy GITa (cheat-sheet)" />
+  <meta name="description" content="Mały cheat sheet z komendami GITa. Trochę tego się nazbierało, dlatego najlepszym wyjściem będzie Ctrl &#43; F. Wszystkie komendy gita są szczegółowo opisane na stronie dokumentacji git-scm.com/docs.
+Natomiast samego GITa można pobrać stąd: git-scm.com/downloads
+Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l  Ustalenie opcji
+git config --global user.name &quot;Imie Nazwisko&quot; git config --global user.email mail@cos.pl  Ustalenie opcji dla projektu
+git config user.name &quot;Imie Nazwisko&quot; git config user.email mail@cos.">
+  <meta property="og:description" content="Mały cheat sheet z komendami GITa. Trochę tego się nazbierało, dlatego najlepszym wyjściem będzie Ctrl &#43; F. Wszystkie komendy gita są szczegółowo opisane na stronie dokumentacji git-scm.com/docs.
+Natomiast samego GITa można pobrać stąd: git-scm.com/downloads
+Konfiguracja Lista wszystkich opcji konfiguracyjnych
+git config -l  Ustalenie opcji
+git config --global user.name &quot;Imie Nazwisko&quot; git config --global user.email mail@cos.pl  Ustalenie opcji dla projektu
+git config user.name &quot;Imie Nazwisko&quot; git config user.email mail@cos.">
+  <meta name="twitter:description" content="Mały cheat sheet z komendami GITa. Trochę tego się nazbierało, dlatego najlepszym wyjściem będzie Ctrl &#43; F. Wszystkie komendy gita są szczegółowo opisane na stronie dokumentacji git-scm.com/docs. …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2017/10/22/git/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.29" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2017/10/22/git/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  
+  
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="https://zielonybuszmen.github.io/prism-highlighter/darcula.css">
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/categories/projekty/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Komendy GITa (cheat-sheet)</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 22 October 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Mały cheat sheet z komendami <strong>GITa</strong>. Trochę tego się nazbierało, dlatego najlepszym wyjściem będzie Ctrl + F. Wszystkie komendy gita są szczegółowo opisane na stronie dokumentacji <a href="https://git-scm.com/docs">git-scm.com/docs</a>.</p>
+
+<p>Natomiast samego <strong>GITa</strong> można pobrać stąd: <a href="https://git-scm.com/downloads">git-scm.com/downloads</a></p>
+
+<h2 id="konfiguracja">Konfiguracja</h2>
+
+<p>Lista wszystkich opcji konfiguracyjnych</p>
+
+<pre><code class="language-git">git config -l
+</code></pre>
+
+<p>Ustalenie opcji</p>
+
+<pre><code class="language-git">git config --global user.name &quot;Imie Nazwisko&quot;
+git config --global user.email mail@cos.pl
+</code></pre>
+
+<p>Ustalenie opcji dla projektu</p>
+
+<pre><code class="language-git">git config user.name &quot;Imie Nazwisko&quot;
+git config user.email mail@cos.pl
+</code></pre>
+
+<p>Globalne ustawienia gita są w pliku:</p>
+
+<pre><code class="language-git">C:\Users\nazwa-usera\.gitconfig
+</code></pre>
+
+<p>Plik konfiguracyjny danego repozytorium</p>
+
+<pre><code class="language-git">.git\config
+</code></pre>
+
+<h2 id="inicjalizacja-repozytorium">Inicjalizacja repozytorium</h2>
+
+<pre><code class="language-git">git init
+</code></pre>
+
+<h2 id="klonowanie-repo">Klonowanie repo</h2>
+
+<pre><code class="language-git">git clone adres-repo [sciezka/docelowa/opcjonalnie]
+</code></pre>
+
+<h2 id="informacje-o-repo">Informacje o repo</h2>
+
+<p>Uczestnicy projektu</p>
+
+<pre><code class="language-git">git shortlog -s -n
+</code></pre>
+
+<h2 id="historia">Historia</h2>
+
+<pre><code class="language-git">git log
+git log --pretty=oneline
+git log --oneline
+</code></pre>
+
+<p>Zminimalizowane indetyfikatory</p>
+
+<pre><code class="language-git">git log --abbrev-commit --abbrev=4 --pretty=oneline
+</code></pre>
+
+<p>3 Ostatnie rewizje</p>
+
+<pre><code class="language-git">git log -3
+</code></pre>
+
+<p>Historia użytkownika</p>
+
+<pre><code class="language-git">git log --author=buszmen
+</code></pre>
+
+<p>Historia zawierająca commity z przedziału czasu</p>
+
+<pre><code class="language-git">git log--since=&quot;2016-06-07&quot; --until=&quot;2017-01-15&quot;
+</code></pre>
+
+<p>Lista ostatnich 15 rewizji w skróconym formacie graficznym</p>
+
+<pre><code class="language-git">git log --pretty=oneline --abbrev-commit --abbrev=4 -15 --graph
+</code></pre>
+
+<h2 id="przywracanie-obszaru-roboczego">Przywracanie obszaru roboczego</h2>
+
+<p>(Nie usuwa nowych plików)</p>
+
+<pre><code class="language-git">git reset --hard
+git checkout -f
+</code></pre>
+
+<p>Powrócenie do określonego commita (późniejsze commity zostają <strong>usunięte</strong> z historii projektu!)</p>
+
+<pre><code class="language-git">git reset --hard [SHA-1]
+</code></pre>
+
+<p>Powrócenie do określonego commita (repo znajduje się w stanie detached head)</p>
+
+<pre><code class="language-git">git checkout -f [SHA-1]
+</code></pre>
+
+<h2 id="stan-repo">Stan repo</h2>
+
+<pre><code class="language-git">git status
+git status -s
+</code></pre>
+
+<h2 id="tworzenie-commita">Tworzenie commita</h2>
+
+<pre><code class="language-git">git add -A
+git commit -m &quot;ble ble ble...&quot;
+</code></pre>
+
+<p>Automatyczna indeksacja plików zmodyfikowanch lub usuniętych</p>
+
+<pre><code class="language-git">git commit -a
+</code></pre>
+
+<h2 id="branche-gałęzie">Branche (gałęzie)</h2>
+
+<p>Sprawdzenie brancha</p>
+
+<pre><code class="language-git">git branch
+</code></pre>
+
+<p>Przejście na wybranego brancha</p>
+
+<pre><code class="language-git">git checkout [nazwa-brancha]
+git checkout develop
+</code></pre>
+
+<h2 id="stan-plików">Stan plików</h2>
+
+<p>Indeksacja pliku</p>
+
+<pre><code class="language-git">git add [nazwa-pliku]
+</code></pre>
+
+<p>Indeksacja wszystkich plików</p>
+
+<pre><code class="language-git">git add --all
+git add -A
+</code></pre>
+
+<p>Indeksacja plików zmodyfikowanych i usuniętych</p>
+
+<pre><code class="language-git">git add --updated
+git add -u
+</code></pre>
+
+<p>Usunięcie pliku</p>
+
+<pre><code class="language-git">git rm [nazwa-pliku]
+</code></pre>
+
+<p>Zmiana nazwy</p>
+
+<pre><code class="language-git">git mv stara-nazwa nowa-nazwa
+</code></pre>
+
+<h2 id="ignorowanie-plików">Ignorowanie plików</h2>
+
+<p>Lista plików do ignorowania znajduje się w pliku <code>.gitignore</code></p>
+
+<pre><code class="language-git">/folder
+folder
+*.exe
+plik.txt
+</code></pre>
+
+<h2 id="znaczniki">Znaczniki</h2>
+
+<p>Znacznik opisany do ostatniego commita</p>
+
+<pre><code class="language-git">git tag -a NAZWA -m KOMENTARZ [SHA-1, by stworzyc do danego commita]
+</code></pre>
+
+<p>Znacznik lekki do ostatniej rewizji</p>
+
+<pre><code class="language-git">git tag NAZWA [SHA-1 opcjonaln]
+</code></pre>
+
+<p>Lista znaczników opisanych</p>
+
+<pre><code class="language-git">git describe
+</code></pre>
+
+<p>Lista wszystkich znaczników</p>
+
+<pre><code class="language-git">git describe --tags
+</code></pre>
+
+<h2 id="dziennik-reflog">Dziennik reflog</h2>
+
+<pre><code class="language-git">git reflog [branch]
+</code></pre>
+
+<h2 id="modyfikacja-historii-projektu">Modyfikacja historii projektu</h2>
+
+<p>Usuwanie ostatnich commitów do X</p>
+
+<pre><code class="language-git">git reset --hard SHA
+</code></pre>
+
+<p>Edycja ostatniego commita</p>
+
+<pre><code class="language-git">git commit --amend -a -m &quot;...&quot;
+</code></pre>
+
+<p>Łączenie commitów, ale dopiero następujących po podanym</p>
+
+<pre><code class="language-git">git rebase -i SHA
+</code></pre>
+
+<p>Stworzenie commita usuwającego zmiany z innego commita</p>
+
+<pre><code class="language-git">git revert --no-edit SHA
+</code></pre>
+
+<p>Odzyskanie pliku z konkretnego commita</p>
+
+<pre><code class="language-git">git checkout -f SHA nazwa-pliku
+</code></pre>
+
+<h2 id="operacje-na-branchach">Operacje na branchach</h2>
+
+<p>Sprawdzanie bieżącego brancha:</p>
+
+<pre><code class="language-git">git branch
+
+git status -sb
+</code></pre>
+
+<p>Tworzenie nowego brancha wskazującej na bieżącego commita (lub SHA-1):</p>
+
+<pre><code class="language-git">git branch NAZWA [SHA-1]
+</code></pre>
+
+<p>Przełączanie branchy:</p>
+
+<pre><code class="language-git">git checkout NAZWA
+</code></pre>
+
+<p>Stworzenie nowego brancha i przełączenie na niego:</p>
+
+<pre><code class="language-git">git checkout -b NAZWA
+</code></pre>
+
+<p>Branche zawarte w aktualnym branchu:</p>
+
+<pre><code class="language-git">git branch --merged
+</code></pre>
+
+<p>Branche rozłączne z aktualnym branchem:</p>
+
+<pre><code class="language-git">git branch --no-merged
+</code></pre>
+
+<p>Usuwanie gałęzi (tylko gdy jest zmergowana)&rdquo;</p>
+
+<pre><code class="language-git">git branch -d NAZWA
+</code></pre>
+
+<p>Usuwanie gałęzi (wymuszone)</p>
+
+<pre><code class="language-git">git branch -D NAZWA
+</code></pre>
+
+<p>Zmiana nazwy brancha</p>
+
+<pre><code class="language-git">git branch -m STARA-NAZWA NOWA-NAZWA
+</code></pre>
+
+<p>Różnice pomiędzy branchami</p>
+
+<pre><code class="language-git">git diff --name-status
+</code></pre>
+
+<h2 id="merge">Merge</h2>
+
+<p>Łączenie gałęzi NAZWA z obecną</p>
+
+<pre><code class="language-git">git merge NAZWA
+</code></pre>
+
+<p>Usuwanie merga</p>
+
+<pre><code class="language-git">git reset --hard HEAD~
+</code></pre>
+
+<h2 id="rebase">Rebase</h2>
+
+<p>&lsquo;Zaaplikowanie&rsquo; (zastosowanie) zmian z bieżącego brancha do brancha NAZWA</p>
+
+<pre><code class="language-git">git rebase NAZWA
+</code></pre>
+
+<p>Anulowanie rebase (gdyby po opracji był stan detached HEAD)</p>
+
+<pre><code class="language-git">git rebase --abort
+</code></pre>
+
+<h1 id="zdalne-repozytoria">Zdalne repozytoria</h1>
+
+<p>Klonowanie repo</p>
+
+<pre><code class="language-git">git clone URL
+</code></pre>
+
+<p>Dodanie adresu repozytorium zdalnego (możemy dołączać kilka repozytoriów zdalnych do jednego lokalnego)</p>
+
+<pre><code class="language-git">git remote add NAZWA ADRES
+</code></pre>
+
+<p>Listowanie adresów zdalnych</p>
+
+<pre><code class="language-git">git remote -v
+</code></pre>
+
+<h2 id="śledzenie-branchy">Śledzenie branchy</h2>
+
+<p>Sprawdzenie śledzonego brancha dla brancha X</p>
+
+<pre><code class="language-git">git config --get branch.X.remote
+git config --get branch.X.merge
+
+</code></pre>
+
+<p>Ustawianie śledzonego brancha</p>
+
+<pre><code class="language-git">git branch --set-upstream branch-lokalny repo/branch-zdalny
+git branch --set-upstream master origin/master
+</code></pre>
+
+<h2 id="lista-branchy">Lista branchy</h2>
+
+<p>Branche lokalne</p>
+
+<pre><code class="language-git">git branch
+</code></pre>
+
+<p>Branche zdalne</p>
+
+<pre><code class="language-git">git branch -r
+</code></pre>
+
+<p>Wszystkie branche</p>
+
+<pre><code class="language-git">git branch -a
+</code></pre>
+
+<h2 id="synchronizacja-gałęzi">Synchronizacja gałęzi</h2>
+
+<p>Pobranie śledzonego brancha</p>
+
+<pre><code class="language-git">git fetch
+</code></pre>
+
+<p>Pobranie zdalnego brancha, łączenie z bieżącym branchem i przywrócenie obszaru roboczego</p>
+
+<pre><code class="language-git">git pull
+</code></pre>
+
+<p>Przesylanie bieżącego brancha do brancha śledzonego</p>
+
+<pre><code class="language-git">git push
+</code></pre>
+
+<p>Przesłanie z nadpisaniem całego brancha (nadpisaniem historii)</p>
+
+<pre><code class="language-git">git push -f
+</code></pre>
+
+<p>Przełączenie na gałąź zdalną</p>
+
+<pre><code class="language-git">git checkout NAZWA
+</code></pre>
+
+<h2 id="optymalizacja-stare-commity">Optymalizacja + stare commity</h2>
+
+<p>Usuwanie zgubionych rewizji</p>
+
+<pre><code class="language-git">git prune
+</code></pre>
+
+<p>Optymalizacja repo</p>
+
+<pre><code class="language-git">git gc
+</code></pre>
+
+<p>Wersja oprogramowania</p>
+
+<pre><code class="language-git">git --version
+</code></pre>
+
+<h2 id="dokumentacja-pomoc">Dokumentacja (pomoc)</h2>
+
+<pre><code class="language-git">git add --help
+git branch -- help
+git config --help
+git init --help
+
+git help add
+git help branch
+git help config
+git help init
+</code></pre>
+
+<style>
+p {
+    margin-bottom: 0px;
+}
+h2 {
+    margin-top: 40px;
+}
+</style>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2017/03/22/albert-launcher-na-ubuntu/" data-toggle="tooltip" data-placement="top" title="Albert launcher na Ubuntu">&larr; Poprzedni post</a>
+          </li>
+        
+        
+      </ul>
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zielonybuszmen-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/ZielonyBuszmen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/load-photoswipe.js"></script>
+
+
+<script src="/prism-highlighter/prism.js"></script>
+
+  </body>
+</html>
+
