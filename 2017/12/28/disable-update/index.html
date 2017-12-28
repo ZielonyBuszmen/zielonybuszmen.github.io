@@ -10,10 +10,10 @@
   <meta name="twitter:title" content="Zablokowanie Update na Windows 10" />
   <meta name="description" content="Przedstawiam prosty sposób na zablokowanie Windows Update na Windowsie 10 (działa także na w przypadku wersji Home). Testowałem ten sposób na Fall Creators Update (1709) i wszystko wydaje się być w porządku. Poniżej doklejam linki do źródeł, gdzie można przeczytać o tym więcej.
  Pobieramy archiwum zip (Windows 10 Update Disabler 1.0) i je wypakowujemy
- Uruchamiamy konsolę w jako administrator, przechodzimy do katalogu z wypakowanym programem i wpisujemy polecenie.">
+ Uruchamiamy konsolę jako administrator a następnie przechodzimy do katalogu z wypakowanym programem i wpisujemy polecenie:">
   <meta property="og:description" content="Przedstawiam prosty sposób na zablokowanie Windows Update na Windowsie 10 (działa także na w przypadku wersji Home). Testowałem ten sposób na Fall Creators Update (1709) i wszystko wydaje się być w porządku. Poniżej doklejam linki do źródeł, gdzie można przeczytać o tym więcej.
  Pobieramy archiwum zip (Windows 10 Update Disabler 1.0) i je wypakowujemy
- Uruchamiamy konsolę w jako administrator, przechodzimy do katalogu z wypakowanym programem i wpisujemy polecenie.">
+ Uruchamiamy konsolę jako administrator a następnie przechodzimy do katalogu z wypakowanym programem i wpisujemy polecenie:">
   <meta name="twitter:description" content="Przedstawiam prosty sposób na zablokowanie Windows Update na Windowsie 10 (działa także na w przypadku wersji Home). Testowałem ten sposób na Fall Creators Update (1709) i wszystko wydaje się być w …">
   <meta name="author" content="Zielony Buszmen"/>
   <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
@@ -205,7 +205,7 @@
 <ol>
 <li><p>Pobieramy archiwum zip (<a href="/files/Windows10UpdaterDisabler.zip">Windows 10 Update Disabler 1.0</a>) i je wypakowujemy</p></li>
 
-<li><p>Uruchamiamy konsolę w jako administrator, przechodzimy do katalogu z wypakowanym programem i wpisujemy polecenie.</p>
+<li><p>Uruchamiamy konsolę jako administrator a następnie przechodzimy do katalogu z wypakowanym programem i wpisujemy polecenie:</p>
 
 <pre><code class="language-cmd">UpdaterDisabler.exe -install
 </code></pre>
@@ -213,13 +213,13 @@
 <p><img src="/img/posts/disable-update2.png" alt="sreen pokazujący działanie programu" /></p></li>
 </ol>
 
-<p>I tyle. Wystarczy wejść w &ldquo;Ustawienia&rdquo;, aby sprawdzić, czy rzeczywiście to zadziałało.</p>
+<p>I tyle. Wystarczy wejść w &ldquo;Ustawienia&rdquo;, aby sprawdzić, że rzeczywiście to działa</p>
 
 <h2 id="a-jak-to-działa">A jak to działa?</h2>
 
-<p>Program instaluje w systemie usługę, która sprawdza aktywność Windows Update, a gdy ją wykryje próbuje ją &lsquo;ubić&rsquo;.</p>
+<p>Program instaluje w systemie usługę, która sprawdza aktywność Windows Update. Gdy ją wykryje, próbuje ją &lsquo;ubić&rsquo;.</p>
 
-<p>Aby przywrócić domyślne działanie Windows Update, należy tą usługę wyłączyć. Najłatwiej jest to zrobić usuwając ją z systemu poleceniem</p>
+<p>Aby przywrócić domyślne działanie Windows Update, należy tą usługę wyłączyć. Najłatwiej jest to zrobić usuwając ją z systemu poleceniem:</p>
 
 <pre><code class="language-cmd">UpdaterDisabler.exe -remove
 </code></pre>
