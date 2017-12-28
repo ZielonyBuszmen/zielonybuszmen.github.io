@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/tags/windows/</link>
+    <description>Recent content in Windows on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <lastBuildDate>Thu, 28 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Zablokowanie update&#39;ów na Windowsie 10</title>
+      <link>https://zielonybuszmen.github.io/2017/12/28/disable-update/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/2017/12/28/disable-update/</guid>
+      <description>Przedstawiam prosty sposób na zablokowanie Windows Update na Windowsie 10 (działa także na w przypadku wersji Home). Testowałem ten sposób na Fall Creators Update (1709) i wszystko wydaje się być w porządku. Poniżej doklejam linki do źródeł, gdzie można przeczytać o tym więcej.
+ Pobieramy archiwum zip () i je wypakowujemy
+ Uruchamiamy konsolę w jako administrator, przechodzimy do katalogu z wypakowanym programem i wpisujemy polecenie.
+UpdaterDisabler.exe -install    I tyle.</description>
+    </item>
+    
+  </channel>
+</rss>
