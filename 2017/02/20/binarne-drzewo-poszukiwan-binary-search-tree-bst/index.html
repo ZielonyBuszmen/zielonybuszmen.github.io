@@ -9,9 +9,9 @@
   <meta property="og:title" content="Binarne drzewo poszukiwań – Binary Search Tree (BST)" />
   <meta name="twitter:title" content="Binarne drzewo poszukiwań – Binary Search Tree (BST)" />
   <meta name="description" content="Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
-Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).">
+Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy” (zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).">
   <meta property="og:description" content="Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.
-Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).">
+Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwóch następników. Stąd też nazwa „binarne”, bo binarny to „dwójkowy” (zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (root).">
   <meta name="twitter:description" content="Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko …">
   <meta name="author" content="Zielony Buszmen"/>
   <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
@@ -198,7 +198,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p>Drzewo to hierarchiczna struktura danych. Co to znaczy? Że do jego „obsługi” w kodzie będziemy musieli używać rekurencji (tej trudnej i nieciekawej). Na początku przyjrzymy się, jak to wszystko wygląda na obrazkach, dopiero potem zaimplementujemy naszą wiedzę w kodzie.</p>
 
-<p>Drzewo składa się z węzłów (<strong>nodes</strong>). Każdy z nich posiada <u>co najwyżej</u> dwóch <em>następników.</em> Stąd też nazwa „binarne”, bo binarny to „dwójkowy”, zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (<strong>root</strong>). Jego następniki są nazywane węzłami <em>potomnymi (dziecko, potomek) (<strong>child nodes).</strong></em></p>
+<p>Drzewo składa się z węzłów (<strong>nodes</strong>). Każdy z nich posiada <u>co najwyżej</u> dwóch <em>następników.</em> Stąd też nazwa „binarne”, bo binarny to „dwójkowy” (zawierający dwa elementy). Drzewo posiada tzw. „węzeł nadrzędny” (<strong>root</strong>). Jego następniki są nazywane węzłami <em>potomnymi (dziecko, potomek) <strong>(child nodes)</strong>.</em></p>
 
 <p><img src="/img/posts/bst/Clipboard01.png" alt="foto" /></p>
 
@@ -206,15 +206,13 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p>A co z elementami równymi? To już kwestia własnego ustalenia. Zazwyczaj takie elementy wrzuca się na prawo.</p>
 
-<p>Na obrazku rootem (głównym węzłem) drzewa jest liczba 8. Ma ona dwóch potomków: 3 oraz 10. Następnie 3 też ma dwóch potomków: 1 oraz 6. Można więc powiedzieć, że 3 jest ojcem dla 1 i 6. Bądź 14 jest ojcem 13; albo że 8 jest ojcem 3 i 10. Warto zauważyć, że np. taka 14 posiada tylko lewego potomka 13. Węzeł 4 nie ma potomków w ogóle.</p>
+<p>Na obrazku rootem (głównym węzłem) drzewa jest liczba <strong>8</strong>. Ma ona dwóch potomków: <strong>3</strong> oraz <strong>10</strong>. Następnie <strong>3</strong> też ma dwóch potomków: <strong>1</strong> oraz <strong>6</strong>. Można więc powiedzieć, że <strong>3</strong> jest ojcem dla <strong>1</strong> i <strong>6</strong>. Bądź <strong>14</strong> jest ojcem <strong>13</strong>; albo że <strong>8</strong> jest ojcem <strong>3</strong> i <strong>10</strong>. Warto zauważyć, że np. taka <strong>14</strong> posiada tylko lewego potomka <strong>13</strong>. Węzeł <strong>4</strong> nie ma potomków w ogóle.</p>
 
 <p>Na tym zakończylibyśmy tą całą otoczkę teoretyczną. Nie omówiliśmy takich rzeczy jak dodawanie węzła, przeszukiwanie drzewa, itp. To wszystko można znaleźć w tym filmiku: <a href="https://youtu.be/_V7a1Gwuj5k?t=37m46s"><strong>https://youtu.be/_V7a1Gwuj5k?t=37m46s</strong></a>  (od <strong>37:46</strong> do <strong>45:20</strong>). Gościu fajnie tłumaczy, ALE nie polecam sugerować się jego kodem. BO jego drzewo jest w C++ ORAZ po drugie i najważniejsze – stosuje <strong>tablicową implementację drzewa</strong>, która do niczego nam się nie przyda. Bo my musimy napisać drzewo „z prawdziwego zdarzenia”, a nie jakieś tablicowe śmieszki.</p>
 
 <p>Warto jeszcze nadmienić, że w tym artykule nie będzie pokazane całe drzewo ze wszystkimi jego możliwościami, itd. Po taką wiedzę zapraszam piętro niżej, do wydziału leśnego. No bo kto jak kto, ale oni o drzewach wiedzą najwięcej.</p>
 
-<p>&nbsp;</p>
-
-<h1 id="implementacja"><strong>Implementacja</strong></h1>
+<h1 id="implementacja">Implementacja</h1>
 
 <pre><code class="language-csharp">public class Node
 {
@@ -227,14 +225,12 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 <p>Klasa nazywa się Node, czyli węzeł. Zawiera trzy pola: <strong>number</strong>, <strong>left</strong> oraz <strong>right</strong>.</p>
 
 <ul>
-<li><code>int number;</code> &#8211; to liczba, czyli to, co dany węzeł ma przechowywać. W węzłach nie będziemy przetrzymywać wymyślnych klientów, adresów, czy innego barachła. Tylko zwykłą i najprostszą liczbę, tak jak to było wyżej na rysunku.</li>
-<li><code>Node left;</code> &#8211; **referencja (odwołanie) **do lewego dziecka.</li>
-<li><code>Node right;</code> &#8211; **referencja (odwołanie) **do prawego dziecka.</li>
+<li><code>int number;</code> - to liczba, czyli to, co dany węzeł ma przechowywać. W węzłach nie będziemy przetrzymywać wymyślnych klientów, adresów, czy innego barachła. Tylko zwykłą i najprostszą liczbę, tak jak to było wyżej na rysunku.</li>
+<li><code>Node left;</code> - <strong>referencja (odwołanie)</strong> do lewego dziecka.</li>
+<li><code>Node right;</code> - <strong>referencja (odwołanie)</strong> do prawego dziecka.</li>
 </ul>
 
 <p>Na początku może to wyglądać dziwnie – klasa Node posiada dwa pola typu Node? Tak. Tak jak już było wspomniane – drzewo to struktura hierarchiczna, więc takie coś jest na początku dziennym. I takie coś trzeba będzie wertować rekurencyjnie (niestety).</p>
-
-<p>&nbsp;</p>
 
 <p>Druga klasa, którą stworzymy zaraz pod kodem klasy węzła, będzie klasą drzewa:</p>
 
@@ -248,11 +244,11 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 <p>Drzewo – czyli <strong>Tree</strong>. Klasa zawiera dwa pola:</p>
 
 <ul>
-<li><code>Node root;</code> &#8211; **refrencja (odwołanie) **do głównego węzła, do <em>korzenia</em> tego drzewa</li>
-<li><code>int counter;</code>funkcją będzie funkc &#8211; a tutaj taki mały licznik elementów drzewa, nie musi on tutaj być, ale dlaczego by go nie zrobić dla picu? 😉</li>
+<li><code>Node root;</code> - <strong>refrencja (odwołanie)</strong> do głównego węzła, do <em>korzenia</em> tego drzewa</li>
+<li><code>int counter;</code> - a tutaj taki mały licznik elementów drzewa, nie musi on tutaj być, ale dlaczego by go nie zrobić dla picu? 😉</li>
 </ul>
 
-<h1 id="teraz-zajmiemy-się-implementacją-węzła-u-node-u"><strong>Teraz zajmiemy się implementacją węzła <u>(node)</u></strong></h1>
+<h1 id="teraz-zajmiemy-się-implementacją-węzła-u-node-u">Teraz zajmiemy się implementacją węzła <em><u>(node)</u></em></h1>
 
 <pre><code class="language-csharp">public class Node
 {
@@ -276,8 +272,6 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 <p>Dodaliśmy do kodu dwie funkcje. Pierwsza z nich to konstruktor, do którego przekazujemy tylko jeden parametr – wartość węzła, którą zaraz przypisujemy do pola <code>int numer (//1)</code>. W kolejnych dwóch linijkach przypisujemy odwołania do lewego i prawego dziecka tego węzła -&gt; z racji tego, że ten węzeł jest „nowo narodzony” to nie ma dzieci, po prostu przypisujemy im nulle <code>(//2).</code></p>
 
 <p>Druga funkcja <code>bool IsLeaf()</code>, sprawdza, czy węzeł jest liściem. A węzeł jest liściem, gdy nie posiada dzieci. Każdy „nowo upieczony” węzeł będzie liściem, bo nie będzie posiadał ani lewego dziecka, ani prawego. Wtedy funkcja zwraca <code>true</code>. Gdy węzeł nie jest liściem, czyli posiada jedno lub dwoje dzieci, to funkcja zwraca <code>false</code>.</p>
-
-<p>&nbsp;</p>
 
 <p>Kolejną funkcją będzie funkcja przeszukująca pod-węzły pod kątem danej wartości:</p>
 
@@ -321,7 +315,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p>Gdy znajdzie – zwraca ten węzeł. Gdy nie znajdzie – zwraca null;</p>
 
-<p>Przeanalizujmy tą funkcję. Składa się ona z trzech **ifów. **Pierwszy sprawdza, czy liczba której szukamy nie jest liczbą w obecnym węźle <strong>(//1)</strong>. Jeśli tak, to od razu zwracamy ten węzeł i kończymy funkcję.</p>
+<p>Przeanalizujmy tą funkcję. Składa się ona z trzech <strong>ifów</strong>. Pierwszy sprawdza, czy liczba której szukamy nie jest liczbą w obecnym węźle <strong>(//1)</strong>. Jeśli tak, to od razu zwracamy ten węzeł i kończymy funkcję.</p>
 
 <p>Drugi i trzeci wypadek jest bardziej złożony. Oba są na szczęście prawie że identyczne.</p>
 
@@ -332,11 +326,11 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p><code>this.left</code> to odwołanie do lewego dziecka naszego węzła. <code>this.left.Search()</code> to odwołanie się do funkcji <code>Search()</code>, czyli do tej w której obecnie jesteśmy, ale z tą różnicą, że wywołujemy ją dla lewego dziecka. Przekazujemy do niej to samo <code>value</code>, które widnieje tam wyżej <strong>(//0)</strong>. Na samym początku linijki daliśmy <code>return</code>, przez co wszystko będzie wykonywać się rekurencyjne aż do znalezienia odpowiedniego węzła i jego zwrócenia <strong>(//1)</strong>. Albo nieznalezienia i zwrócenia null <strong>(//8)</strong>.</p>
 
-<p>Analogicznie postępujemy w trzeciej części tej funkcji, gdy szukana liczba jest większa lub równa od liczby przechowywanej w naszym węźle. <strong>(//5).</strong> Najpierw sprawdzamy, czy w ogóle istnieje prawy pod-węzeł **(//6). **Jeśli istnieje <strong>(//7)</strong> to zaczynamy przeszukiwać prawy węzeł i ewentualnie jego podwęzły (tak jak to miało miejsce z lewej strony).</p>
+<p>Analogicznie postępujemy w trzeciej części tej funkcji, gdy szukana liczba jest większa lub równa od liczby przechowywanej w naszym węźle. <strong>(//5).</strong> Najpierw sprawdzamy, czy w ogóle istnieje prawy pod-węzeł <strong>(//6)</strong>. Jeśli istnieje <strong>(//7)</strong> to zaczynamy przeszukiwać prawy węzeł i ewentualnie jego podwęzły (tak jak to miało miejsce z lewej strony).</p>
 
-<p>Gdy żaden z tych 3 **ifów **się nie wykona, to pozostaje nam zwrócić null **(//8), **czyli informację o nieznalezieniu węzła o takiej wartości.</p>
+<p>Gdy żaden z tych 3 <strong>ifów</strong> się nie wykona, to pozostaje nam zwrócić null <strong>(//8)</strong>, czyli informację o nieznalezieniu węzła o takiej wartości.</p>
 
-<h1 id="dodawanie-węzła-do-struktury"><strong>Dodawanie węzła do struktury</strong></h1>
+<h2 id="dodawanie-węzła-do-struktury">Dodawanie węzła do struktury</h2>
 
 <pre><code class="language-csharp">// ..............  //
 
@@ -369,11 +363,11 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p></pre></p>
 
-<p>Funkcja <code>Add()</code> jest bliźniaczo podobna do omówionej wcześniej funkcji <code>Search()</code>. Przekazujemy do niej wartość, którą chcemy dodać do węzła (a dokładniej – do dzieci tego węzła)**(//0). **Funkcja składa się z dwóch głównych ifów <strong>(//1),(//4)</strong>. Pierwszy z nich **(//1) **wykona się wtedy, gdy liczba którą chcemy wpisać będzie większa od tej w aktualnym węźle. Jeśli tak się stanie, to najpierw sprawdzamy, czy dany węzeł posiada prawego potomka. Jeśli nie, to sprawa jest prosta. Tworzymy tego prawego potomka i przypisujemy mu naszą wartość <strong>(//2).</strong> W przeciwnym wypadku, gdy prawy węzeł istnieje, dzieje się rekurencja **(//3), **czyli znowu wywołujemy funkcję <code>Add()</code>, tylko z tą różnicą, że nie dla naszego węzła, a dla jego prawego potomka.</p>
+<p>Funkcja <code>Add()</code> jest bliźniaczo podobna do omówionej wcześniej funkcji <code>Search()</code>. Przekazujemy do niej wartość, którą chcemy dodać do węzła (a dokładniej – do dzieci tego węzła) <strong>(//0)</strong>. Funkcja składa się z dwóch głównych ifów <strong>(//1),(//4)</strong>. Pierwszy z nich <strong>(//1)</strong> wykona się wtedy, gdy liczba którą chcemy wpisać będzie większa od tej w aktualnym węźle. Jeśli tak się stanie, to najpierw sprawdzamy, czy dany węzeł posiada prawego potomka. Jeśli nie, to sprawa jest prosta. Tworzymy tego prawego potomka i przypisujemy mu naszą wartość <strong>(//2).</strong> W przeciwnym wypadku, gdy prawy węzeł istnieje, dzieje się rekurencja <strong>(//3)</strong>, czyli znowu wywołujemy funkcję <code>Add()</code>, tylko z tą różnicą, że nie dla naszego węzła, a dla jego prawego potomka.</p>
 
-<p>Dodawanie lewego węzła dzieje się analogicznie. W przypadku, gdy dodawana wartość jest mniejsza od tej w aktualnym węźle, to musimy wrzucić ją na lewo **(//4). **Gdy lewy pod-węzeł nie istnieje to sprawa jest prosta – tworzymy go z wartością którą chcemy dodać <strong>(//5).</strong> Gdy takowy węzeł istenieje, wywołujemy na nim funkcję <code>Add()</code> <strong>(//6)</strong>, identycznie jak wcześniej.</p>
+<p>Dodawanie lewego węzła dzieje się analogicznie. W przypadku, gdy dodawana wartość jest mniejsza od tej w aktualnym węźle, to musimy wrzucić ją na lewo <strong>(//4)</strong>. Gdy lewy pod-węzeł nie istnieje to sprawa jest prosta – tworzymy go z wartością którą chcemy dodać <strong>(//5)</strong>. Gdy takowy węzeł istenieje, wywołujemy na nim funkcję <code>Add()</code> <strong>(//6)</strong>, identycznie jak wcześniej.</p>
 
-<h1 id="wyświetlanie-węzła-i-jego-dzieci-i-dzieci-jego-dzieci-itd"><strong>Wyświetlanie węzła i jego dzieci (i dzieci jego dzieci, itd.)</strong></h1>
+<h2 id="wyświetlanie-węzła-i-jego-dzieci-i-dzieci-jego-dzieci-itd">Wyświetlanie węzła i jego dzieci (i dzieci jego dzieci, itd.)</h2>
 
 <pre><code class="language-csharp">    public void Display()
         {
@@ -390,9 +384,9 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
     }
 </code></pre>
 
-<p>Kolejną funkcją jest <code>Display()</code>, która będzie wyświetlała nasz węzeł, oraz wszystkie jego dzieci (i dzieci ich dzieci, itd.). Funkcja ta (jak i każda inna wcześniej przedstawiona) jest niestety rekurencyjna. Wyświetlenie węzła to po prostu wyświetlenie jego wartości, czyli zmiennej <code>number</code>. Wystarczy zwykłe <code>Console.Write()</code> ze spacją z przodu (albo z tyłu, kto jak tam woli).**(//2). **Ale wyświetlenie jednej wartości nie wystarczy – musimy przecież wyświetlić całą strukturę. Stąd też powyżej linijki **//2 **oraz poniżej tworzymy dwa warunki. Ten powyżej **(//1) **sprawdza, czy nasz węzeł posiada lewe dziecko. Jeśli tak, to wywołuje na jego rzecz tą samą funkcję <code>Display()</code>. Analogicznie dzieje się poniżej **(//3). **W przypadku gdy istnieje prawe dziecko to wywołujemy na jego rzecz funkcję <code>Display()</code>.</p>
+<p>Kolejną funkcją jest <code>Display()</code>, która będzie wyświetlała nasz węzeł, oraz wszystkie jego dzieci (i dzieci ich dzieci, itd.). Funkcja ta (jak i każda inna wcześniej przedstawiona) jest niestety rekurencyjna. Wyświetlenie węzła to po prostu wyświetlenie jego wartości, czyli zmiennej <code>number</code>. Wystarczy zwykłe <code>Console.Write()</code> ze spacją z przodu (albo z tyłu, kto jak tam woli) <strong>(//2)</strong>. Ale wyświetlenie jednej wartości nie wystarczy – musimy przecież wyświetlić całą strukturę. Stąd też powyżej linijki <strong>//2</strong> oraz poniżej tworzymy dwa warunki. Ten powyżej <strong>(//1)</strong> sprawdza, czy nasz węzeł posiada lewe dziecko. Jeśli tak, to wywołuje na jego rzecz tą samą funkcję <code>Display()</code>. Analogicznie dzieje się poniżej <strong>(//3)</strong>. W przypadku gdy istnieje prawe dziecko to wywołujemy na jego rzecz funkcję <code>Display()</code>.</p>
 
-<h1 id="wreszcie-możemy-przejść-do-drzewa-tree"><strong>Wreszcie możemy przejść do drzewa (tree)</strong></h1>
+<h2 id="wreszcie-możemy-przejść-do-drzewa-tree">Wreszcie możemy przejść do drzewa (tree)</h2>
 
 <pre><code class="language-csharp">public class Tree
 {
@@ -446,17 +440,17 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 }
 </code></pre>
 
-<p>Na początku tworzymy standardowy konstruktor. **(//1). <strong>Do głównego korzenia drzewa (</strong>root<strong>) przypisujemy null (bo nowe drzewo jest zawsze puste), i licznik (</strong>counter**) ustawiamy na ****.</p>
+<p>Na początku tworzymy standardowy konstruktor. <strong>(//1)</strong>. Do głównego korzenia drzewa (<strong>root</strong>) przypisujemy null (bo nowe drzewo jest zawsze puste), i licznik (<strong>counter</strong>) ustawiamy na <strong>0</strong>.</p>
 
-<p>Kolejna funkcja to <code>IsEmpty()</code> **(//2). <strong>Działanie jej jest proste – zwraca true gdy drzewo (czyli korzeń) jest pusty (</strong>null**). W przeciwnym wypadku zwraca false.</p>
+<p>Kolejna funkcja to <code>IsEmpty()</code> <strong>(//2)</strong>. Działanie jej jest proste – zwraca true gdy drzewo (czyli korzeń) jest pusty (<strong>null</strong>). W przeciwnym wypadku zwraca false.</p>
 
-<p>Dalej mamy funkcję <code>Add()</code>, <strong>(//3)</strong> która dodaje element do drzewa. Jest ona bardzo prosta, a to dlatego, że całe właściwe dodawanie węzła znajduje się we wcześniej omówionym kodzie – w klasie Node. Na początku sprawdzamy, czy nasze drzewo jest puste (wszystko dzięki wcześniej napisanej funkcji IsEmpty()). Jeśli tak, to nowy węzeł musimy wrzucić na miejsce roota **(//4). <strong>W przeciwnym wypadku, czyli gdy drzewo nie jest puste, nową wartość musimy upakować gdzieś w strukturze. Jednak cały kod dodawania już napisaliśmy, więc wystarczy wywołaj funkcję <code>Add()</code> z klasy <code>Node</code> dla naszego korzenia (</strong>root**) **(//5). **Na końcu zwiększamy licznik elementów w drzewie.</p>
+<p>Dalej mamy funkcję <code>Add()</code>, <strong>(//3)</strong> która dodaje element do drzewa. Jest ona bardzo prosta, a to dlatego, że całe właściwe dodawanie węzła znajduje się we wcześniej omówionym kodzie – w klasie Node. Na początku sprawdzamy, czy nasze drzewo jest puste (wszystko dzięki wcześniej napisanej funkcji IsEmpty()). Jeśli tak, to nowy węzeł musimy wrzucić na miejsce roota <strong>(//4)</strong>. W przeciwnym wypadku, czyli gdy drzewo nie jest puste, nową wartość musimy upakować gdzieś w strukturze. Jednak cały kod dodawania już napisaliśmy, więc wystarczy wywołaj funkcję <code>Add()</code> z klasy <code>Node</code> dla naszego korzenia (<strong>root</strong>) <strong>(//5)</strong>. Na końcu zwiększamy licznik elementów w drzewie.</p>
 
-<p>Przedostatnią funkcją jest <code>Display()</code>, który wyświetla nasze całe drzewo. **(//8) **Dzieje się to tylko w przypadku, gdy nie jest ono puste **(//9). **Całe wyświetlanie polega na wywołaniu funkcji <code>Display()</code> z klasy <strong>Node</strong> dla naszego głównego węzła (<strong>root</strong>).</p>
+<p>Przedostatnią funkcją jest <code>Display()</code>, który wyświetla nasze całe drzewo. <strong>(//8)</strong> Dzieje się to tylko w przypadku, gdy nie jest ono puste <strong>(//9)</strong>. Całe wyświetlanie polega na wywołaniu funkcji <code>Display()</code> z klasy <strong>Node</strong> dla naszego głównego węzła (<strong>root</strong>).</p>
 
-<p>Ostatnia funkcja to <code>Count()</code> **(//10), **która zwraca ilość elementów w drzewie, czyli wartość naszego licznika.</p>
+<p>Ostatnia funkcja to <code>Count()</code> <strong>(//10)</strong>, która zwraca ilość elementów w drzewie, czyli wartość naszego licznika.</p>
 
-<h1 id="wykorzystanie-kodu-drzewa-w-main"><strong>Wykorzystanie kodu drzewa w Main()</strong></h1>
+<h2 id="wykorzystanie-kodu-drzewa-w-main">Wykorzystanie kodu drzewa w Main()</h2>
 
 <pre><code class="language-csharp">    static void Main(string[] args)
     {
@@ -492,17 +486,17 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <p>&nbsp;</p>
 
-<h1 id="kilka-rysunków"><strong>Kilka rysunków</strong></h1>
+<h1 id="kilka-rysunków">Kilka rysunków</h1>
 
-<h2 id="diagramy-uml-klas"><strong>Diagramy UML klas:</strong></h2>
+<h3 id="diagramy-uml-klas">Diagramy UML klas:</h3>
 
 <p><img src="/img/posts/bst/uml-drzewo-bst.png" alt="foto" /></p>
 
-<h2 id="przykładowe-drzewo"><strong>Przykładowe drzewo</strong></h2>
+<h3 id="przykładowe-drzewo">Przykładowe drzewo</h3>
 
 <p><img src="/img/posts/bst/drzewo-bst.png" alt="foto" /></p>
 
-<h1 id="cały-kod"><strong>Cały kod:</strong></h1>
+<h1 id="cały-kod">Cały kod:</h1>
 
 <h2 id="http-wklej-org-id-3021727"><a href="http://wklej.org/id/3021727/">http://wklej.org/id/3021727/</a></h2>
 
@@ -522,9 +516,9 @@ namespace tree
 
         public Node(int value)    // konstruktor
         {
-            this.number = value;   //1
-            this.left = null;      //2
-            this.right = null;     //2
+            this.number = value;   
+            this.left = null;     
+            this.right = null;     
         }
 
         public bool IsLeaf()
@@ -532,60 +526,60 @@ namespace tree
             return (this.left == null &amp;&amp; this.right == null);
         }
 
-        public Node Search(int value)  //0
+        public Node Search(int value) 
         {
-            if (this.number == value)      //1
+            if (this.number == value)      
             {
                 return this;
             }
-            else if (value &lt; this.number)    //2
+            else if (value &lt; this.number)    
             {
-                if (this.left == null)  //3
+                if (this.left == null)  
                 {
                     return null;
                 }
                 else
                 {
-                    return this.left.Search(value);  //4
+                    return this.left.Search(value); 
                 }
 
             }
-            else if (value &gt; this.number)  //5
+            else if (value &gt; this.number)  
             {
-                if (this.right == null)   //6
+                if (this.right == null)   
                 {
                     return null;
                 }
                 else
                 {
-                    return this.right.Search(value);   //7
+                    return this.right.Search(value);  
                 }
             }
-            return null;  //8
+            return null;  
         }
 
-        public void Add(int value)        //0
+        public void Add(int value)        
         {
-            if (value &gt;= this.number)    //1
+            if (value &gt;= this.number)    
             {
                 if (this.right == null)
                 {
-                    this.right = new Node(value);  //2
+                    this.right = new Node(value);  
                 }
                 else
                 {
-                    this.right.Add(value);    //3
+                    this.right.Add(value);    
                 }
             }
-            else if (value &lt; this.number)    //4
+            else if (value &lt; this.number)    
             {
                 if (this.left == null)
                 {
-                    this.left = new Node(value);    //5
+                    this.left = new Node(value);   
                 }
                 else
                 {
-                    this.left.Add(value);     //6
+                    this.left.Add(value);    
                 }
             }
         }
@@ -594,12 +588,12 @@ namespace tree
         {
             if (this.left != null)
             {
-                this.left.Display();     //1
+                this.left.Display();    
             }
-            Console.Write(&quot; &quot; + this.number);    //2
+            Console.Write(&quot; &quot; + this.number);    
             if (this.right != null)
             {
-                this.right.Display();     //3
+                this.right.Display();    
             }
         }
     }
@@ -610,46 +604,46 @@ namespace tree
         Node root;
         int counter;
 
-        public Tree()       //1
+        public Tree()      
         {
             root = null;
             counter = 0;
         }
 
-        public bool IsEmpty()    //2  
+        public bool IsEmpty()   
         {
             return this.root == null;
         }
 
-        public void Add(int value)   //3
+        public void Add(int value)  
         {
             if (IsEmpty())
             {
-                this.root = new Node(value);   //4
+                this.root = new Node(value);   
             }
             else
             {
-                this.root.Add(value);     //5
+                this.root.Add(value);   
             }
             counter++;
         }
 
-        public bool Search(int value)     //6
+        public bool Search(int value)   
         {
-            if (this.root.Search(value) != null) return true;    //7
+            if (this.root.Search(value) != null) return true;    
             else return false;
         }
 
 
-        public void Display()    //8
+        public void Display()   
         {
-            if (IsEmpty() == false)   //9
+            if (IsEmpty() == false)   
             {
                 this.root.Display();
             }
         }
 
-        public int Count()   //10
+        public int Count()   
         {
             return this.counter;
         }
@@ -695,7 +689,9 @@ namespace tree
 
 <p>&nbsp;</p>
 
-<h2 id="pobierz-drzewo-w-pdf-files-drzewo-pdf"><a href="/files/drzewo.pdf">Pobierz drzewo w PDF</a></h2>
+<h2 id="pobierz-wszystko-w-pdf-files-drzewo-pdf"><a href="/files/drzewo.pdf">Pobierz wszystko w PDF</a></h2>
+
+<p>&nbsp;</p>
 
       </article>
 
