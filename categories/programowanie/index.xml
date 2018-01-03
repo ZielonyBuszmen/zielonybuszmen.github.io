@@ -53,8 +53,7 @@ class ExampleTest extends TestCase { public function testTrue() { $this-&amp;gt;
       <pubDate>Tue, 21 Feb 2017 17:13:57 +0000</pubDate>
       
       <guid>https://zielonybuszmen.github.io/2017/02/21/instalacja-cakephp-od-podszewki/</guid>
-      <description> https://www.youtube.com/embed/L6rNjcW_-1s
-Linki, komendy  Composer download: https://getcomposer.org/download/ CakePHP installation: https://book.cakephp.org/3.0/en/installation.html composer create-project --prefer-dist cakephp/app&amp;lt;br /&amp;gt;   </description>
+      <description>   Linki, komendy  Composer: https://getcomposer.org/download/ CakePHP installation: https://book.cakephp.org/3.0/en/installation.html composer create-project --prefer-dist cakephp/app&amp;lt;br /&amp;gt;   </description>
     </item>
     
     <item>

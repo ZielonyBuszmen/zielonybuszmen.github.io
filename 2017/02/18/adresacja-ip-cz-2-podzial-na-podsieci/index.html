@@ -5,14 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Adresacja IP cz. 2 – podział na podsieci</title>
-  <meta property="og:title" content="Adresacja IP cz. 2 – podział na podsieci" />
-  <meta name="twitter:title" content="Adresacja IP cz. 2 – podział na podsieci" />
-  <meta name="description" content="Jest to druga część poradnika. Będą opisane w niej trochę bardziej zaawansowane zagadnienia z tematów podziału sieci na podsieci. Jeśli nie widziałeś części pierwszej, odnajdziesz ją pod tym adresem: Adresacja IP cz. 1 – Z czym to się je?
-Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie musimy zasiąść i sprawdzić ile w danej sieci mieści się hostów. Nie jest to zajęcie trudne, jednakże wymaga trochę pomyślunku.">
-  <meta property="og:description" content="Jest to druga część poradnika. Będą opisane w niej trochę bardziej zaawansowane zagadnienia z tematów podziału sieci na podsieci. Jeśli nie widziałeś części pierwszej, odnajdziesz ją pod tym adresem: Adresacja IP cz. 1 – Z czym to się je?
-Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie musimy zasiąść i sprawdzić ile w danej sieci mieści się hostów. Nie jest to zajęcie trudne, jednakże wymaga trochę pomyślunku.">
-  <meta name="twitter:description" content="Jest to druga część poradnika. Będą opisane w niej trochę bardziej zaawansowane zagadnienia z tematów podziału sieci na podsieci. Jeśli nie widziałeś części pierwszej, odnajdziesz ją pod tym adresem: …">
+  <title>Adresacja IP cz. 2</title>
+  <meta property="og:title" content="Adresacja IP cz. 2" />
+  <meta name="twitter:title" content="Adresacja IP cz. 2" />
+  <meta name="description" content="Podział na podsieci">
+  <meta property="og:description" content="Podział na podsieci">
+  <meta name="twitter:description" content="Podział na podsieci">
   <meta name="author" content="Zielony Buszmen"/>
   <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
   <meta name="twitter:card" content="summary" />
@@ -171,7 +169,11 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Adresacja IP cz. 2 – podział na podsieci</h1>
+              <h1>Adresacja IP cz. 2</h1>
+                
+                  
+                    <h2 class="post-subheading">Podział na podsieci</h2>
+                  
                 
                 
                   <span class="post-meta">
@@ -260,21 +262,21 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 <pre><big><big>.00 111111 - adres podsieci 1.
 .11 000000 - maska</big></big></pre>
 
-<p>00111111 daje nam to 63, czyli adres broadcast pierwszej podsieci to 192.168.25.63.</p>
+<p><code>00111111</code> daje nam 63, czyli adres broadcast pierwszej podsieci to 192.168.25.63.</p>
 
 <p>Z drugą podsiecią postępujemy identycznie</p>
 
 <pre><big><big>.01 111111 - adres podsieci 2.
 .11 000000 - maska</big></big></pre>
 
-<p>Liczba 01111111 daje nam 127, czyli adres broadcast pierwszej podsieci to 192.168.25.127.</p>
+<p>Liczba <code>01111111</code> daje nam 127, czyli adres broadcast pierwszej podsieci to 192.168.25.127.</p>
 
 <p>W trzeciej podsieci jest identycznie:</p>
 
 <pre><big><big>.10 111111 - adres podsieci 3.
 .11 000000 - maska</big></big></pre>
 
-<p>10111111 daje nam liczbę 191, czyli adres broadcast pierwszej podsieci to 192.168.25.191.</p>
+<p><code>10111111</code> daje nam liczbę 191, czyli adres broadcast pierwszej podsieci to 192.168.25.191.</p>
 
 <h2 id="przykład-nr-2">Przykład nr 2:</h2>
 
@@ -295,21 +297,21 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 <pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
 1001000 0.00000000 - adres</big></big></pre>
 
-<p>A więc pierwsza podsieć ma bity <strong>00</strong>:</p>
+<p>A więc pierwsza podsieć ma bity <strong><code>00</code></strong>:</p>
 
 <pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
 1001000 <strong>0.0</strong>0000000 - adres pierwszej podsieci</big></big></pre>
 
 <p>Po zamianie obu oktetów na liczby dziesiętne mamy 144.0, więc adres pierwszej podsieci to 120.130.144.0</p>
 
-<p>Druga podsieć ma bity <strong>01</strong>. Podstawiamy to:</p>
+<p>Druga podsieć ma bity <strong><code>01</code></strong>. Podstawiamy to:</p>
 
 <pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
 1001000 <strong>0.1</strong>0000000 - adres drugiej podsieci</big></big></pre>
 
 <p>Po zamianie wychodzi nam 144.128, co daje nam adres 120.130.144.128</p>
 
-<p>Trzecia podsieć ma bity <strong>10:</strong></p>
+<p>Trzecia podsieć ma bity <strong><code>10</code></strong>:</p>
 
 <pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
 1001000 <strong>1.0</strong>0000000 - adres trzeciej podsieci</big></big></pre>
@@ -318,7 +320,7 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 
 <p>&nbsp;</p>
 
-<p>Ostatnia, czwarta podsieć ma bity <strong>11</strong>:</p>
+<p>Ostatnia, czwarta podsieć ma bity <strong><code>11</code></strong>:</p>
 
 <pre><big><big>1111111 <strong>1.1</strong>0000000 - maska
 1001000 <strong>1.1</strong>0000000 - adres czwartej podsieci</big></big></pre>
@@ -349,9 +351,9 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
 <p>Aby obliczyć adres ostatniego hosta wystarczy że od adresu broadcast odejmiemy jedynkę. A więc dla przykładu ostatnim adresem w pierwszej podsieci będzie 120.130.144.126, gdyż adres broadcast to 120.130.144.127.</p>
 </blockquote>
 
-<h2 id="informacje-na-koniec-wpz-sc-box-info">Informacje na koniec {.wpz-sc-box.info}</h2>
+<h2 id="informacje-na-koniec">Informacje na koniec</h2>
 
-<p>Pierwotnie oba artykuły zostały umieszczone na stronie pcfaq.pl. Z racji tego że są całkiem niezłe i w dodatku mogę poszczyć się, że jestem ich autorem, umieściłem je tutaj. 😉 Linki do pierwotnych artykułów:</p>
+<p>Pierwotnie oba artykuły zostały umieszczone na stronie pcfaq.pl. Z racji tego że są całkiem niezłe i w dodatku mogę pochwalić się, że to ja jestem ich autorem, umieściłem je tutaj. 😉 Linki do pierwotnych artykułów:</p>
 
 <ul>
 <li><a href="http://pcfaq.pl/internet/adresacja-ip-z-czym-to-sie-je-cz-1/">Adresacja IP cz. 1 – Z czym to się je?</a></li>
@@ -365,7 +367,7 @@ Ilość hostów w sieci oraz adres broadcast Czasem nastaje taki dzień, gdzie m
       <ul class="pager blog-pager">
         
           <li class="previous">
-            <a href="https://zielonybuszmen.github.io/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/" data-toggle="tooltip" data-placement="top" title="Adresacja IP cz. 1 – Z czym to się je?">&larr; Poprzedni post</a>
+            <a href="https://zielonybuszmen.github.io/2017/02/17/adresacja-ip-cz-1-z-czym-to-sie-je/" data-toggle="tooltip" data-placement="top" title="Adresacja IP cz. 1">&larr; Poprzedni post</a>
           </li>
         
         

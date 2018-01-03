@@ -5,14 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Adresacja IP cz. 1 – Z czym to się je?</title>
-  <meta property="og:title" content="Adresacja IP cz. 1 – Z czym to się je?" />
-  <meta name="twitter:title" content="Adresacja IP cz. 1 – Z czym to się je?" />
-  <meta name="description" content="Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik składa się z dwóch części. Druga jest dostępna tutaj: [Adresacja IP cz. 2 – podział na podsieci][1].
- Pierwotnie poradnik został wrzucony na stronę Pcfaq.pl Z racji tego, że ma wysoką wartość edukacyjną oraz że jest on mojego autorstwa, postanowiłem go przenieść także i tutaj.">
-  <meta property="og:description" content="Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik składa się z dwóch części. Druga jest dostępna tutaj: [Adresacja IP cz. 2 – podział na podsieci][1].
- Pierwotnie poradnik został wrzucony na stronę Pcfaq.pl Z racji tego, że ma wysoką wartość edukacyjną oraz że jest on mojego autorstwa, postanowiłem go przenieść także i tutaj.">
-  <meta name="twitter:description" content="Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik …">
+  <title>Adresacja IP cz. 1</title>
+  <meta property="og:title" content="Adresacja IP cz. 1" />
+  <meta name="twitter:title" content="Adresacja IP cz. 1" />
+  <meta name="description" content="Z czym to się je?">
+  <meta property="og:description" content="Z czym to się je?">
+  <meta name="twitter:description" content="Z czym to się je?">
   <meta name="author" content="Zielony Buszmen"/>
   <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
   <meta name="twitter:card" content="summary" />
@@ -171,7 +169,11 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Adresacja IP cz. 1 – Z czym to się je?</h1>
+              <h1>Adresacja IP cz. 1</h1>
+                
+                  
+                    <h2 class="post-subheading">Z czym to się je?</h2>
+                  
                 
                 
                   <span class="post-meta">
@@ -196,15 +198,13 @@
       <article role="main" class="blog-post">
         
 
-<p>Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik składa się z dwóch części. Druga jest dostępna tutaj: [Adresacja IP cz. 2 – podział na podsieci][1].</p>
+<p>Niniejszy poradnik został stworzony dla osób, którym obce jest dzielenie sieci na podsieci. W tym poradniku pokażę obliczanie adresów sieci oraz jak ugryźć maskę, by sobie zębów nie połamać. Poradnik składa się z dwóch części. Druga jest dostępna tutaj: <a href="/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/">Adresacja IP cz. 2 – podział na podsieci</a>.</p>
 
 <blockquote>
 <p>Pierwotnie poradnik został wrzucony na stronę Pcfaq.pl Z racji tego, że ma wysoką wartość <em>edukacyjną</em> oraz że jest on mojego autorstwa, postanowiłem go przenieść także i tutaj.</p>
 </blockquote>
 
-<h2 id="adres-ip-i-jego-maska">**Adres IP i jego maska</h2>
-
-<p>**</p>
+<h2 id="adres-ip-i-jego-maska">Adres IP i jego maska</h2>
 
 <p>A więc, aby zrozumieć zaawansowane „techniki”, musimy przypomnieć sobie podstawy. Co to jest adres IP i do czego służy nie wytłumaczę, gdyż Wiki nie kot, nie ugryzie. Na „warsztat” rzucimy sobie przykładowy adres IP:</p>
 
@@ -217,9 +217,7 @@
 <pre><big><big><strong>190 = 10111110</strong></big></big></pre>
 
 <blockquote>
-<div class="wpz-sc-box info ">
-  Warto nadmienić, że każda z czterech części adresu IP (a także maski) składa się z ośmiu bitów. Jeśli po zamianie liczby na system binarny wychodzi nam mniej bitów niż 8, dopisujemy zera przed liczbę, czyli np. 17 = 10001. Liczba binarna ma 5 cyfr, więc z początku dopisujemy trzy zera. Końcowa liczba powinna wyglądać tak: 00010001
-</div>
+<p>Warto nadmienić, że każda z czterech części adresu IP (a także maski) składa się z ośmiu bitów. Jeśli po zamianie liczby na system binarny wychodzi nam mniej bitów niż 8, dopisujemy zera przed liczbę, czyli np. 17 = 10001. Liczba binarna ma 5 cyfr, więc z początku dopisujemy trzy zera. Końcowa liczba powinna wyglądać tak: 00010001</p>
 </blockquote>
 
 <p>Po zamianie pierwszego oktetu na liczbę binarną musimy sprawdzić pierwsze cyfry (te od lewej). W naszym przypadku jest to 10, więc adres należy do klasy B. Poniżej tabelka ukazująca te zasady:</p>
@@ -245,6 +243,7 @@
     </td>
     
     <td width="197">
+    1
     </td>
     
     <td width="57">
@@ -281,8 +280,6 @@
   </tr>
 </table>
 
-<p>&nbsp;</p>
-
 <p>Gdy znamy klasę naszego adresu, pozostaje nam napisać maskę. Maski zapisuje się w dwóch formatach. Pierwszy z nich to ten, podobny do adresu ip, np. 255.255.0.0. Drugi sposób to liczba po ukośniku, np. /16.</p>
 
 <p>O co w tym chodzi? Aby to zrozumieć, musimy rozpisać cały adres maski na system binarny:</p>
@@ -295,8 +292,8 @@
 
 <p>Po cóż więc ta maska jest? Jak to prawią mądre księgi: „Maska oddziela część adresu sieci od części hosta”. Mądre to słowa. A teraz prościej. Mamy jakiś IP i znamy jego maskę (czy to z obliczeń, czy to z treści zadania). Ten adres IP może być adresem jakiegoś konkretnego komputera. A my chcemy znać np. adres sieci tego komputera, albo chcemy wiedzieć ile komputerów jest w tej sieci. Musimy wtedy dokonać pewnego obliczenia. Adres i maska muszą rozpisane być blisko siebie, jeden nad drugim. Pamiętajmy, że najlepiej wszystko widać na adresach i maskach zapisanych w formie binarnej, więc do takiego stanu musimy doprowadzić nasze „obiekty testowe”.</p>
 
-<pre><big><big>190.168.15.10 = 11000000. 10101000.00001111.00001010
-255.255.0.0 = 11111111.11111111.00000000.00000000</big></big></pre>
+<pre><big><big>190.168.15.10 = 11000000.10101000.00001111.00001010
+255.255.0.0  =  11111111.11111111.00000000.00000000</big></big></pre>
 
 <p>Teraz musimy zrobić coś niebywale precyzyjnego. Chirurg na oddziale ma już lżejsze zadanie. Otóż cała sztuka polega na tym, by każda cyfra adresu IP była pod daną cyfra maski.</p>
 
@@ -330,9 +327,7 @@
 
 <hr />
 
-<p>&nbsp;</p>
-
-<h2 id="maski-trochę-mniej-standardowe"><strong>Maski trochę mniej standardowe</strong></h2>
+<h2 id="maski-trochę-mniej-standardowe">Maski trochę mniej standardowe</h2>
 
 <p>Maski klas adresów A, B oraz C są, co by tu dużo nie gadać, standardowe. Gdybyśmy się uparli, to nie musielibyśmy zamieniać całego adresu IP na system binarny. Wystarczyłby pierwszy oktet do określenia maski i tyle. Potem moglibyśmy działać na liczbach dziesiętnych. Powyższe zadanie moglibyśmy rozwiązać tak:</p>
 
@@ -367,8 +362,6 @@ Maska tego adresu to: /20</big></big></pre>
 
 <hr />
 
-<p>&nbsp;</p>
-
 <p>Jako drugi przykład weźmy adres IP 192.168.75.220 wraz z maską /29.</p>
 
 <p>Na początek zamieniamy maskę na system binarny:</p>
@@ -386,9 +379,7 @@ Maska tego adresu to: /20</big></big></pre>
 
 <p>Tam gdzie zera w masce, tam i zera w adresie. A więc ostatni oktet powinien wyglądać tak: .11011000, co daje nam liczbę 216. Pozostałe 3 oktety przepisujemy bez zmian, a więc adres sieci wygląda tak:</p>
 
-<pre><big><big>192.168.75.216
-
-</big></big></pre>
+<pre><big><big>192.168.75.216</big></big></pre>
 
 <hr />
 
@@ -404,7 +395,7 @@ Maska tego adresu to: /20</big></big></pre>
         
         
           <li class="next">
-            <a href="https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/" data-toggle="tooltip" data-placement="top" title="Adresacja IP cz. 2 – podział na podsieci">Następny post &rarr;</a>
+            <a href="https://zielonybuszmen.github.io/2017/02/18/adresacja-ip-cz-2-podzial-na-podsieci/" data-toggle="tooltip" data-placement="top" title="Adresacja IP cz. 2">Następny post &rarr;</a>
           </li>
         
       </ul>
