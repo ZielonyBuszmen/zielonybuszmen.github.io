@@ -205,126 +205,113 @@
 <h1 id="zaczynamy">Zaczynamy</h1>
 
 <ol>
-<li><p>W głównym katalogu szukamy pliku <code>package.json</code> i podmieniamy w nim kod na poniższy: <pre class="brush: jscript; title: package.json; notranslate" title="package.json">{
-&ldquo;private&rdquo;: true,
-&ldquo;scripts&rdquo;: {
-&ldquo;prod&rdquo;: &ldquo;gulp &ndash;production&rdquo;,
-&ldquo;dev&rdquo;: &ldquo;gulp watch&rdquo;,
-&ldquo;start&rdquo;: &ldquo;tsc &amp;&amp; concurrently \&ldquo;npm run tsc:w\&rdquo; \&ldquo;npm run lite\&rdquo; &ldquo;,
-&ldquo;lite&rdquo;: &ldquo;lite-server&rdquo;,
-&ldquo;postinstall&rdquo;: &ldquo;typings install&rdquo;,
-&ldquo;tsc&rdquo;: &ldquo;tsc&rdquo;,
-&ldquo;tsc:w&rdquo;: &ldquo;tsc -w&rdquo;,
-&ldquo;typings&rdquo;: &ldquo;typings&rdquo;
+<li><p>W głównym katalogu szukamy pliku <code>package.json</code> i podmieniamy w nim kod na poniższy:</p>
+
+<pre><code class="language-javascript">{
+&quot;private&quot;: true,
+&quot;scripts&quot;: {
+&quot;prod&quot;: &quot;gulp --production&quot;,
+&quot;dev&quot;: &quot;gulp watch&quot;,
+&quot;start&quot;: &quot;tsc &amp;&amp; concurrently \&quot;npm run tsc:w\&quot; \&quot;npm run lite\&quot; &quot;,
+&quot;lite&quot;: &quot;lite-server&quot;,
+&quot;postinstall&quot;: &quot;typings install&quot;,
+&quot;tsc&quot;: &quot;tsc&quot;,
+&quot;tsc:w&quot;: &quot;tsc -w&quot;,
+&quot;typings&quot;: &quot;typings&quot;
 },
-&ldquo;dependencies&rdquo;: {
-&ldquo;@angular/common&rdquo;: &ldquo;2.0.0&rdquo;,
-&ldquo;@angular/compiler&rdquo;: &ldquo;2.0.0&rdquo;,
-&ldquo;@angular/core&rdquo;: &ldquo;2.0.0&rdquo;,
-&ldquo;@angular/forms&rdquo;: &ldquo;2.0.0&rdquo;,
-&ldquo;@angular/http&rdquo;: &ldquo;2.0.0&rdquo;,
-&ldquo;@angular/platform-browser&rdquo;: &ldquo;2.0.0&rdquo;,
-&ldquo;@angular/platform-browser-dynamic&rdquo;: &ldquo;2.0.0&rdquo;,
-&ldquo;@angular/router&rdquo;: &ldquo;3.0.0&rdquo;,
-&ldquo;@angular/upgrade&rdquo;: &ldquo;2.0.0&rdquo;,
-&ldquo;core-js&rdquo;: &ldquo;^2.4.1&rdquo;,
-&ldquo;reflect-metadata&rdquo;: &ldquo;^0.1.3&rdquo;,
-&ldquo;rxjs&rdquo;: &ldquo;5.0.0-beta.12&rdquo;,
-&ldquo;systemjs&rdquo;: &ldquo;0.19.27&rdquo;,
-&ldquo;zone.js&rdquo;: &ldquo;^0.6.23&rdquo;,
-&ldquo;angular2-in-memory-web-api&rdquo;: &ldquo;0.0.20&rdquo;,
-&ldquo;bootstrap&rdquo;: &ldquo;^3.3.6&rdquo;
+&quot;dependencies&quot;: {
+&quot;@angular/common&quot;: &quot;2.0.0&quot;,
+&quot;@angular/compiler&quot;: &quot;2.0.0&quot;,
+&quot;@angular/core&quot;: &quot;2.0.0&quot;,
+&quot;@angular/forms&quot;: &quot;2.0.0&quot;,
+&quot;@angular/http&quot;: &quot;2.0.0&quot;,
+&quot;@angular/platform-browser&quot;: &quot;2.0.0&quot;,
+&quot;@angular/platform-browser-dynamic&quot;: &quot;2.0.0&quot;,
+&quot;@angular/router&quot;: &quot;3.0.0&quot;,
+&quot;@angular/upgrade&quot;: &quot;2.0.0&quot;,
+&quot;core-js&quot;: &quot;^2.4.1&quot;,
+&quot;reflect-metadata&quot;: &quot;^0.1.3&quot;,
+&quot;rxjs&quot;: &quot;5.0.0-beta.12&quot;,
+&quot;systemjs&quot;: &quot;0.19.27&quot;,
+&quot;zone.js&quot;: &quot;^0.6.23&quot;,
+&quot;angular2-in-memory-web-api&quot;: &quot;0.0.20&quot;,
+&quot;bootstrap&quot;: &quot;^3.3.6&quot;
 },
-&ldquo;devDependencies&rdquo;: {
-&ldquo;bootstrap-sass&rdquo;: &ldquo;^3.3.7&rdquo;,
-&ldquo;concurrently&rdquo;: &ldquo;^2.2.0&rdquo;,
-&ldquo;elixir-typescript&rdquo;: &ldquo;2.0.0&rdquo;,
-&ldquo;gulp&rdquo;: &ldquo;^3.9.1&rdquo;,
-&ldquo;jquery&rdquo;: &ldquo;^3.1.0&rdquo;,
-&ldquo;laravel-elixir&rdquo;: &ldquo;^6.0.0-9&rdquo;,
-&ldquo;laravel-elixir-browsersync-official&rdquo;: &ldquo;^1.0.0&rdquo;,
-&ldquo;laravel-elixir-vue&rdquo;: &ldquo;^0.1.4&rdquo;,
-&ldquo;laravel-elixir-webpack-official&rdquo;: &ldquo;^1.0.2&rdquo;,
-&ldquo;lite-server&rdquo;: &ldquo;^2.2.2&rdquo;,
-&ldquo;lodash&rdquo;: &ldquo;^4.14.0&rdquo;,
-&ldquo;typescript&rdquo;: &ldquo;^2.0.2&rdquo;,
-&ldquo;typings&rdquo;: &ldquo;^1.3.2&rdquo;,
-&ldquo;vue&rdquo;: &ldquo;^1.0.26&rdquo;,
-&ldquo;vue-resource&rdquo;: &ldquo;^0.9.3&rdquo;
+&quot;devDependencies&quot;: {
+&quot;bootstrap-sass&quot;: &quot;^3.3.7&quot;,
+&quot;concurrently&quot;: &quot;^2.2.0&quot;,
+&quot;elixir-typescript&quot;: &quot;2.0.0&quot;,
+&quot;gulp&quot;: &quot;^3.9.1&quot;,
+&quot;jquery&quot;: &quot;^3.1.0&quot;,
+&quot;laravel-elixir&quot;: &quot;^6.0.0-9&quot;,
+&quot;laravel-elixir-browsersync-official&quot;: &quot;^1.0.0&quot;,
+&quot;laravel-elixir-vue&quot;: &quot;^0.1.4&quot;,
+&quot;laravel-elixir-webpack-official&quot;: &quot;^1.0.2&quot;,
+&quot;lite-server&quot;: &quot;^2.2.2&quot;,
+&quot;lodash&quot;: &quot;^4.14.0&quot;,
+&quot;typescript&quot;: &quot;^2.0.2&quot;,
+&quot;typings&quot;: &quot;^1.3.2&quot;,
+&quot;vue&quot;: &quot;^1.0.26&quot;,
+&quot;vue-resource&quot;: &quot;^0.9.3&quot;
 }
 }
-</pre></p>
+</code></pre>
 
-<p>Jest to plik, który &#8222;zarządza&#8221; pakietami Node.js. Dzięki niemu w łatwy sposób w dalszej części ściągniemy wszystkie wymagane biblioteki.</p>
+<p>Jest to plik, który &#8222;zarządza&#8221; pakietami Node.js. Dzięki niemu w łatwy sposób w dalszej części ściągniemy wszystkie wymagane biblioteki.</p></li>
 
-<p>&nbsp;</p>
+<li><p>W głównym katalogu tworzymy plik <code>tsconfig.json</code></p>
 
-<p>&nbsp;</p></li>
-
-<li><p>W głównym katalogu tworzymy plik <code>tsconfig.json</code> <pre class="brush: jscript; title: tsconfig.json; notranslate" title="tsconfig.json">{
-&ldquo;compilerOptions&rdquo;: {
-&ldquo;target&rdquo;: &ldquo;es5&rdquo;,
-&ldquo;module&rdquo;: &ldquo;commonjs&rdquo;,
-&ldquo;moduleResolution&rdquo;: &ldquo;node&rdquo;,
-&ldquo;sourceMap&rdquo;: true,
-&ldquo;emitDecoratorMetadata&rdquo;: true,
-&ldquo;experimentalDecorators&rdquo;: true,
-&ldquo;removeComments&rdquo;: false,
-&ldquo;noImplicitAny&rdquo;: false
+<pre><code class="language-javascript">{
+&quot;compilerOptions&quot;: {
+&quot;target&quot;: &quot;es5&quot;,
+&quot;module&quot;: &quot;commonjs&quot;,
+&quot;moduleResolution&quot;: &quot;node&quot;,
+&quot;sourceMap&quot;: true,
+&quot;emitDecoratorMetadata&quot;: true,
+&quot;experimentalDecorators&quot;: true,
+&quot;removeComments&quot;: false,
+&quot;noImplicitAny&quot;: false
 }
 }
-</pre></p>
+</code></pre>
 
-<p>Plik konfiguracyjny dla skryptu kompilującego typescript do JSa</p>
+<p>Plik konfiguracyjny dla skryptu kompilującego typescript do JSa</p></li>
 
-<p>&nbsp;</p>
+<li><p>Tworzymy plik <code>typings.json</code> również w głównym katalogu</p>
 
-<p>&nbsp;</p></li>
-
-<li><p>Tworzymy plik <code>typings.json</code> również w głównym katalogu <pre class="brush: jscript; title: typings.json; notranslate" title="typings.json">{
-&ldquo;globalDependencies&rdquo;: {
-&ldquo;core-js&rdquo;: &ldquo;registry:dt/core-js#0.0.0+20160725163759&rdquo;,
-&ldquo;jasmine&rdquo;: &ldquo;registry:dt/jasmine#2.2.0+20160621224255&rdquo;,
-&ldquo;node&rdquo;: &ldquo;registry:dt/node#6.0.0+20160909174046&rdquo;
+<pre><code class="language-javascript">{
+&quot;globalDependencies&quot;: {
+&quot;core-js&quot;: &quot;registry:dt/core-js#0.0.0+20160725163759&quot;,
+&quot;jasmine&quot;: &quot;registry:dt/jasmine#2.2.0+20160621224255&quot;,
+&quot;node&quot;: &quot;registry:dt/node#6.0.0+20160909174046&quot;
 }
 }
-</pre></p>
+</code></pre></li>
 
-<p>&nbsp;</p>
+<li><p>Uruchamiamy terminal i wpisujemy w nim komendę:</p>
 
-<p>&nbsp;</p></li>
-
-<li><p>Uruchamiamy terminal i wpisujemy w nim komendę:
-<pre>npm install</pre></p>
+<pre><code class="language-cmd">npm install
+</code></pre>
 
 <p>Może to trochę potrwać, bo właśnie teraz do katalogu  _node<em>modules</em> pobierają się wszystkie paczki wymienione w pliku <em>package.json</em></p>
 
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
 <ul>
-<li><p>Po tym przechodzimy do <code>node_modules/elixir-typescript/index.js</code> i komentujemy poniższą linijkę: <pre class="brush: jscript; first-line: 45; title: ; notranslate" title="">//.pipe($.concat(paths.output.name))
-</pre></p>
+<li><p>Po tym przechodzimy do <code>node_modules/elixir-typescript/index.js</code> i komentujemy poniższą linijkę:</p>
 
-<p>Jak by nie patrzeć to edytujemy plik &#8222;systemowy&#8221;, nie powinno się tak robić. Niestety, w tym wypadku musimy. Bo gdy nie zakomentujemy tej linijki, skrypt kompilujący TS do JS wrzuci wszystko do jednego pliku app.js. A nie o to nam chodzi. Chcemy przecież, by kompilator TSa skompilował każdy plik oddzielnie. Stąd też taka mała zmiana w kodzie źródłowym. </li></p>
+<pre><code class="language-javascript">//.pipe($.concat(paths.output.name))
+</code></pre>
 
-<p>&nbsp;</p>
+<p>Jak by nie patrzeć to edytujemy plik &#8222;systemowy&#8221;, nie powinno się tak robić. Niestety, w tym wypadku musimy. Bo gdy nie zakomentujemy tej linijki, skrypt kompilujący TS do JS wrzuci wszystko do jednego pliku app.js. A nie o to nam chodzi. Chcemy przecież, by kompilator TSa skompilował każdy plik oddzielnie. Stąd też taka mała zmiana w kodzie źródłowym. </li></p></li>
 
-<p>&nbsp;</p>
-
-<ul>
 <li><p>Przechodzimy do <code>resources/assets/typescript</code> i tworzymy w nim 3 pliki: <code>app.component.ts</code>, <code>app.module.ts</code>, <code>main.ts</code>. (Gdyby folder <em>typescript</em> nie istniał, to go oczywiście tworzymy 😉 )</p>
 
-<p>&nbsp;</p>
+<pre><code>Będą to pliki naszej aplikacji Angularowej. Tutaj będziemy rozszerzać jej funkcjonalność o nowe komponenty.
+</code></pre>
 
-<p>Będą to pliki naszej aplikacji Angularowej. Tutaj będziemy rozszerzać jej funkcjonalność o nowe komponenty.</p>
+<p><strong>app.module.ts</strong></p>
 
-<p>&nbsp;</p>
-<strong>app.module.ts</strong></p>
-
-<p><pre class="brush: jscript; title: resources/assets/typescript/app.module.ts; notranslate" title="resources/assets/typescript/app.module.ts">///&lt;reference path=&ldquo;../../../typings/index.d.ts&rdquo;/&gt;</p></li>
-</ul></li>
+<pre><code>&lt;pre class=&quot;brush: jscript; title: resources/assets/typescript/app.module.ts; notranslate&quot; title=&quot;resources/assets/typescript/app.module.ts&quot;&gt;///&amp;lt;reference path=&quot;../../../typings/index.d.ts&quot;/&amp;gt;
+</code></pre></li>
 </ul></li>
 </ol>
 
