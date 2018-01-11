@@ -5,18 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>404 Page not found</title>
-  <meta property="og:title" content="404 Page not found" />
-  <meta name="twitter:title" content="404 Page not found" />
+  <title>Podwójna tożsamość na GitHubie</title>
+  <meta property="og:title" content="Podwójna tożsamość na GitHubie" />
+  <meta name="twitter:title" content="Podwójna tożsamość na GitHubie" />
+  <meta name="description" content="Wrzutki z drugiego konta w innych projektach">
+  <meta property="og:description" content="Wrzutki z drugiego konta w innych projektach">
+  <meta name="twitter:description" content="Wrzutki z drugiego konta w innych projektach">
   <meta name="author" content="Zielony Buszmen"/>
   <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://zielonybuszmen.github.io/" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2018/01/11/podwojna-tozsamosc-github/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Zielony Buszmen" />
 
   <meta name="generator" content="Hugo 0.29" />
-  <link rel="canonical" href="https://zielonybuszmen.github.io/" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2018/01/11/podwojna-tozsamosc-github/" />
   <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -149,14 +152,184 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
     
-  <div role="main" class="container main-content">
-    <div class="text-center">
-      <h1>Ups, strona nie istenieje. Uciekaj stąd! (błąd 404)</h1>
-      <br/>
-      <img src="https://zielonybuszmen.github.io//img/404-southpark.jpg" />
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Podwójna tożsamość na GitHubie</h1>
+                
+                  
+                    <h2 class="post-subheading">Wrzutki z drugiego konta w innych projektach</h2>
+                  
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 2018-01-11
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Czasami zdarza się tak, że chcemy w danym projekcie wrzucać zmiany jako ktoś inny. Prostym przykładem jest osoba mająca dwa konta na Githubie - jedno prywatne, a drugie pracowe. Wówczas możemy nie chcieć wrzucać zmian do własnych <em>pet projectów</em> z konta pracowego i na odwrót. Jest na to sposób, który tutaj prezentuję.</p>
+
+<p>Trzeba rozdzielić dwie kwestie wrzucania kodu na GitHuba:</p>
+
+<ol>
+<li><strong>Jako kto będziesz zalogowany</strong> - czyli z kogo uprawnieniami będziesz wrzucał kod. Jest to ustalane za pomocą używanego aktualnie <em>klucza prywatnego</em>.</li>
+<li><strong>Jako kto wrzucisz kod</strong> - czyli jaki username i jaki email wyświetli się w historii commitów. Jest to określane za pomocą <em>git identity</em>.</li>
+</ol>
+
+<h2 id="generowanie-kluczy-rsa">Generowanie kluczy RSA</h2>
+
+<p>Odnosząc się do pkt 1. Aby przedstawiony sposób zadziałał, musimy zacząć łączyć się do GitHuba za pomocą SSH zamiast HTTPS.
+Na początku musimy wygenerować dwa klucze RSA, do pierwszego i do drugiego konta.</p>
+
+<p>Generujemy nowy klucz SSH wpisując w terminalu (na Windowsie najlepiej odpalić Git Bash):</p>
+
+<pre><code class="language-git">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
+</code></pre>
+
+<p>Na pytanie o <code>file in which to save the key</code> wpisujemy np. <code>first</code></p>
+
+<p>Drugi klucz generujemy w identyczny sposób, wpisując inną nazwę pliku, np. <code>second</code></p>
+
+<h2 id="tworzenie-pliku-config">Tworzenie pliku config</h2>
+
+<p>W katalogu <code>~/.ssh/</code> tworzymy plik <code>config</code>. W Windowsie lokalizację tą znajdziemy w <code>%userprofile%/.ssh/</code>, tj. <code>C:/Users/Buszmen/.ssh/</code>. Warto mieć na uwadze to, że katalog <code>.ssh</code> jest domyślnie ukryty. Do stworzonego pliku <code>config</code> wrzucamy poniższy kod:</p>
+
+<pre><code class="language-git">#Pierwsze konto
+Host first-account
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/first
+#Drugie konto
+Host second
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/second
+</code></pre>
+
+<p>W Windowsie <em>Indentity File</em> znajdziemy pod adresem <code>%userprofile%/.ssh/plik</code>, czyli np.ta linijka będzie wyglądać tak: <code>IdentityFile C:/Users/Buszmen/.ssh/first</code>.</p>
+
+<h2 id="dodawanie-kluczy-rsa-do-kont">Dodawanie kluczy RSA do kont</h2>
+
+<p>Musimy teraz dodać odpowiednie klucze do odpowiednich kont na GitHubie. Logujemy się na pierwsze konto, przechodzimy do <strong>Settings</strong> i dodajemy pierwszy klucz, tak jak na poniższym screenie.</p>
+
+<p><img src="/img/posts/podwojna-tozsamosc-github1.png" alt="screen dodawania rsa do githuba" /></p>
+
+<p>Tak samo postępujemy z drugim kontem, dodając do niego drugi klucz.</p>
+
+<h2 id="konfigurowanie-repozytorium">Konfigurowanie repozytorium</h2>
+
+<p>Musimy ponownie sklonować swoje repozytorium w taki sposób:</p>
+
+<pre><code class="language-git">git clone git@first:ZielonyBuszmen/moje_repo.git
+</code></pre>
+
+<p>(zamiast standardowego <code>git clone git@github.com:ZielonyBuszmen/moje_repo.git</code>).</p>
+
+<p>Gdzie:</p>
+
+<ul>
+<li><strong><code>first</code></strong> - <code>Host</code> z pliku pliku <code>config</code></li>
+<li><strong><code>ZielonyBuszmen/moje_repo</code></strong> - nazwa użytkownika i repozytorium na GitHubie</li>
+</ul>
+
+<p>Zamiast ponownego klonowania możemy użyć komendy do zmiany &lsquo;origin&rsquo;</p>
+
+<p>Tak samo robimy z drugim repozytorium i z drugim kontem:</p>
+
+<pre><code class="language-git">git clone git@second:Company/projekt_firmowy.git
+</code></pre>
+
+<hr />
+
+<p>Następnie przechodzimy do wybranego repozytorium i sprawdzamy, <em>jako kto wrzucimy kod</em>. Możemy to zrobić za pomocą poleceń:</p>
+
+<pre><code class="language-git">git config user.name
+git config user.email
+</code></pre>
+
+<p>Jeśli chcemy zmienić dane na inne konto w ramach tego repozytorium, to wówczas wpisujemy:</p>
+
+<pre><code class="language-git">git config user.name &quot;Nowe Imie&quot;
+git config user.email &quot;Nowy@email.pl&quot;
+</code></pre>
+
+<p>Możemy przetestować zmiany, tworząc w obu repozytoriach przykładowego commita i wrzucając go za pomocą zwykłego:</p>
+
+<pre><code class="language-git">git push
+</code></pre>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2017/12/28/disable-update/" data-toggle="tooltip" data-placement="top" title="Zablokowanie Update na Windows 10">&larr; Starszy post</a>
+          </li>
+        
+        
+      </ul>
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zielonybuszmen-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
