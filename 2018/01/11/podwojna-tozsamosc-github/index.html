@@ -209,10 +209,10 @@
 
 <h2 id="generowanie-kluczy-rsa">Generowanie kluczy RSA</h2>
 
-<p>Odnosząc się do pkt 1. Aby przedstawiony sposób zadziałał, musimy zacząć łączyć się do GitHuba za pomocą SSH zamiast HTTPS.
-Na początku musimy wygenerować dwa klucze RSA, do pierwszego i do drugiego konta.</p>
+<p>Aby przedstawiony sposób zadziałał, musimy zacząć łączyć się do GitHuba za pomocą SSH zamiast HTTPS.
+Na początku wygenerujemy dwa klucze RSA, do pierwszego i do drugiego konta.</p>
 
-<p>Generujemy nowy klucz SSH wpisując w terminalu (na Windowsie najlepiej odpalić Git Bash):</p>
+<p>Klucz SSH można wygenerować wpisując w terminalu poniższą komendę (na Windowsie najlepiej odpalić Git Bash):</p>
 
 <pre><code class="language-git">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
 </code></pre>
@@ -226,7 +226,7 @@ Na początku musimy wygenerować dwa klucze RSA, do pierwszego i do drugiego kon
 <p>W katalogu <code>~/.ssh/</code> tworzymy plik <code>config</code>. W Windowsie lokalizację tą znajdziemy w <code>%userprofile%/.ssh/</code>, tj. <code>C:/Users/Buszmen/.ssh/</code>. Warto mieć na uwadze to, że katalog <code>.ssh</code> jest domyślnie ukryty. Do stworzonego pliku <code>config</code> wrzucamy poniższy kod:</p>
 
 <pre><code class="language-git">#Pierwsze konto
-Host first-account
+Host first
   HostName github.com
   User git
   IdentityFile ~/.ssh/first
@@ -270,9 +270,9 @@ Host second
 <pre><code class="language-git">git clone git@second:Company/projekt_firmowy.git
 </code></pre>
 
-<hr />
+<h2 id="zmiana-git-identity">Zmiana <em>git identity</em></h2>
 
-<p>Następnie przechodzimy do wybranego repozytorium i sprawdzamy, <em>jako kto wrzucimy kod</em>. Możemy to zrobić za pomocą poleceń:</p>
+<p>Przechodzimy do wybranego repozytorium i sprawdzamy, <em>jako kto wrzucimy kod</em>. Możemy to zrobić za pomocą poleceń:</p>
 
 <pre><code class="language-git">git config user.name
 git config user.email
@@ -284,9 +284,9 @@ git config user.email
 git config user.email &quot;Nowy@email.pl&quot;
 </code></pre>
 
-<p>Możemy przetestować zmiany, tworząc w obu repozytoriach przykładowego commita i wrzucając go za pomocą zwykłego:</p>
+<p>Zmiany możemy przetestować, tworząc w obu repozytoriach przykładowego <code>commita</code> i wpisując komendę</p>
 
-<pre><code class="language-git">git push
+<pre><code class="language-git">git log
 </code></pre>
 
       </article>
