@@ -40,7 +40,7 @@ git config user.name &amp;quot;Imie Nazwisko&amp;quot; git config user.email mai
       <pubDate>Sun, 26 Feb 2017 17:06:36 +0000</pubDate>
       
       <guid>https://zielonybuszmen.github.io/2017/02/26/laravel-testy-jednostkowe-w-phpstormie/</guid>
-      <description>Krótki wpis, szybka porada &amp;#8211; jak uruchomić testy jednostkowe Laravela w PHPStorm?
+      <description>Krótki wpis, szybka porada - jak uruchomić testy jednostkowe Laravela w PHPStorm?
 Przechodzimy do Settings (Ctrl + Alt + S), klikamy Languages &amp;amp; Frameworks, następnie PHP i wybieramy PHPUnit.
 W nowo otwartym oknie wybieramy Use Composer autoloader i jako ścieżkę podajemy plik /vendor/autoload.php, który znajduje się w naszym projekcie.
 Testowanie Przechodzimy do /tests/ExampleTest.php i piszemy przykładowy test:
