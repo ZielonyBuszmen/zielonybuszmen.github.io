@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/tags/react/</link>
+    <description>Recent content in React on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wygodne Reducery</title>
+      <link>https://zielonybuszmen.github.io/2018/10/07/wygodne-reducery/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/2018/10/07/wygodne-reducery/</guid>
+      <description>Dokumentacja Reduxa, pokazująca jego podstawy, podaje jeden przepis na pisanie reducerów. Nie jest on skomplikowany, gdyż korzysta z każdemu znanej konstrukcji switch() case.
+Wygląda on tak:
+function todoApp(state, action) { switch (action.type) { case SET_VISIBILITY_FILTER: const newState = {...state, visibilityFilter: action.filter}; return newState; case SET_PRIVS: return setNewPrivs(state); default: return state } }  Gdy zaczniemy dorzucać kolejne akcje, składnia stanie się szybko nieczytelna.
+A co, gdyby reducer wyglądał tak:
+function setNewPrivs(state, action) { const newState = {.</description>
+    </item>
+    
+  </channel>
+</rss>

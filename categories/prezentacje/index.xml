@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prezentacje on Zielony Buszmen</title>
+    <link>https://zielonybuszmen.github.io/categories/prezentacje/</link>
+    <description>Recent content in Prezentacje on Zielony Buszmen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl-pl</language>
+    <lastBuildDate>Tue, 20 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zielonybuszmen.github.io/categories/prezentacje/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pierwsze kroki w GIT &amp; GitHub</title>
+      <link>https://zielonybuszmen.github.io/2018/03/20/prezentacja-gita/</link>
+      <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/2018/03/20/prezentacja-gita/</guid>
+      <description>// todo</description>
+    </item>
+    
+  </channel>
+</rss>
