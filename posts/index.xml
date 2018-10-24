@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ruby - ściągawka</title>
+      <link>https://zielonybuszmen.github.io/2018/10/24/ruby-sciagawka/</link>
+      <pubDate>Wed, 24 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/2018/10/24/ruby-sciagawka/</guid>
+      <description>Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (syntax sugar) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć rozbudowany, dlatego polecam go przeszukiwać, a nie czytać w całości.
+Spis treści  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klasy i obiekty  Akcesory Konstruktory Dziedziczenie Zmienne i metody klasy Inne  Konstrola dostępu Monkey patching &amp;amp; Open classes   Sterowanie przepływem  Warunki Przypisywanie warunkowe Konstrukcja case Pętle Iteratory i bloki Kontrola wykonywania pętli Wyjątki  Obsługiwanie wyjątków Rzucanie wyjątków ensure &amp;amp; else Ponawianie prób    Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie.</description>
+    </item>
     
     <item>
       <title>Wygodne Reducery</title>
@@ -22,15 +32,6 @@ Wygląda on tak:
 function todoApp(state, action) { switch (action.type) { case SET_VISIBILITY_FILTER: const newState = {...state, visibilityFilter: action.filter}; return newState; case SET_PRIVS: return setNewPrivs(state); default: return state } }  Gdy zaczniemy dorzucać kolejne akcje, składnia stanie się szybko nieczytelna.
 A co, gdyby reducer wyglądał tak:
 function setNewPrivs(state, action) { const newState = {.</description>
-    </item>
-    
-    <item>
-      <title>Pierwsze kroki w GIT &amp; GitHub</title>
-      <link>https://zielonybuszmen.github.io/2018/03/20/prezentacja-gita/</link>
-      <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://zielonybuszmen.github.io/2018/03/20/prezentacja-gita/</guid>
-      <description>// todo</description>
     </item>
     
     <item>

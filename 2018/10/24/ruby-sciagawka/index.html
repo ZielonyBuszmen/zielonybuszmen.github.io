@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Ruby - ściągawka</title>
+  <meta property="og:title" content="Ruby - ściągawka" />
+  <meta name="twitter:title" content="Ruby - ściągawka" />
+  <meta name="description" content="Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (syntax sugar) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć rozbudowany, dlatego polecam go przeszukiwać, a nie czytać w całości.
+Spis treści  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klasy i obiekty  Akcesory Konstruktory Dziedziczenie Zmienne i metody klasy Inne  Konstrola dostępu Monkey patching &amp; Open classes   Sterowanie przepływem  Warunki Przypisywanie warunkowe Konstrukcja case Pętle Iteratory i bloki Kontrola wykonywania pętli Wyjątki  Obsługiwanie wyjątków Rzucanie wyjątków ensure &amp; else Ponawianie prób    Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie.">
+  <meta property="og:description" content="Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (syntax sugar) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć rozbudowany, dlatego polecam go przeszukiwać, a nie czytać w całości.
+Spis treści  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klasy i obiekty  Akcesory Konstruktory Dziedziczenie Zmienne i metody klasy Inne  Konstrola dostępu Monkey patching &amp; Open classes   Sterowanie przepływem  Warunki Przypisywanie warunkowe Konstrukcja case Pętle Iteratory i bloki Kontrola wykonywania pętli Wyjątki  Obsługiwanie wyjątków Rzucanie wyjątków ensure &amp; else Ponawianie prób    Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie.">
+  <meta name="twitter:description" content="Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (syntax sugar) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2018/10/24/ruby-sciagawka/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.37" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2018/10/24/ruby-sciagawka/" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  
+  
+
+
+
+<link rel="stylesheet" href="https://zielonybuszmen.github.io/prism-highlighter/darcula.css"><link rel="stylesheet" href="https://zielonybuszmen.github.io/styles/my.css">
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/MyProjects/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+          <li>
+            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+              <span class="hidden-sm hidden-md hidden-lg">Szukaj</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Szukajka</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search linktarget="_parent"></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Ruby - ściągawka</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 2018-10-24
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (<em>syntax sugar</em>) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć rozbudowany, dlatego polecam go przeszukiwać, a nie czytać w całości.</p>
+
+<h3 id="spis-treści"><em>Spis treści</em></h3>
+
+<ul>
+<li><a href="#typy-wbudowane">Typy wbudowane</a>
+
+<ul>
+<li><a href="#tablice">Tablice</a></li>
+<li><a href="#hashe">Hashe</a></li>
+<li><a href="#zakresy-range">Zakresy (Range)</a></li>
+<li><a href="#splat-operator">Splat Operator</a></li>
+</ul></li>
+<li><a href="#klasy-i-obiekty">Klasy i obiekty</a>
+
+<ul>
+<li><a href="#akcesory">Akcesory</a></li>
+<li><a href="#konstruktory">Konstruktory</a></li>
+<li><a href="#dziedziczenie">Dziedziczenie</a></li>
+<li><a href="#zmienne-i-metody-klasy">Zmienne i metody klasy</a></li>
+<li><a href="#inne">Inne</a>
+
+<ul>
+<li><a href="#konstrola-dostępu-private-public">Konstrola dostępu</a></li>
+<li><a href="#monkey-patching-open-classes">Monkey patching &amp; Open classes</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#sterowanie-przepływem">Sterowanie przepływem</a>
+
+<ul>
+<li><a href="#warunki">Warunki</a></li>
+<li><a href="#przypisywanie-warunkowe">Przypisywanie warunkowe</a></li>
+<li><a href="#konstrukcja-case">Konstrukcja <code>case</code></a></li>
+<li><a href="#pętle">Pętle</a></li>
+<li><a href="#iteratory-i-bloki">Iteratory i bloki</a></li>
+<li><a href="#kontrola-wykonywania-pętli">Kontrola wykonywania pętli</a></li>
+<li><a href="#wyjątki">Wyjątki</a>
+
+<ul>
+<li><a href="#obsługiwanie-wyjątków">Obsługiwanie wyjątków</a></li>
+<li><a href="#rzucanie-wyjątków">Rzucanie wyjątków</a></li>
+<li><a href="#ensure-else"><code>ensure</code> &amp; <code>else</code></a></li>
+<li><a href="#ponawianie-prób">Ponawianie prób</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie. Nazwy zmiennych <code>Ble</code> oraz <code>ble</code> są rozróżniane i wykrywane jako dwie różne. Nazwy zmiennych, metod i symboli piszemy <code>snake_casem</code>. Klasy i moduły nazywamy <code>CamelCasem</code>. Jako <code>tab</code> używamy dwóch spacji.
+Więcej o konwencji nazwniczej <a href="https://github.com/rubocop-hq/ruby-style-guide#naming">można znaleźć tutaj</a></p>
+
+<ul>
+<li><strong><code>puts 'tekst'</code></strong> - wyświetlenie tekstu w konsoli</li>
+<li><strong><code>name = gets</code></strong> - pobranie danych z konsoli do zmiennej <code>name</code></li>
+<li><strong><code>test.class</code></strong> - zwróci nazwę klasy zmiennej <code>test</code></li>
+<li><strong><code>test.methods</code></strong> - lista wszystkich metod zmiennej <code>test</code></li>
+<li><strong><code>test.public_methods</code></strong> - lista tylko metod publicznych</li>
+<li><strong><code>String.superclass</code></strong> - klasa nadrzędna danej klasy</li>
+<li><code>&quot;test &quot; * 4</code> zwróci <code>&quot;test test test test&quot;</code></li>
+<li><code>[1, 2] * 2</code> zwróci <code>[1, 2, 1, 2]</code></li>
+<li><code>a = a.strip</code> można zapisać jako <code>a.strip!</code> - wywołanie funkcji z wykrzyknikiem nadpisuje wartość</li>
+<li>Liczby binarne  zapisuje się jako <code>0b101010</code>, szesnastkowe jako <code>0xFA5B</code>.</li>
+<li>W liczbach można używać podkreślników, Ruby je ignoruje, np <code>564_8758_98</code> da nam wynik <code>564875898</code></li>
+<li>Komentarze zaczyna się od hasha (znak #)</li>
+<li><strong><code>b = a.clone</code></strong> - klonuje zmienną lub obiekt. Zwykłe przypisanie tylko kopiuje referencję</li>
+<li><strong><code>p obiekt</code></strong> - wyświetla wszystkie wartości zmiennych danego obiektu. Jest to skrót od <code>object.inspect</code></li>
+</ul>
+
+<pre><code class="language-ruby">#&lt;Spaceship:0x02a2f7e0 @name=&quot;serenity&quot;, @cargo=12, @weight=222.22&gt;
+</code></pre>
+
+<p><style>
+p {
+    margin-top: 10px;
+}</p>
+
+<p>h1 {
+  margin-top: 30px;
+}</p>
+
+<p>h4 {
+    margin-top: 20px;
+}
+</style></p>
+
+<h4 id="zmienne">Zmienne</h4>
+
+<ul>
+<li><code>zmienna = 10</code>, <code>b = 'test'</code>, <code>c = false</code> - zadeklarowanie zmiennych i przypisanie wartości</li>
+<li><code>tablica = [1, 2, 3, 4]</code> - zwykła tablica</li>
+<li><code>$zmienna_globalna</code> - zaczyna się od znaku dolara</li>
+</ul>
+
+<h4 id="metody">Metody</h4>
+
+<p>Metody zawsze zwracają to, co jest w ostatniej linijce. Nie używa się słowa return.</p>
+
+<pre><code class="language-ruby">def metoda(argument)
+  argument * 2
+end
+</code></pre>
+
+<h1 id="typy-wbudowane">Typy wbudowane</h1>
+
+<ul>
+<li><code>true</code> to obiekt klasy <code>TrueClass</code>. <code>false</code> to obiekt klasy <code>FalseClass</code></li>
+<li>Po <code>Integer</code> dziedziczą dwie klasy: <code>Fixnum</code> (mniejsze liczby) oraz <code>Bignum</code> (duże liczby).</li>
+<li>Liczbę<code>Float</code> zapisujemy jako <code>2.0</code></li>
+<li>Obiekty reprezentujące liczby są <strong>read only</strong>! Dlatego nie ma operatora <code>++</code> ani <code>--</code></li>
+<li>Wyświetlanie znaków specjalnych w stringach za pomocą <code>%q</code>:</li>
+</ul>
+
+<pre><code class="language-ruby">%q('Zielony' buszmen) # =&gt; 'Zielony' buszmen
+%q&lt;'Zielony' buszmen&gt;
+%q{'Zielony' buszmen}
+</code></pre>
+
+<ul>
+<li>Podwójne cudzysłowy <code>&quot;</code> umożliwiają <em>interpolację</em>:</li>
+</ul>
+
+<pre><code class="language-ruby">counter = 20
+qty = 2
+puts &quot;Licznik: #{counter}&quot; # interpolacja
+puts &quot;Ilość: #{counter * qty}&quot;
+</code></pre>
+
+<ul>
+<li>Metody i operatory klasy <code>String</code>:</li>
+</ul>
+
+<pre><code class="language-ruby">puts &quot;Hello world&quot;[1] # =&gt; &quot;e&quot;
+puts &quot;Hello world&quot;[1, 4] # =&gt; &quot;ello&quot;
+
+a = &quot;Hello world&quot;
+a[&quot;world&quot;] = &quot;sky&quot;
+puts a # =&gt; &quot;Hello sky&quot;
+
+puts &quot;ble &quot; * 3 # =&gt; &quot;ble ble ble &quot;
+
+puts &quot;%05d&quot; % 321 # =&gt; &quot;00321&quot;
+puts &quot;%.4g&quot; % 3.14151692653 # =&gt; &quot;3.142&quot;
+
+puts &quot;aa&quot; + &quot;bbb&quot; # =&gt; &quot;aabbb&quot;
+</code></pre>
+
+<h3 id="tablice">Tablice</h3>
+
+<pre><code class="language-ruby">arr = [] # pusta tablica
+arr = Array.new(3) # [nil, nil, nil]
+arr = Array.new(3, &quot;abc&quot;) # [&quot;abc&quot;, &quot;abc&quot;, &quot;abc&quot;], każdy element to ten sam obiekt
+arr = Array.new(3) { &quot;abc&quot; } # [&quot;abc&quot;, &quot;abc&quot;, &quot;abc&quot;], każdy element to inny obiekt
+arr[-1] # ostatni element tablicy
+arr[1..3] # zwróci elementy od 1 do 3 włącznie
+</code></pre>
+
+<h3 id="hashe">Hashe</h3>
+
+<pre><code class="language-ruby">h = {} # pusty hash
+h = {&quot;min&quot; =&gt; 0, &quot;max&quot; =&gt; 10}
+h[&quot;max&quot;]
+
+z = {:min =&gt; 0, :max =&gt; 10}
+z = {min: 0, max: 10}
+z[:max]
+
+z.each { |k, v| puts &quot;#{k}: #{v}&quot; } # wyświetlenie wszystkich wartości hasha
+</code></pre>
+
+<h3 id="zakresy-range">Zakresy (Range)</h3>
+
+<pre><code class="language-ruby">(1..7)  # [1, 7]
+(1...7) # [1, 7)
+</code></pre>
+
+<h3 id="splat-operator">Splat Operator</h3>
+
+<pre><code class="language-ruby">a, *b = get_values  # a == 1, b == [2, 3, 4]
+a, *b, c = get_values  # a == 1, b == [2, 3], c == 4
+</code></pre>
+
+<h1 id="klasy-i-obiekty">Klasy i obiekty</h1>
+
+<pre><code class="language-ruby">class Spaceship
+  def launch(destination)
+    @destination = destination
+  end
+end
+
+ship = Spaceship.new
+ship.launch 'Andromeda'
+</code></pre>
+
+<p>Jest to klasa <code>Spaceship</code>, która zawiera metodę <code>launch</code>. Metoda ta przyjmuje jeden parametr - <code>destination</code>. Konstrukcja <code>@destination</code> to odwołanie się do stanu obiektu (odpowiednik <code>this.zmienna</code> z C#)</p>
+
+<p>Na samym dole tworzymy obiekt tej klasy poprzez wywołanie metody <code>new</code>. Następnie wywołujemy metodę <code>launch</code> przekazując do niej string <code>'Andromeda'</code>.</p>
+
+<p>Metody w klasie są domyślnie publiczne, zmienne są domyślnie prywatne.</p>
+
+<h3 id="akcesory">Akcesory</h3>
+
+<pre><code class="language-ruby">class Person
+  def name
+    @name
+  end
+
+  def name=(str)
+    @name = str
+  end
+end
+
+pablo = Person.new
+pablo.name = 'Pablo' # Przypisanie wartości
+p pablo.name # wyświetlenie wartości =&gt; &quot;Pablo&quot;
+</code></pre>
+
+<p>Pierwsza funkcja to getter, zwraca zmienną <code>name</code>, natomiast druga to stter - ustawia jej wartość.</p>
+
+<p>Powyższy kod można skrócić - Ruby oferuje tzw <strong>akcesory</strong>. Zobaczmy:</p>
+
+<pre><code class="language-ruby">class Person
+  attr_accessor :name
+end
+
+pablo = Person.new
+pablo.name = 'Pablo'
+p pablo.name # =&gt; &quot;Pablo&quot;
+</code></pre>
+
+<p>Powyższa konstrukcja (<code>attr_accessor</code>) umożliwia odczyt i zapis zmiennej. Aby umożliwić sam odczyt, możemy skorzystać z <strong><code>attr_reader</code></strong>. Istnieje analogiczny sposób na umożliwienie samego zapisu - <strong><code>attr_writer</code></strong></p>
+
+<h3 id="konstruktory-initialize">Konstruktory - <code>initialize</code></h3>
+
+<pre><code class="language-ruby">class Person
+  def initialize(name, age, height)
+    @name = name
+    @age = age
+    @height = height
+  end
+end
+
+zielony = Person.new('Zielony', 128, 12.5)
+</code></pre>
+
+<p>Konstruktor tworzymy za pomocą metody <code>initialize</code>. Tworząc nowy obiekt, wywołanie metody <code>new</code> wywołuje także metodę <code>initialize</code> z naszej klasy.</p>
+
+<h3 id="dziedziczenie">Dziedziczenie - <strong><code>&lt;</code></strong></h3>
+
+<pre><code class="language-ruby">class Probe
+  def deploy
+    # wypuszcza próbnik
+  end
+
+  def take_sample
+    # pobiera ogólną próbkę
+  end
+end
+
+
+class MineralProbe &lt; Probe
+  def take_sample
+    # pobiera próbkę minerałów
+    super() # wywołanie przesłoniętej metody z klasy rodzica
+  end
+end
+
+
+class SpaceProbe &lt; Probe
+  def take_sample
+    # pobiera próbkę z przestrzeni kosmicznej
+    super # wywołanie przesłoniętej metody z klasy rodzica
+  end
+end
+</code></pre>
+
+<p>Dziedziczenie jest realizowane operatorem <code>&lt;</code>. Aby odwołać się do metody z klasy nadrzędnej, wywołujemy metodę <code>super()</code> (możliwa notacja bez nawiasów - <code>super</code>).</p>
+
+<h3 id="zmienne-i-metody-klasy">Zmienne i metody klasy</h3>
+
+<pre><code class="language-ruby">class Car
+  @@amount = 0 # zmienna klasowa
+
+  def initialize
+    @@amount += 1
+  end
+
+  def self.count # metoda klasy
+    @@amount
+  end
+
+  def count_normally # metoda instancji
+    @@amount
+  end
+end
+
+Car.new
+Car.new
+bla = Car.new
+
+p bla.count_normally # =&gt; 3
+p Car.count # =&gt; 3
+</code></pre>
+
+<p>Zmienna <code>amount</code> jest taka sama we wszystkich klasach, które by dziedziczyły po klasie <code>Car</code></p>
+
+<h3 id="inne">Inne:</h3>
+
+<h4 id="konstrola-dostępu-private-public">Konstrola dostępu (private, public)</h4>
+
+<pre><code class="language-ruby">class Probe
+  private # wszystkie metody będą prywatne
+
+  def deploy 
+    # ...
+  end
+
+  public # wszystkie metody będą publiczne
+
+  def take_sample
+    # ...
+  end
+
+  def turn_off
+    # ...
+  end
+end
+</code></pre>
+
+<p>Identyczne działanie zapewnia konstrukcja:</p>
+
+<pre><code class="language-ruby">class Probe
+  def deploy
+  end
+
+  def take_sample
+  end
+
+  def turn_off
+  end
+
+  private :deploy # wpisujemy metody, które mają być prywatne
+  public :take_sample, :turn_off # to jest nadmiarowe, bo domyślnie wszystkie metody są publiczne
+end
+</code></pre>
+
+<h4 id="monkey-patching-open-classes">Monkey patching &amp; Open classes</h4>
+
+<p>Termin <strong>Open classes</strong> oznacza, że możemy deklarować jedną klasę w wielu miejscach, dodając jej po jednej metodzie. Możemy też dowolnie nadpisywać jakieś metody innymi. Dzięki temu, Ruby umożliwia tzw <strong>Monkey Patching</strong>, czyli np dodawanie do wbudowanej klasy String nowych metod. Możliwe też jest ich nadpisywanie:</p>
+
+<pre><code class="language-ruby">class String
+  def cos_tam
+    'nic konkretnego'
+  end
+end
+
+a = 'abcdef'
+p a.length # =&gt; 6 - wbudowana metoda w string
+p a.cos_tam # =&gt; &quot;nic konkretnego&quot; - nasza nowa metoda
+</code></pre>
+
+<h1 id="sterowanie-przepływem">Sterowanie przepływem</h1>
+
+<h3 id="warunki">Warunki</h3>
+
+<pre><code class="language-ruby">if can_run?
+  run
+else
+  wait
+end
+
+message = if counter &gt; 10 then 'Go out' else 'Wait' end
+
+run if can_run?
+
+if fuel_level &gt; 50
+  set_fuel_light('green')
+elsif fuel_level &gt; 24
+  set_fuel_light('yellow')
+end
+</code></pre>
+
+<ul>
+<li><code>false</code> i <code>nil</code> są traktowane jako <strong><code>false</code></strong></li>
+<li>reszta, czyli <code>true</code>, <code>0</code>, <code>''</code> (pusty string), <code>[]</code> (pusta tablica) - są traktowane jako <strong><code>true</code></strong></li>
+<li>konwertowanie do boola można dokonać operatorem <code>!!</code>, np <code>!![]</code></li>
+</ul>
+
+<pre><code class="language-ruby"># if not == unless
+
+unless fuel_level &lt; 25
+  launch
+end
+
+launch unless fuel_level &lt; 25
+
+
+# Ternary operator ?: (operator trójargumentowy)
+can_launch ? launch : stop
+</code></pre>
+
+<h3 id="przypisywanie-warunkowe">Przypisywanie warunkowe</h3>
+
+<pre><code class="language-ruby"># przypisze się tylko wtedy, gdy ship nie ma wartości
+ship ||= Spaceship.new
+ship = Spaceship.new unless ship
+</code></pre>
+
+<h3 id="konstrukcja-case">Konstrukcja <code>case</code></h3>
+
+<pre><code class="language-ruby">case distance_from_here
+when 'far away'
+  go_close
+when 'close to'
+  dock
+else
+  alarm 'error'
+end
+
+# case zwraca także wartości
+result = case distance_from_here
+         when 'far away'
+           100
+         when 'close to'
+           50
+         end
+         
+# bardziej zwięzła forma ze słówkiem then
+result = case distance_from_here
+         when 'far away' then 100
+         when 'close to' then 50
+         end
+</code></pre>
+
+<h3 id="pętle">Pętle</h3>
+
+<ul>
+<li><strong>pętla <code>while</code></strong> - trzy sposoby zapisu:</li>
+</ul>
+
+<pre><code class="language-ruby">while hight_alert?
+  sound_system.alarm
+end
+
+while hight_alert? do sound_system.alarm end
+
+sound_system.alarm while hight_alert?
+</code></pre>
+
+<ul>
+<li><strong>pętla <code>until</code></strong>, czyli while not (dopóki nie):</li>
+</ul>
+
+<pre><code class="language-ruby">until no_fuel?
+  accelerate
+end
+
+until no_fuel? do accelerate end
+
+accelerate until no_fuel?
+</code></pre>
+
+<ul>
+<li><strong><code>begin/end</code></strong> - wykona się przynajmniej raz, nawet jeśli warunek jest od początku fałszywy:</li>
+</ul>
+
+<pre><code class="language-ruby">begin
+  light.start_falshing
+  sound.play_siren
+end while alarm?
+</code></pre>
+
+<ul>
+<li><strong><code>for</code></strong>:</li>
+</ul>
+
+<pre><code class="language-ruby">for i in [3, 2, 1]
+  puts i
+end
+
+# wyświetli liczby od 1 do 15 (z zakresu - rage)
+for i in (1..15)
+  puts i
+end
+</code></pre>
+
+<h3 id="iteratory-i-bloki">Iteratory i bloki</h3>
+
+<p>Blok zaczyna się od <code>do</code>, kończy na <code>end</code>. Jest to <em>specjalny</em> argument przekazywany do funkcji. Konstrukcja <code>|element|</code> to parametr</p>
+
+<pre><code class="language-ruby">[1, 2, 3].each do |element|
+  puts element
+end
+
+# równoznaczne z wcześniejszym
+[1, 2, 3].each {|element| puts element}
+
+
+# nieskończona pętla
+loop do
+  puts 'Infinity loop'
+end
+</code></pre>
+
+<h3 id="kontrola-wykonywania-pętli">Kontrola wykonywania pętli</h3>
+
+<ul>
+<li><strong><code>next</code></strong>  przechodzi do kolejnej iteracji:</li>
+</ul>
+
+<pre><code class="language-ruby">while message = stream.get_message
+  next if message.type == 'sync'
+  message.process
+end
+</code></pre>
+
+<ul>
+<li><strong><code>break</code></strong>  wychodzi z pętli:</li>
+</ul>
+
+<pre><code class="language-ruby">while message = stream.get_message
+  message.process
+  break if message.type == 'undefined'
+end
+
+# instrukcja break może zwrócić wartość z pętli ('result')
+result = while message = stream.get_message
+           message.process
+           break 'result' if message.type == 'undefined'
+         end
+</code></pre>
+
+<ul>
+<li><strong><code>redo</code></strong>  powtarza iterację bez ponownego sprawdzania warunku:</li>
+</ul>
+
+<pre><code class="language-ruby">i = 0
+while i &lt; 3
+  print 'Podaj liczbę: '
+  input = gets.to_i
+  redo if input &lt;= 0
+  i += 1
+end
+</code></pre>
+
+<h3 id="wyjątki">Wyjątki</h3>
+
+<h4 id="obsługiwanie-wyjątków">Obsługiwanie wyjątków</h4>
+
+<p><code>begin</code> oraz <code>end</code> to <em>blok obsługi</em> wyjątków. Łapanie ich odbywa się w sekcji <code>rescue</code>:</p>
+
+<pre><code class="language-ruby">def launch
+  begin
+    not_implemented_method # ta metoda nie istnieje
+  rescue 
+    puts 'Nie mozna wykonac'
+    return false
+  end
+end
+
+# to samo co wyżej, tylko blok (begin ... end) obejmuje całą funkcję
+def launch
+  not_implemented_method
+  turn_on_lights
+  true
+rescue
+  puts 'Nie mozna wykonac'
+  false 
+end
+</code></pre>
+
+<p>Możliwe jest łapanie wyjątków określonego typu i przechwytywanie ich właściwości. (<code>RuntimeError</code> dziedziczy po <code>StandardError</code>, a <code>StandardError</code> dziedziczy po <code>Exception</code>)</p>
+
+<pre><code class="language-ruby">def launch
+  not_implemented_method
+  turn_on_lights
+rescue StandardError =&gt; e
+  puts e.message
+  puts e.backtrace
+  false
+end
+
+# łapanie kilku wyjątków
+def launch
+  not_implemented_method
+  turn_on_lights
+rescue LightsError
+  puts 'Lights error'
+  true
+rescue StandardError =&gt; e
+  puts e.backtrace
+  false
+end
+</code></pre>
+
+<h4 id="rzucanie-wyjątków">Rzucanie wyjątków</h4>
+
+<pre><code class="language-ruby"># Wyrzucenie wyjątku z wiadomością
+def turn_on_lights
+  # ...
+  raise 'No energy' # ==&gt; RuntimeError
+  # ...
+end
+
+# Wyrzucenie własnego wyjątku z wiadomością
+def turn_on_lights
+  # ...
+  raise LightError, 'No energy'
+  # ...
+end
+</code></pre>
+
+<h4 id="ensure-else"><code>ensure</code> &amp; <code>else</code></h4>
+
+<p>Kilka możliwych wyjść z metod utrudnia np. zamknięcie pliku. Z pomocą przychodzi blok <code>ensure</code>, który wykona się zawsze, nie ważne czy został złapany wyjątek, czy też nie.
+Sekcja <code>else</code> wykona się tylko wtedy, gdy funkcja nie rzuci żadnego wyjątku (<code>ensure</code> wykona się zaraz po <code>else</code>).</p>
+
+<pre><code class="language-ruby">def read_book
+  book = File.open('book.txt')
+  # ...
+  raise BookError, 'Bad book' if review.bad? # wyjście z metody
+  # ...
+  true # wyjście z metody
+rescue
+  # łapiemy błędy z funkcji
+  false # wyjście z metody
+else
+  puts 'Brak wyjątków, wszystko poszło jak trzeba'
+ensure
+  book.close if book # zamykamy plik
+end
+</code></pre>
+
+<h4 id="ponawianie-prób">Ponawianie prób</h4>
+
+<pre><code class="language-ruby">def fetch_book
+  book = API.request('/book/1')
+  # ...
+rescue RuntimeError =&gt; e
+  attempts ||= 0
+  attempts += 1
+  if attempts &lt; 3 # próbujemy 3 razy połączyć się z API
+    puts e.message + '. Ponawiam próbę'
+    retry # przenosi wykonywanie na początek metody (bloku begin..end)
+  else
+    puts 'Niepowodzenie.'
+    raise
+  end
+end
+</code></pre>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+        
+          <li class="next">
+            <a href="https://zielonybuszmen.github.io/2018/10/07/wygodne-reducery/" data-toggle="tooltip" data-placement="top" title="Wygodne Reducery">Starszy post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zielonybuszmen-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/ZielonyBuszmen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+
+
+
+
+
+
+
+<script>
+  (function() {
+    var cx = '007478084746714163272:uz5nuajlf-i';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<script src="/prism-highlighter/prism.js"></script>
+<script src="/js/my.js"></script>
+
+  </body>
+</html>
+
