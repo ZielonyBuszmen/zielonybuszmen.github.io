@@ -301,25 +301,23 @@
 
 <p>Daje nam to 145.128, więc adresem czwartej podsieci jest 120.130.145.128</p>
 
-<p>Obliczmy teraz pierwszy adres podsieci. do każdej wystarczy dodać 1.</p>
+<p>Obliczmy teraz pierwszy adres hosta w podsieci. Do każdej wystarczy dodać 1.</p>
 
-<p>1) 120.130.144.0 do adresu sieci +1 = 120.130.144.<strong>1</strong></p>
-
-<p>2) 120.130.144.128 do adresu sieci +1 = 120.130.144.<strong>129</strong></p>
-
-<p>3) 120.130.145.0 do adresu sieci +1 = 120.130.145.<strong>1</strong></p>
-
-<p>4) 120.130.145.128 do adresu sieci +1 = 120.130.145.<strong>129</strong></p>
+<ol>
+<li>- 120.130.144.0 do adresu sieci +1 = 120.130.144.<strong>1</strong></li>
+<li>- 120.130.144.128 do adresu sieci +1 = 120.130.144.<strong>129</strong></li>
+<li>- 120.130.145.0 do adresu sieci +1 = 120.130.145.<strong>1</strong></li>
+<li>- 120.130.145.128 do adresu sieci +1 = 120.130.145.<strong>129</strong></li>
+</ol>
 
 <p>Teraz obliczymy adres broad cast dla poszczególnych podsieci. Tak jak już było wspominane, adres ten jest ostatnim możliwym w danej podsieci</p>
 
-<p>1) 1001000 0.01<strong>1111111</strong> – daje nam to liczbę 144.127, więc adres broadcast  to 120.130.144.<strong>127</strong></p>
-
-<p>2) 1001000 0.11<strong>1111111</strong> – daje nam to liczbę 144.255, więc adres broadcast  to 120.130.144.<strong>255</strong></p>
-
-<p>3) 1001000 1.01<strong>1111111</strong> – daje nam to liczbę 145.127, więc adres broadcast  to 120.130.145.<strong>127</strong></p>
-
-<p>4) 1001000 1.11<strong>1111111</strong> – daje nam to liczbę 145.255, więc adres broadcast  to 120.130.145.<strong>255</strong></p>
+<ol>
+<li>- 1001000 0.01<strong>1111111</strong> – daje nam to liczbę 144.127, więc adres broadcast  to 120.130.144.<strong>127</strong></li>
+<li>- 1001000 0.11<strong>1111111</strong> – daje nam to liczbę 144.255, więc adres broadcast  to 120.130.144.<strong>255</strong></li>
+<li>- 1001000 1.01<strong>1111111</strong> – daje nam to liczbę 145.127, więc adres broadcast  to 120.130.145.<strong>127</strong></li>
+<li>- 1001000 1.11<strong>1111111</strong> – daje nam to liczbę 145.255, więc adres broadcast  to 120.130.145.<strong>255</strong></li>
+</ol>
 
 <blockquote>
 <p>Aby obliczyć adres ostatniego hosta wystarczy że od adresu broadcast odejmiemy jedynkę. A więc dla przykładu ostatnim adresem w pierwszej podsieci będzie 120.130.144.126, gdyż adres broadcast to 120.130.144.127.</p>
