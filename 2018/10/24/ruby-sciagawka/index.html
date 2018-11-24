@@ -9,9 +9,11 @@
   <meta property="og:title" content="Ruby - ściągawka" />
   <meta name="twitter:title" content="Ruby - ściągawka" />
   <meta name="description" content="Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (syntax sugar) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć rozbudowany, dlatego polecam go przeszukiwać, a nie czytać w całości.
-Spis treści  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klasy i obiekty  Akcesory Konstruktory Dziedziczenie Zmienne i metody klasy Inne  Konstrola dostępu Monkey patching &amp; Open classes   Sterowanie przepływem  Warunki Przypisywanie warunkowe Konstrukcja case Pętle Iteratory i bloki Kontrola wykonywania pętli Wyjątki  Obsługiwanie wyjątków Rzucanie wyjątków ensure &amp; else Ponawianie prób    Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie.">
+Ten wpis jest jednym z serii o Ruby, które pojawiły się na blogu:
+ Ruby - ściągawka Metody na metody w Ruby  Spis treści wpisu  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klasy i obiekty  Akcesory Konstruktory - initialize Dziedziczenie Zmienne i metody klasy Inne  Konstrola dostępu Monkey patching &amp; Open classes   Sterowanie przepływem  Warunki Przypisywanie warunkowe Konstrukcja case Pętle Iteratory i bloki Kontrola wykonywania pętli Wyjątki  Obsługiwanie wyjątków Rzucanie wyjątków ensure &amp; else Ponawianie prób    Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie.">
   <meta property="og:description" content="Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (syntax sugar) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć rozbudowany, dlatego polecam go przeszukiwać, a nie czytać w całości.
-Spis treści  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klasy i obiekty  Akcesory Konstruktory Dziedziczenie Zmienne i metody klasy Inne  Konstrola dostępu Monkey patching &amp; Open classes   Sterowanie przepływem  Warunki Przypisywanie warunkowe Konstrukcja case Pętle Iteratory i bloki Kontrola wykonywania pętli Wyjątki  Obsługiwanie wyjątków Rzucanie wyjątków ensure &amp; else Ponawianie prób    Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie.">
+Ten wpis jest jednym z serii o Ruby, które pojawiły się na blogu:
+ Ruby - ściągawka Metody na metody w Ruby  Spis treści wpisu  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klasy i obiekty  Akcesory Konstruktory - initialize Dziedziczenie Zmienne i metody klasy Inne  Konstrola dostępu Monkey patching &amp; Open classes   Sterowanie przepływem  Warunki Przypisywanie warunkowe Konstrukcja case Pętle Iteratory i bloki Kontrola wykonywania pętli Wyjątki  Obsługiwanie wyjątków Rzucanie wyjątków ensure &amp; else Ponawianie prób    Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie.">
   <meta name="twitter:description" content="Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (syntax sugar) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć …">
   <meta name="author" content="Zielony Buszmen"/>
   <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
@@ -172,7 +174,18 @@ Spis treści  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klas
 
 <p>Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (<em>syntax sugar</em>) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć rozbudowany, dlatego polecam go przeszukiwać, a nie czytać w całości.</p>
 
-<h3 id="spis-treści"><em>Spis treści</em></h3>
+<hr />
+
+<p>Ten wpis jest jednym z serii o <em>Ruby</em>, które pojawiły się na blogu:</p>
+
+<ol>
+<li><strong>Ruby - ściągawka</strong></li>
+<li><a href="/2018/11/24/metody-na-metody-ruby/">Metody na metody w Ruby</a></li>
+</ol>
+
+<hr />
+
+<h3 id="spis-treści-wpisu"><em>Spis treści wpisu</em></h3>
 
 <ul>
 <li><a href="#typy-wbudowane">Typy wbudowane</a>
@@ -187,7 +200,7 @@ Spis treści  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klas
 
 <ul>
 <li><a href="#akcesory">Akcesory</a></li>
-<li><a href="#konstruktory">Konstruktory</a></li>
+<li><a href="#konstruktory-initialize">Konstruktory</a> - <code>initialize</code></li>
 <li><a href="#dziedziczenie">Dziedziczenie</a></li>
 <li><a href="#zmienne-i-metody-klasy">Zmienne i metody klasy</a></li>
 <li><a href="#inne">Inne</a>
@@ -218,7 +231,7 @@ Spis treści  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klas
 </ul>
 
 <p>Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie. Nazwy zmiennych <code>Ble</code> oraz <code>ble</code> są rozróżniane i wykrywane jako dwie różne. Nazwy zmiennych, metod i symboli piszemy <code>snake_casem</code>. Klasy i moduły nazywamy <code>CamelCasem</code>. Jako <code>tab</code> używamy dwóch spacji.
-Więcej o konwencji nazwniczej <a href="https://github.com/rubocop-hq/ruby-style-guide#naming">można znaleźć tutaj</a></p>
+Więcej o konwencji nazewniczej <a href="https://github.com/rubocop-hq/ruby-style-guide#naming">można znaleźć tutaj</a></p>
 
 <ul>
 <li><strong><code>puts 'tekst'</code></strong> - wyświetlenie tekstu w konsoli</li>
@@ -231,7 +244,7 @@ Więcej o konwencji nazwniczej <a href="https://github.com/rubocop-hq/ruby-style
 <li><code>[1, 2] * 2</code> zwróci <code>[1, 2, 1, 2]</code></li>
 <li><code>a = a.strip</code> można zapisać jako <code>a.strip!</code> - wywołanie funkcji z wykrzyknikiem nadpisuje wartość</li>
 <li>Liczby binarne  zapisuje się jako <code>0b101010</code>, szesnastkowe jako <code>0xFA5B</code>.</li>
-<li>W liczbach można używać podkreślników, Ruby je ignoruje, np <code>564_8758_98</code> da nam wynik <code>564875898</code></li>
+<li>W liczbach można używać podkreślników, Ruby je ignoruje, np. <code>564_8758_98</code> da nam wynik <code>564875898</code></li>
 <li>Komentarze zaczyna się od hasha (znak #)</li>
 <li><strong><code>b = a.clone</code></strong> - klonuje zmienną lub obiekt. Zwykłe przypisanie tylko kopiuje referencję</li>
 <li><strong><code>p obiekt</code></strong> - wyświetla wszystkie wartości zmiennych danego obiektu. Jest to skrót od <code>object.inspect</code></li>
@@ -323,6 +336,10 @@ arr = Array.new(3, &quot;abc&quot;) # [&quot;abc&quot;, &quot;abc&quot;, &quot;a
 arr = Array.new(3) { &quot;abc&quot; } # [&quot;abc&quot;, &quot;abc&quot;, &quot;abc&quot;], każdy element to inny obiekt
 arr[-1] # ostatni element tablicy
 arr[1..3] # zwróci elementy od 1 do 3 włącznie
+arr = [1, 2, 3]
+arr = [:a, :bb, :ccc]
+arr = ['info', 2, true]
+arr = [[1, 2], [3, 4]]
 </code></pre>
 
 <h3 id="hashe">Hashe</h3>
@@ -387,7 +404,7 @@ p pablo.name # wyświetlenie wartości =&gt; &quot;Pablo&quot;
 
 <p>Pierwsza funkcja to getter, zwraca zmienną <code>name</code>, natomiast druga to stter - ustawia jej wartość.</p>
 
-<p>Powyższy kod można skrócić - Ruby oferuje tzw <strong>akcesory</strong>. Zobaczmy:</p>
+<p>Powyższy kod można skrócić - Ruby oferuje tzw. <strong>akcesory</strong>. Zobaczmy:</p>
 
 <pre><code class="language-ruby">class Person
   attr_accessor :name
@@ -516,7 +533,7 @@ end
 
 <h4 id="monkey-patching-open-classes">Monkey patching &amp; Open classes</h4>
 
-<p>Termin <strong>Open classes</strong> oznacza, że możemy deklarować jedną klasę w wielu miejscach, dodając jej po jednej metodzie. Możemy też dowolnie nadpisywać jakieś metody innymi. Dzięki temu, Ruby umożliwia tzw <strong>Monkey Patching</strong>, czyli np dodawanie do wbudowanej klasy String nowych metod. Możliwe też jest ich nadpisywanie:</p>
+<p>Termin <strong>Open classes</strong> oznacza, że możemy deklarować jedną klasę w wielu miejscach, dodając jej po jednej metodzie. Możemy też dowolnie nadpisywać jakieś metody innymi. Dzięki temu, Ruby umożliwia tzw. <strong>Monkey Patching</strong>, czyli np. dodawanie do wbudowanej klasy String nowych metod. Możliwe też jest ich nadpisywanie:</p>
 
 <pre><code class="language-ruby">class String
   def cos_tam
@@ -553,7 +570,7 @@ end
 <ul>
 <li><code>false</code> i <code>nil</code> są traktowane jako <strong><code>false</code></strong></li>
 <li>reszta, czyli <code>true</code>, <code>0</code>, <code>''</code> (pusty string), <code>[]</code> (pusta tablica) - są traktowane jako <strong><code>true</code></strong></li>
-<li>konwertowanie do boola można dokonać operatorem <code>!!</code>, np <code>!![]</code></li>
+<li>konwertowanie do boola można dokonać operatorem <code>!!</code>, np. <code>!![]</code></li>
 </ul>
 
 <pre><code class="language-ruby"># if not == unless
@@ -822,6 +839,10 @@ end
       </article>
 
       <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://zielonybuszmen.github.io/2018/11/24/metody-na-metody-ruby/" data-toggle="tooltip" data-placement="top" title="Metody na metody w Ruby">&larr; Nowszy post </a>
+          </li>
         
         
           <li class="next">
