@@ -233,7 +233,7 @@ end
 
 </code></pre>
 
-<p>Argumenty bloku, tak jak i argumenty funkcji, mogą mieć swoje domyśln wartości. Możemy też używać argumentów nazwanych oraz argumentów przekazywanych jako splat:</p>
+<p>Argumenty bloku, tak jak i argumenty funkcji, mogą mieć swoje domyślne wartości. Możemy też używać argumentów nazwanych oraz argumentów przekazywanych jako splat:</p>
 
 <pre><code class="language-ruby">def creator
   yield :ship, :sedan, :van, size: :s, seats: :leather
@@ -283,7 +283,7 @@ destinator
 end
 </code></pre>
 
-<p>Rozwiązaniem tego problemu są zmienne lokalne bloku, które definuje się po średniku na liście parametrów. Wówczas zmienna <code>attrs</code> z zewnątrz nie zostanie zmieniona:</p>
+<p>Rozwiązaniem tego problemu są zmienne lokalne bloku, które definiuje się po średniku na liście parametrów. Wówczas zmienna <code>attrs</code> z zewnątrz nie zostanie zmieniona:</p>
 
 <pre><code class="language-ruby">def destinator
   attrs = {weight: 10, destination: 'Alpha3'}
@@ -334,24 +334,24 @@ p.('sth')
 p['summit']
 </code></pre>
 
-<h4 id="różnice-pomiędzy-obiektami-proc-a-funkcjami-lambda">Różnice pomiędzy obiektami <code>Proc</code> a funkcjami lambda:</h4>
+<h4 id="różnice-pomiędzy-obiektami-proc-a-funkcjami-lambda">Różnice pomiędzy obiektami <code>Proc</code>, a funkcjami lambda:</h4>
 
 <ul>
 <li>Obiekt <code>Proc</code> jest bardziej podobny do bloku, natomiast lambda jest zwykłą funkcją anonimową.</li>
 <li>Funkcje lambda ściśle przestrzegają argumentów - podanie zbyt małej ilości argumentów (lub zbyt dużej) spowoduje wyrzucenie wyjątku.</li>
-<li>W obiekcie <code>Proc</code> nadmiarowe argumenty zostaną odrzucone, a brakujące przyjmą warość <code>Nil</code></li>
+<li>W obiekcie <code>Proc</code> nadmiarowe argumenty zostaną odrzucone, a brakujące przyjmą wartość <code>Nil</code></li>
 <li><code>return</code> i <code>break</code> działają inaczej w <code>Proc</code> i lambda.
 
 <ul>
 <li>W obiekcie <code>Proc</code> instrukcja <code>return</code> przerywa wykonywanie funkcji, w której <code>Proc</code> został wywołany.</li>
-<li>W <code>Procs</code> słowo break nie jest dozwolone, chyba że w pętli</li>
+<li>W <code>Procs</code> instrukcja <code>break</code> nie jest dozwolone, chyba że w pętli.</li>
 <li>W funkcji lambda <code>break</code> i <code>return</code> zwracają kontrolę do funkcji wywołującej, nie przerywając jej działania.</li>
 </ul></li>
 </ul>
 
 <h3 id="moduły">Moduły</h3>
 
-<p>Ruby oferuje możliwość tworzenia modułów. Moduły możemy traktować jako przestrzenie nazw, w w których mamy możliwość zadeklarowania klas i metod. Nie posiadają one własnych instancji. Moduły można zagnieżdżać w sobie. Tworzymy je w taki sposób:</p>
+<p>Ruby oferuje możliwość tworzenia modułów. Moduły możemy traktować jako przestrzenie nazw, w których mamy możliwość zadeklarowania klas i metod. Nie posiadają one własnych instancji. Moduły można zagnieżdżać w sobie. Tworzymy je w taki sposób:</p>
 
 <pre><code class="language-ruby">module API
 
@@ -360,7 +360,7 @@ end
 
 <h3 id="stałe">Stałe</h3>
 
-<p>Pomimo wielu możliwości, które dają nam symbole w Ruby, stałe też mają swoje zastosowanie. Stałe są bardzo podobne do zmiennych, ponieważ też przechowują referencję do obiektu, tylko z tą różnicą, że nie powinno się zmieniać tej referencji. Mówię &ldquo;nie powinno&rdquo;, ponieważ Ruby zezwala na taką operację, jednakże wyświetli wtedy warning.</p>
+<p>Pomimo wielu możliwości, które dają nam symbole w Ruby, stałe też mają swoje zastosowanie. Stałe są bardzo podobne do zmiennych, ponieważ też przechowują referencję do obiektu, tylko z tą różnicą, że nie powinno się zmieniać tej referencji. Mówię &ldquo;nie powinno&rdquo;, ponieważ Ruby zezwala na taką operację, jednakże zostanie wygenerowanie ostrzeżenie.</p>
 
 <p>Stała musi rozpoczynać się dużą literą (<code>LIMIT = 100</code>). Więc nazwy klas też są stałymi.</p>
 
@@ -384,7 +384,7 @@ PLACES.freeze
 PLACES[0].upcase! # &quot;EARTH&quot;
 </code></pre>
 
-<p>Tworząc stałą poza jakimkolwiek modułem bądź klasą, staje się ona widoczna w całym projekcie. Stałe utworzone w modułach lub w klasach są widoczne tylko w nich. Mamy jednak możliwość odwołania się do nich z dowolnego miejsca poprzed operator <code>::</code></p>
+<p>Tworząc stałą poza jakimkolwiek modułem bądź klasą, staje się ona widoczna w całym projekcie. Stałe utworzone w modułach lub w klasach są widoczne tylko w nich. Mamy jednak możliwość odwołania się do nich z dowolnego miejsca poprzez operator <code>::</code></p>
 
 <pre><code class="language-ruby">class A; LIMIT = 50; end
 A::LIMIT
