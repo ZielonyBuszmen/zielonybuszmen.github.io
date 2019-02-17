@@ -6,10 +6,21 @@
     <description>Recent content on Zielony Buszmen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-pl</language>
-    <lastBuildDate>Sat, 24 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zielonybuszmen.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bloki i moduły w Ruby</title>
+      <link>https://zielonybuszmen.github.io/2019/02/17/bloki-i-moduly/</link>
+      <pubDate>Sun, 17 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zielonybuszmen.github.io/2019/02/17/bloki-i-moduly/</guid>
+      <description>Każdy język programowania umożliwia grupowanie kodu w jednostki. Ruby, oprócz tworzenia metod i klas, umożliwia grupowanie kodu w blokach i modułach. Wiąże się z tym wiele zagadnień, takich jak zasięg widoczności zmiennych, przekazywanie parametrów i zwracanie wartości. Z tematem bloków wiąże się także temat obiektów proc oraz funkcji lambda.
+Ten wpis jest jednym z serii o Ruby, które pojawiły się na blogu:
+ Ruby - ściągawka Metody na metody w Ruby Bloki i moduły w Ruby  Bloki, procs i lambda Blok to kawałek kodu, który możemy przekazać do funkcji jako &amp;ldquo;argument&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>Metody na metody w Ruby</title>
@@ -19,7 +30,7 @@
       <guid>https://zielonybuszmen.github.io/2018/11/24/metody-na-metody-ruby/</guid>
       <description>Tak jak już wspominałem w poprzednim artykule, Ruby ma syntax sugar na wszystko. Także na deklarowanie i wywoływanie metod. W rozbudowanej składni łatwo się pogubić. W tym artykule przedstawię część składni, na którą można natrafić na początku nauki.
 Ten wpis jest jednym z serii o Ruby, które pojawiły się na blogu:
- Ruby - ściągawka Metody na metody w Ruby  Domyślne parametry Tak jak w większości języków programowania, w Ruby istnieją wartości domyślne parametrów metody.</description>
+ Ruby - ściągawka Metody na metody w Ruby Bloki i moduły w Ruby  Domyślne parametry Tak jak w większości języków programowania, w Ruby istnieją wartości domyślne parametrów metody.</description>
     </item>
     
     <item>
@@ -30,7 +41,7 @@ Ten wpis jest jednym z serii o Ruby, które pojawiły się na blogu:
       <guid>https://zielonybuszmen.github.io/2018/10/24/ruby-sciagawka/</guid>
       <description>Ruby jest dosyć rozbudowanym językiem pod względem składni. Sam język ma lukier składniowy (syntax sugar) prawie na każdy element. Dlatego poniżej wrzucam małą ściągawkę ze składni. Post jest dosyć rozbudowany, dlatego polecam go przeszukiwać, a nie czytać w całości.
 Ten wpis jest jednym z serii o Ruby, które pojawiły się na blogu:
- Ruby - ściągawka Metody na metody w Ruby  Spis treści wpisu  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klasy i obiekty  Akcesory Konstruktory - initialize Dziedziczenie Zmienne i metody klasy Inne  Konstrola dostępu Monkey patching &amp;amp; Open classes   Sterowanie przepływem  Warunki Przypisywanie warunkowe Konstrukcja case Pętle Iteratory i bloki Kontrola wykonywania pętli Wyjątki  Obsługiwanie wyjątków Rzucanie wyjątków ensure &amp;amp; else Ponawianie prób    Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie.</description>
+ Ruby - ściągawka Metody na metody w Ruby Bloki i moduły w Ruby  Spis treści wpisu  Typy wbudowane  Tablice Hashe Zakresy (Range) Splat Operator  Klasy i obiekty  Akcesory Konstruktory - initialize Dziedziczenie Zmienne i metody klasy Inne  Konstrola dostępu Monkey patching &amp;amp; Open classes   Sterowanie przepływem  Warunki Przypisywanie warunkowe Konstrukcja case Pętle Iteratory i bloki Kontrola wykonywania pętli Wyjątki  Obsługiwanie wyjątków Rzucanie wyjątków ensure &amp;amp; else Ponawianie prób    Warto zaznaczyć, że w Ruby wielkość znaków ma znaczenie.</description>
     </item>
     
     <item>

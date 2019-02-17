@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Bloki i moduły w Ruby</title>
+  <meta property="og:title" content="Bloki i moduły w Ruby" />
+  <meta name="twitter:title" content="Bloki i moduły w Ruby" />
+  <meta name="description" content="Każdy język programowania umożliwia grupowanie kodu w jednostki. Ruby, oprócz tworzenia metod i klas, umożliwia grupowanie kodu w blokach i modułach. Wiąże się z tym wiele zagadnień, takich jak zasięg widoczności zmiennych, przekazywanie parametrów i zwracanie wartości. Z tematem bloków wiąże się także temat obiektów proc oraz funkcji lambda.
+Ten wpis jest jednym z serii o Ruby, które pojawiły się na blogu:
+ Ruby - ściągawka Metody na metody w Ruby Bloki i moduły w Ruby  Bloki, procs i lambda Blok to kawałek kodu, który możemy przekazać do funkcji jako &ldquo;argument&rdquo;.">
+  <meta property="og:description" content="Każdy język programowania umożliwia grupowanie kodu w jednostki. Ruby, oprócz tworzenia metod i klas, umożliwia grupowanie kodu w blokach i modułach. Wiąże się z tym wiele zagadnień, takich jak zasięg widoczności zmiennych, przekazywanie parametrów i zwracanie wartości. Z tematem bloków wiąże się także temat obiektów proc oraz funkcji lambda.
+Ten wpis jest jednym z serii o Ruby, które pojawiły się na blogu:
+ Ruby - ściągawka Metody na metody w Ruby Bloki i moduły w Ruby  Bloki, procs i lambda Blok to kawałek kodu, który możemy przekazać do funkcji jako &ldquo;argument&rdquo;.">
+  <meta name="twitter:description" content="Każdy język programowania umożliwia grupowanie kodu w jednostki. Ruby, oprócz tworzenia metod i klas, umożliwia grupowanie kodu w blokach i modułach. Wiąże się z tym wiele zagadnień, takich jak zasięg …">
+  <meta name="author" content="Zielony Buszmen"/>
+  <link href='https://zielonybuszmen.github.io/img/avatar-green.png' rel='icon' type='image/x-icon'/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://zielonybuszmen.github.io/2019/02/17/bloki-i-moduly" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zielony Buszmen" />
+
+  <meta name="generator" content="Hugo 0.37" />
+  <link rel="canonical" href="https://zielonybuszmen.github.io/2019/02/17/bloki-i-moduly" />
+  <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
+  
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://zielonybuszmen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  
+  
+
+
+
+<link rel="stylesheet" href="https://zielonybuszmen.github.io/prism-highlighter/darcula.css"><link rel="stylesheet" href="https://zielonybuszmen.github.io/styles/my.css">
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Przełącz nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Projekty" href="/MyProjects/">Projekty</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="O mnie" href="/o-mnie/">O mnie</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/ZielonyBuszmen">GitHub</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Menu</a>
+              <div class="navlinks-children">
+                
+                  <a href="/categories">Kategorie</a>
+                
+                  <a href="/tags">Tagi</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+          <li>
+            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+              <span class="hidden-sm hidden-md hidden-lg">Szukaj</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Szukajka</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search linktarget="_parent"></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Bloki i moduły w Ruby</h1>
+                
+                
+                  <span class="post-meta">
+  Napisano dnia 2019-02-17
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Każdy język programowania umożliwia grupowanie kodu w jednostki. Ruby, oprócz tworzenia metod i klas, umożliwia grupowanie kodu w blokach i modułach. Wiąże się z tym wiele zagadnień, takich jak zasięg widoczności zmiennych, przekazywanie parametrów i zwracanie wartości. Z tematem bloków wiąże się także temat obiektów <code>proc</code> oraz funkcji lambda.</p>
+
+<hr />
+
+<p>Ten wpis jest jednym z serii o <em>Ruby</em>, które pojawiły się na blogu:</p>
+
+<ol>
+<li><a href="/2018/10/24/ruby-sciagawka/">Ruby - ściągawka</a></li>
+<li><a href="/2018/11/24/metody-na-metody-ruby/">Metody na metody w Ruby</a></li>
+<li><strong>Bloki i moduły w Ruby</strong></li>
+</ol>
+
+<hr />
+
+<h3 id="bloki-procs-i-lambda">Bloki, <code>procs</code> i lambda</h3>
+
+<p>Blok to kawałek kodu, który możemy przekazać do funkcji jako &ldquo;argument&rdquo;. Jednolinijkowe bloki umieszczamy pomiędzy nawiasami klamrowymi, a wielolinijkowe muszą być otoczone słowami kluczowymi <code>do</code> i <code>end</code>:</p>
+
+<pre><code class="language-ruby">[1, 2, 3].each { |i| puts 'element tablicy =&gt; ', i}
+
+[1, 2, 3].each do
+  puts 'element tablicy =&gt; ', i
+end
+</code></pre>
+
+<p>Metoda, do której przekazaliśmy blok, może go wykonać dowolną ilość razy. Może też przesłać argument do bloku. Listę argumentów umieszczamy pomiędzy pionowymi kreskami - <code>|arg1, arg2, test|</code>.</p>
+
+<p>Powyżej widzimy przykład użycia funkcji <code>each</code>. Przyjmuje ona blok, do którego przekazuje argument z aktualną wartością z tablicy. Dzięki temu możemy np. wyświetlić wszystkie elementy tablicy.</p>
+
+<p>Aby wywołać taki blok, korzystamy ze słówka <code>yield</code>:</p>
+
+<pre><code class="language-ruby">def check
+  return nil unless block_given?
+  puts 'Debugowanie...'
+  yield 100
+end
+
+
+check do |speed|
+  puts &quot;Speed: #{speed}&quot;
+end
+
+</code></pre>
+
+<p>W powyższym kodzie wywołujemy funkcję <code>check</code>, do której przekazujemy blok. Funkcja <code>check</code> podczas wywoływania bloku przekazuje do niego parametr <code>100</code>, który wyświetlamy w bloku. Dzięki funkcji <code>block_given</code> możemy sprawdzić, czy blok został przekazany, i odpowiedni zareagować.</p>
+
+<p>Blok zawsze zwraca wartość do funkcji. Jest to wartość ostatniego wyrażenia w bloku:</p>
+
+<pre><code class="language-ruby">def check
+  return nil unless block_given?
+  value = yield 100
+  puts &quot;Wartosc zwrocona: &quot;, value
+end
+
+
+check do |speed|
+  speed * 20
+end
+
+</code></pre>
+
+<p>Argumenty bloku, tak jak i argumenty funkcji, mogą mieć swoje domyśln wartości. Możemy też używać argumentów nazwanych oraz argumentów przekazywanych jako splat:</p>
+
+<pre><code class="language-ruby">def creator
+  yield :ship, :sedan, :van, size: :s, seats: :leather
+end
+
+creator do |category = :car, *types,
+    size: :m, engines: 2, **ohter_components|
+  puts &quot;Category: #{category}&quot;  # Category: ship
+  puts &quot;Types:&quot;
+  p types  # [:sedan, :van]
+  puts &quot;Size: #{size}&quot;  # Size: s
+  puts &quot;Engines: #{engines}&quot;  # Engines: 2
+  puts &quot;Other components&quot;
+  p ohter_components  # {:seats=&gt;:leather}
+end
+</code></pre>
+
+<h4 id="zasięg-zmiennych-w-blokach">Zasięg zmiennych w blokach</h4>
+
+<p>Zmienna przekazana w argumencie do bloku, przykryje zmienną z zewnątrz o takiej samej nazwie:</p>
+
+<pre><code class="language-ruby">def creator
+  yield empty: true
+end
+
+def destinator
+  attrs = {weight: 10, destination: 'Alpha3'}
+  creator do |attrs|
+    attrs = {} # czyścimy attrs
+    attrs[:cargo] = 'bananas'
+  end
+  p attrs  # {:weight=&gt;10, :destination=&gt;&quot;Alpha3&quot;} - poprzednia wartość
+end
+
+destinator
+</code></pre>
+
+<p>Jednakże sam blok ma dostęp do zmiennych z zewnątrz, i może je modyfikować:</p>
+
+<pre><code class="language-ruby">def destinator
+  attrs = {weight: 10, destination: 'Alpha3'}
+  creator do |new_attrs|
+    attrs = {} # czyścimy attrs
+    attrs[:cargo] = 'bananas'
+  end
+  p attrs  # {:cargo=&gt;&quot;bananas&quot;} - zmienna została nadpisana
+end
+</code></pre>
+
+<p>Rozwiązaniem tego problemu są zmienne lokalne bloku, które definuje się po średniku na liście parametrów. Wówczas zmienna <code>attrs</code> z zewnątrz nie zostanie zmieniona:</p>
+
+<pre><code class="language-ruby">def destinator
+  attrs = {weight: 10, destination: 'Alpha3'}
+  creator do |new_attrs; attrs|
+    attrs = {}
+    attrs[:cargo] = 'bananas'
+  end
+  p attrs  # {:weight=&gt;10, :destination=&gt;&quot;Alpha3&quot;}
+end
+</code></pre>
+
+<p>Bloki mają dwa podstawowe ograniczenia:</p>
+
+<ul>
+<li>Można przesłać tylko jeden blok do metody</li>
+<li>Bloki nie mogą by przekazywane pomiędzy metodami</li>
+</ul>
+
+<h3 id="proce">Proce</h3>
+
+<p>Metoda może informować w sposób jawny, że do działania wymaga bloku. Możemy taki blok umieścić na liście parametrów i go nazwać. Robi się to, dodając prefiks w postaci znaczka <code>&amp;</code> oraz umieszczając taki parametr na końcu listy.</p>
+
+<pre><code class="language-ruby">def creator(param = nil, &amp;block)
+  puts block.class # Proc
+end
+</code></pre>
+
+<p>Taki jawny blok tak na prawdę nie jest blokiem, a obiektem <code>Proc</code></p>
+
+<pre><code class="language-ruby">def creator(param = nil, &amp;block)
+  puts block.class
+end
+
+creator {&quot;sth&quot;} # Proc
+
+p = Proc.new {|param| puts &quot;This is proc with #{param}&quot;}
+creator(&amp;p) # Proc
+</code></pre>
+
+<p>Obiekty <code>Proc</code> możemy tworzyć i wywoływać w taki sposób:</p>
+
+<pre><code class="language-ruby">p = Proc.new {|param| puts &quot;This is proc with #{param}&quot;}
+p = proc {|param| puts &quot;This is proc with #{param}&quot;}
+
+p.call 'test'
+p.yield 'nooo'
+p.('sth')
+p['summit']
+</code></pre>
+
+<h4 id="różnice-pomiędzy-obiektami-proc-a-funkcjami-lambda">Różnice pomiędzy obiektami <code>Proc</code> a funkcjami lambda:</h4>
+
+<ul>
+<li>Obiekt <code>Proc</code> jest bardziej podobny do bloku, natomiast lambda jest zwykłą funkcją anonimową.</li>
+<li>Funkcje lambda ściśle przestrzegają argumentów - podanie zbyt małej ilości argumentów (lub zbyt dużej) spowoduje wyrzucenie wyjątku.</li>
+<li>W obiekcie <code>Proc</code> nadmiarowe argumenty zostaną odrzucone, a brakujące przyjmą warość <code>Nil</code></li>
+<li><code>return</code> i <code>break</code> działają inaczej w <code>Proc</code> i lambda.
+
+<ul>
+<li>W obiekcie <code>Proc</code> instrukcja <code>return</code> przerywa wykonywanie funkcji, w której <code>Proc</code> został wywołany.</li>
+<li>W <code>Procs</code> słowo break nie jest dozwolone, chyba że w pętli</li>
+<li>W funkcji lambda <code>break</code> i <code>return</code> zwracają kontrolę do funkcji wywołującej, nie przerywając jej działania.</li>
+</ul></li>
+</ul>
+
+<h3 id="moduły">Moduły</h3>
+
+<p>Ruby oferuje możliwość tworzenia modułów. Moduły możemy traktować jako przestrzenie nazw, w w których mamy możliwość zadeklarowania klas i metod. Nie posiadają one własnych instancji. Moduły można zagnieżdżać w sobie. Tworzymy je w taki sposób:</p>
+
+<pre><code class="language-ruby">module API
+
+end
+</code></pre>
+
+<h3 id="stałe">Stałe</h3>
+
+<p>Pomimo wielu możliwości, które dają nam symbole w Ruby, stałe też mają swoje zastosowanie. Stałe są bardzo podobne do zmiennych, ponieważ też przechowują referencję do obiektu, tylko z tą różnicą, że nie powinno się zmieniać tej referencji. Mówię &ldquo;nie powinno&rdquo;, ponieważ Ruby zezwala na taką operację, jednakże wyświetli wtedy warning.</p>
+
+<p>Stała musi rozpoczynać się dużą literą (<code>LIMIT = 100</code>). Więc nazwy klas też są stałymi.</p>
+
+<p>W ramach stałej możliwe są operacje na obiekcie. Np. do tablicy możemy dodawać elementy:</p>
+
+<pre><code class="language-ruby">PLACES = []
+PLACES &lt;&lt; &quot;moon&quot;
+</code></pre>
+
+<p>Aby to zablokować, możemy zamrozić (<strong>freeze</strong>) obiekt. Przy próbie modyfikacji zostanie wygenerowany błąd:</p>
+
+<pre><code class="language-ruby">PLACES = []
+PLACES.freeze
+PLACES &lt;&lt; &quot;pluton&quot; # niedozwolona operacja
+</code></pre>
+
+<p>Niestety, nie zapewni nam to pełnej ochrony - pojedyncze elementy tablicy będą podatne na modyfikacje:</p>
+
+<pre><code class="language-ruby">PLACES = [&quot;earth&quot;, &quot;moon&quot;, &quot;mars&quot;]
+PLACES.freeze
+PLACES[0].upcase! # &quot;EARTH&quot;
+</code></pre>
+
+<p>Tworząc stałą poza jakimkolwiek modułem bądź klasą, staje się ona widoczna w całym projekcie. Stałe utworzone w modułach lub w klasach są widoczne tylko w nich. Mamy jednak możliwość odwołania się do nich z dowolnego miejsca poprzed operator <code>::</code></p>
+
+<pre><code class="language-ruby">class A; LIMIT = 50; end
+A::LIMIT
+A::NAME = 'test' # stworzenie nowej stałej w klasie, dzięki monkey patching
+</code></pre>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+        
+          <li class="next">
+            <a href="https://zielonybuszmen.github.io/2018/11/24/metody-na-metody-ruby/" data-toggle="tooltip" data-placement="top" title="Metody na metody w Ruby">Starszy post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zielonybuszmen-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/ZielonyBuszmen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://zielonybuszmen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2019
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://zielonybuszmen.github.io/">Zielony Buszmen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          To wszystko działa dzięki <a href="https://pages.github.com/">Github Pages</a> oraz <a href="https://gohugo.io/">GoHugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://zielonybuszmen.github.io/js/main.js"></script>
+<script src="https://zielonybuszmen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+
+
+
+
+
+
+
+<script>
+  (function() {
+    var cx = '007478084746714163272:uz5nuajlf-i';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<script src="/prism-highlighter/prism.js"></script>
+<script src="/js/my.js"></script>
+
+  </body>
+</html>
+
