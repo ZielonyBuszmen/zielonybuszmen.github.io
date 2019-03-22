@@ -37,7 +37,7 @@ Info git clone https://github.com/ZielonyBuszmen/onePage-hafty.git   Github - gi
       <pubDate>Thu, 23 Feb 2017 08:43:52 +0000</pubDate>
       
       <guid>https://zielonybuszmen.github.io/2017/02/23/projekt-sklep-prosty-sklep-internetowy/</guid>
-      <description>git clone https://github.com/ZielonyBuszmen/projektSklep.git   Github - github.com/ZielonyBuszmen/projektSklep Działający projekt - projektsklep.cba.pl lub projektsklep.za.pl Użyte technologie -  PHP, MySQL, Bootstrap Kiedy -  listopad/grudzień 2015 Zespół -  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu -  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL.</description>
+      <description>git clone https://github.com/ZielonyBuszmen/projektSklep.git   Github - github.com/ZielonyBuszmen/projektSklep Działający projekt - projektsklep.cba.pl Użyte technologie -  PHP, MySQL, Bootstrap Kiedy -  listopad/grudzień 2015 Zespół -  niewielki, bo dwuosobowy. Razem ze mną kodził Bartosh: bartoszgajda.com Przeznaczenie projektu -  Projekt został stworzony na potrzeby zaliczenia programowania w ostatniej klasie technikum  Przedstawiany tutaj projekt to sklep internetowy. Nie jest wyszukany, wygląd to czysty Bootstrap. Kod jest napisany w czystym PHP oraz korzysta z bazy danych MySQL.</description>
     </item>
     
     <item>
@@ -47,7 +47,7 @@ Info git clone https://github.com/ZielonyBuszmen/onePage-hafty.git   Github - gi
       
       <guid>https://zielonybuszmen.github.io/2017/02/22/jpg-aq-pl-hosting-screenow-i-zdjec/</guid>
       <description>Projekt napisany na potrzeby własne. A potrzebą był szybki upload zdjęć do chmury, bez potrzeby logowania i innych niepotrzebnych formalności. I ten serwis taki jest - wrzucasz zdjęcie, dostajesz link i zapewnienie, że zdjęcie z czasem nie wygaśnie (jak ma to miejsce na wielu podobnych stronach).
-Info  Działający projekt - jpg.aq.pl Użyte technologie -  PHP Kiedy -  grudzień 2012 / styczeń 2013 Przeznaczenie projektu -  Kilka lat temu stare wersje IP Board (fora internetowe) nie umożliwiały łatwego wrzucania screenów i zdjęć.</description>
+Info  Działający projekt -  jpg.aq.pl - niestety, serwer ze stroną nie działa Użyte technologie -  PHP Kiedy -  grudzień 2012 / styczeń 2013 Przeznaczenie projektu -  Kilka lat temu stare wersje IP Board (fora internetowe) nie umożliwiały łatwego wrzucania screenów i zdjęć.</description>
     </item>
     
   </channel>
