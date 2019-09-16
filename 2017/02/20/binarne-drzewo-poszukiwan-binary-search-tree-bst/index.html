@@ -20,7 +20,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Zielony Buszmen" />
 
-  <meta name="generator" content="Hugo 0.37" />
+  <meta name="generator" content="Hugo 0.52" />
   <link rel="canonical" href="https://zielonybuszmen.github.io/2017/02/20/binarne-drzewo-poszukiwan-binary-search-tree-bst/" />
   <link rel="alternate" href="https://zielonybuszmen.github.io/index.xml" type="application/rss+xml" title="Zielony Buszmen">
   
@@ -39,7 +39,7 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 </head>
 
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom top-nav-short">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
@@ -251,37 +251,37 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <pre><code class="language-csharp">// .............  //
 
-    public Node Search(int value)  //0
-    {
-        if (this.number == value)      //1
-        {
-            return this;
-        }
-        else if (value &lt; this.number)    //2
-        {
-            if (this.left == null)  //3
-            {
-                return null;
-            }
-            else
-            {
-                return this.left.Search(value);  //4
-            }
+	public Node Search(int value)  //0
+	{
+		if (this.number == value)      //1
+		{
+			return this;
+		}
+		else if (value &lt; this.number)    //2
+		{
+			if (this.left == null)  //3
+			{
+				return null;
+			}
+			else
+			{
+				return this.left.Search(value);  //4
+			}
 
-        }
-        else if (value &gt; this.number)  //5
-        {
-            if (this.right == null)   //6
-            {
-                return null;
-            }
-            else
-            {
-                return this.right.Search(value);   //7
-            }
-        }
-        return null;  //8
-    } 
+		}
+		else if (value &gt; this.number)  //5
+		{
+			if (this.right == null)   //6
+			{
+				return null;
+			}
+			else
+			{
+				return this.right.Search(value);   //7
+			}
+		}
+		return null;  //8
+	} 
 
 </code></pre>
 
@@ -308,31 +308,31 @@ Drzewo składa się z węzłów (nodes). Każdy z nich posiada co najwyżej dwó
 
 <pre><code class="language-csharp">// ..............  //
 
-    public void Add(int value)        //0
-    {
-        if (value &gt;= this.number)    //1
-        {
-            if (this.right == null) 
-            {
-                this.right = new Node(value);  //2
-            }
-            else
-            {
-                this.right.Add(value);    //3
-            }
-        }
-        else if (value &lt; this.number)    //4
-        {
-            if (this.left == null)
-            {
-                this.left = new Node(value);    //5
-            }
-            else
-            {
-                this.left.Add(value);     //6
-            }
-        }
-    }
+	public void Add(int value)        //0
+	{
+		if (value &gt;= this.number)    //1
+		{
+			if (this.right == null) 
+			{
+				this.right = new Node(value);  //2
+			}
+			else
+			{
+				this.right.Add(value);    //3
+			}
+		}
+		else if (value &lt; this.number)    //4
+		{
+			if (this.left == null)
+			{
+				this.left = new Node(value);    //5
+			}
+			else
+			{
+				this.left.Add(value);     //6
+			}
+		}
+	}
 </code></pre>
 
 <p></pre></p>
@@ -680,7 +680,7 @@ namespace tree
         
           <div class="disqus-comments">
             <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
